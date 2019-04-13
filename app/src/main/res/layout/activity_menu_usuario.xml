@@ -23,7 +23,7 @@
 
     <Button
         android:id="@+id/btnAdm"
-        android:layout_width="90dp"
+        android:layout_width="94dp"
         android:layout_height="136dp"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
@@ -31,6 +31,7 @@
         android:layout_marginRight="88dp"
         android:background="@drawable/frank"
         android:freezesText="false"
+        android:onClick="logar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnCliente"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -82,7 +83,7 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="90dp"
-        android:layout_height="86dp"
+        android:layout_height="85dp"
         android:layout_marginStart="86dp"
         android:layout_marginLeft="86dp"
         android:layout_marginTop="4dp"
