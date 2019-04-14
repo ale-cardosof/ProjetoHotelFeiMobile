@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ProjetoHotelFEI</string>
     <string name="login_adm">Bem-Vindo Administrador! Utilize os campos abaixo para realizar seu login.</string>
+    <string name="title_activity_teste">teste</string>
 </resources>

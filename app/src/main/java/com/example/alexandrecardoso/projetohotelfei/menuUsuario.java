@@ -15,6 +15,7 @@ public class menuUsuario extends AppCompatActivity {
     public static Administrador admsLogados[] = new Administrador[5];
     //public static Usuario usuariosLogados[] = new Usuario[5];
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Inicia o Programa na Tela de seleção de Usuário
@@ -34,6 +35,11 @@ public class menuUsuario extends AppCompatActivity {
         /* Redireciona para tela de Login
         Intent intent = new Intent(menuUsuario.this, loginAdm.class);
         startActivity(intent);*/
+    }
+
+    public void abrirTelaADM(View view){
+        Intent intent = new Intent(menuUsuario.this, menuAdministrador.class);
+        startActivity(intent);
     }
 
 }
