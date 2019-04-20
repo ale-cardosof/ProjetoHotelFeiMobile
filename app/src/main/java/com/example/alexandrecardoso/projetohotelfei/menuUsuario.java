@@ -24,7 +24,7 @@ public class menuUsuario extends AppCompatActivity {
         // Retira barra superior com o nome do app
         getSupportActionBar().hide();
         // Cria o adm padrão
-        Administrador admInicial = new Administrador("admin","Administrador Inicial",123456789,"01/01/2019","admin@admin.com.br","11954546565","admin");
+        Administrador admInicial = new Administrador("admin","Administrador Inicial","123456789","01/01/2019","admin@admin.com.br","11954546565","admin");
         admsLogados[0] = admInicial;
     }
 

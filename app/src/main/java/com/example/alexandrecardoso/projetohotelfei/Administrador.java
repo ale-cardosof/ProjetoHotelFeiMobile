@@ -7,7 +7,7 @@ public class Administrador extends Pessoa {
 
     /* Métodos */
     // 0. Construtor
-    public Administrador(String username, String nome, int cpf, String dataNascimento, String email, String celular, String senha) {
+    public Administrador(String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
         super(username, nome, cpf, dataNascimento, email, celular, senha);
     }
     // 1. Exibe Quartos
