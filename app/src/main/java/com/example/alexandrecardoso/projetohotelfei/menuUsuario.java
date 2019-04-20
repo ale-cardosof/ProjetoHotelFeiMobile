@@ -28,18 +28,17 @@ public class menuUsuario extends AppCompatActivity {
         admsLogados[0] = admInicial;
     }
 
-    public void logar(View v){
-        // DANDO ERRO
-        Toast toast = Toast.makeText(this, "OLA PAPAI",Toast.LENGTH_SHORT);
-        toast.show();
-        /* Redireciona para tela de Login
-        Intent intent = new Intent(menuUsuario.this, loginAdm.class);
-        startActivity(intent);*/
-    }
-
     public void abrirTelaADM(View view){
-        Intent intent = new Intent(menuUsuario.this, menuAdministrador.class);
+        Intent intent = new Intent(menuUsuario.this, loginAdm.class);
         startActivity(intent);
+
+    }
+    public void abrirTelaCliente(View view){
+        /* Quando criar, setar tela de login para cliente
+        Intent intent = new Intent(menuUsuario.this, menuAdministrador.class);
+        startActivity(intent);*/
+        Toast toast = Toast.makeText(this, "Recurso não criado.",Toast.LENGTH_SHORT);
+        toast.show();
     }
 
 }
