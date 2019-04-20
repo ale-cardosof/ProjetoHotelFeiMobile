@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".menuCadastroNovoFuncionario"></activity>
+        <activity android:name=".menuInserirQuarto"></activity>
+        <activity android:name=".menuEstruturaHotel" />
+        <activity android:name=".menuCadastroNovoFuncionario" />
         <activity android:name=".menuVisualizarHotel" />
         <activity android:name=".menuAdministrador" /> <!-- <activity android:name=".teste"></activity>! -->
         <activity android:name=".loginAdm" />
