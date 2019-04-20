@@ -4,8 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginAdm"
+    tools:context=".loginUser"
     android:background="@drawable/back">
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="171dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/btnno"
+        android:onClick="novoCadastro"
+        android:text="Novo Cadastro"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -25,14 +42,14 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="252dp"
-        android:layout_height="73dp"
+        android:layout_height="85dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center_horizontal"
-        android:text="@string/login_adm"
+        android:text="@string/login_user"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +66,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/btnno"
-        android:onClick="loginAdm"
+        android:onClick="loginUser"
         android:text="Logar"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +77,7 @@
         android:id="@+id/textInputLayout"
         android:layout_width="365dp"
         android:layout_height="66dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="23dp">
