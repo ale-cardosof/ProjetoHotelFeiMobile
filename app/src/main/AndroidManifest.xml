@@ -11,8 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".menuAdministrador"></activity>
-        <!-- <activity android:name=".teste"></activity>! -->
+        <activity android:name=".menuCadastroNovoFuncionario"></activity>
+        <activity android:name=".menuVisualizarHotel" />
+        <activity android:name=".menuAdministrador" /> <!-- <activity android:name=".teste"></activity>! -->
         <activity android:name=".loginAdm" />
         <activity android:name=".menuUsuario">
             <intent-filter>
