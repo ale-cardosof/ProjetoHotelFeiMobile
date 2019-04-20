@@ -15,11 +15,11 @@ public class cadastroUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_user);
         getSupportActionBar().hide();
-        edUsuario = findViewById(R.id.edUsuario);
-        edNome = findViewById(R.id.edNome);
-        edCPF = findViewById(R.id.edCpf);
-        edData = findViewById(R.id.edData);
-        edEmail = findViewById(R.id.edEmail);
+        edUsuario = findViewById(R.id.ednumPorta);
+        edNome = findViewById(R.id.edValDiaria);
+        edCPF = findViewById(R.id.edAvaliacao);
+        edData = findViewById(R.id.edqtdCama);
+        edEmail = findViewById(R.id.edqtdChuveiro);
         edCelular = findViewById(R.id.edCelular);
         edSenha = findViewById(R.id.edSenha);
     }

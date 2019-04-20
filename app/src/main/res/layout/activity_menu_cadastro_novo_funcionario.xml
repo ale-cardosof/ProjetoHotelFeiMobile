@@ -8,7 +8,7 @@
     android:background="@drawable/back">
 
     <EditText
-        android:id="@+id/edCpf"
+        android:id="@+id/edAvaliacao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -22,10 +22,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edNome" />
+        app:layout_constraintTop_toBottomOf="@+id/edValDiaria" />
 
     <EditText
-        android:id="@+id/edNome"
+        android:id="@+id/edValDiaria"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/ednumPorta" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/edUsuario"
+        android:id="@+id/ednumPorta"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -89,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/edData"
+        android:id="@+id/edqtdCama"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -102,10 +102,10 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edCpf" />
+        app:layout_constraintTop_toBottomOf="@+id/edAvaliacao" />
 
     <EditText
-        android:id="@+id/edEmail"
+        android:id="@+id/edqtdChuveiro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -118,7 +118,7 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edData" />
+        app:layout_constraintTop_toBottomOf="@+id/edqtdCama" />
 
     <EditText
         android:id="@+id/edCelular"
@@ -134,7 +134,7 @@
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro" />
 
     <EditText
         android:id="@+id/edSenha"

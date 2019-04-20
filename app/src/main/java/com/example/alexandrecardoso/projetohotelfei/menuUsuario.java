@@ -12,6 +12,7 @@ public class menuUsuario extends AppCompatActivity {
     // Cria variáveis globais (COLOCAR NA PRIMEIRA TELA CHAMADA PELO APP)
     public static ArrayList<Administrador> admsLogados = new ArrayList();
     public static ArrayList<Usuario> usuariosLogados = new ArrayList();
+    public static ArrayList<Quarto> quartosCriados = new ArrayList();
     public static infoLogado logado = new infoLogado(0,0);
 
 

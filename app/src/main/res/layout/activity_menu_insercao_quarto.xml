@@ -8,7 +8,7 @@
     android:background="@drawable/back">
 
     <EditText
-        android:id="@+id/edCpf"
+        android:id="@+id/edAvaliacao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -18,14 +18,14 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Avaliação"
-        android:inputType="textPersonName"
+        android:inputType="numberSigned|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edNome" />
+        app:layout_constraintTop_toBottomOf="@+id/edValDiaria" />
 
     <EditText
-        android:id="@+id/edNome"
+        android:id="@+id/edValDiaria"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -35,11 +35,11 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Valor diária"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/ednumPorta" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/edUsuario"
+        android:id="@+id/ednumPorta"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -82,14 +82,14 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Número da Porta"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/edData"
+        android:id="@+id/edqtdCama"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -99,13 +99,13 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Quantidade Camas"
-        android:inputType="date"
+        android:inputType="date|numberSigned"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edCpf" />
+        app:layout_constraintTop_toBottomOf="@+id/edAvaliacao" />
 
     <EditText
-        android:id="@+id/edEmail"
+        android:id="@+id/edqtdChuveiro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -115,10 +115,10 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Quantidade Chuveiro"
-        android:inputType="textEmailAddress"
+        android:inputType="numberSigned|textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edData" />
+        app:layout_constraintTop_toBottomOf="@+id/edqtdCama" />
 
     <Button
         android:id="@+id/btnCadastrar"
@@ -126,6 +126,7 @@
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -133,7 +134,8 @@
         android:text="CADASTRAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/textView2"
@@ -147,7 +149,7 @@
         android:text="Possui TV?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -158,14 +160,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:checkedButton="@id/radioButton2"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.091">
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <RadioButton
             android:id="@+id/radioButton2"
