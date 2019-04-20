@@ -34,11 +34,8 @@ public class menuUsuario extends AppCompatActivity {
 
     }
     public void abrirTelaCliente(View view){
-        /* Quando criar, setar tela de login para cliente
-        Intent intent = new Intent(menuUsuario.this, menuAdministrador.class);
-        startActivity(intent);*/
-        Toast toast = Toast.makeText(this, "Recurso não criado.",Toast.LENGTH_SHORT);
-        toast.show();
+        Intent intent = new Intent(menuUsuario.this, loginUser.class);
+        startActivity(intent);
     }
 
 }
