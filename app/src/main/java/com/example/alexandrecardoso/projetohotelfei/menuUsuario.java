@@ -5,15 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
-// Para ver em outra tela, usar:
-// import static com.example.alexandrecardoso.projetohotelfei.MainActivity.admsLogados;
+import java.util.ArrayList;
 
 
 public class menuUsuario extends AppCompatActivity {
     // Cria variáveis globais (COLOCAR NA PRIMEIRA TELA CHAMADA PELO APP)
-    public static Administrador admsLogados[] = new Administrador[5];
+    public static ArrayList<Administrador> admsLogados = new ArrayList();
     //public static Usuario usuariosLogados[] = new Usuario[5];
+    public static infoLogado logado = new infoLogado(0,0);
 
 
     @Override
@@ -25,7 +24,7 @@ public class menuUsuario extends AppCompatActivity {
         getSupportActionBar().hide();
         // Cria o adm padrão
         Administrador admInicial = new Administrador("admin","Administrador Inicial","123456789","01/01/2019","admin@admin.com.br","11954546565","admin");
-        admsLogados[0] = admInicial;
+        admsLogados.add(admInicial);
     }
 
     public void abrirTelaADM(View view){

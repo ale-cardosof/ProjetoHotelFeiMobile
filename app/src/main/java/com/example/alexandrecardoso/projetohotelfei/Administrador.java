@@ -4,7 +4,6 @@ public class Administrador extends Pessoa {
     /* Atributos */
     private Hotel meuHotel;
 
-
     /* Métodos */
     // 0. Construtor
     public Administrador(String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
