@@ -30,12 +30,16 @@ public class loginAdm extends AppCompatActivity {
 
         // Caso o login seja efetuado abre o menu principal
         if(login){
+            Toast.makeText(getApplicationContext(), "Logado com sucesso!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, menuAdministrador.class);
             startActivity(intent);
+        }else{
+            Toast.makeText(getApplicationContext(), "Falha ao Logar. Tente novamente", Toast.LENGTH_SHORT).show();
         }
     }
 
     public boolean tryLogin(String admProcurado, String senhaDigitada){
+        boolean aux = false;
         // Percorrendo o vetor de Administradores Cadastrados
         for(int i=0; i < admsLogados.size(); i++){
             // Usuário encontrado
@@ -43,23 +47,21 @@ public class loginAdm extends AppCompatActivity {
                 // Senha correta
                 if(admsLogados.get(i).getSenha().equals(senhaDigitada)){
                     // Login efetuado
-                    Toast.makeText(getApplicationContext(), "Login efetuado com sucesso.", Toast.LENGTH_SHORT).show();
                     // Guarda o usuario logado
                     logado.tipoUser = 1;
                     logado.posicao = i;
-                    return true;
+                    aux = true;
+                    break;
                 }else{// Senha incorreta
                     // Aviso sobre senha incorreta
-                    Toast.makeText(getApplicationContext(), "Senha Incorreta." + " ", Toast.LENGTH_SHORT).show();
-                    return false;
+                    aux = false;
                 }
             }else{ // Usuário não existe
                 // Aviso sobre usuario não existente
-                Toast.makeText(getApplicationContext(), "Administrador não cadastrado." + " ", Toast.LENGTH_SHORT).show();
-                return false;
+                aux = false;
             }
         }
-        return false;
+        return aux;
     }
 
 
