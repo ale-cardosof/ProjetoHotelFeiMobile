@@ -24,4 +24,9 @@ public class menuAdministrador extends AppCompatActivity {
         Intent intent = new Intent(menuAdministrador.this, menuCadastroNovoFuncionario.class);
         startActivity(intent);
     }
+
+    public void estruturaHotel(View view){
+        Intent intent = new Intent(menuAdministrador.this, menuEstruturaHotel.class);
+        startActivity(intent);
+    }
 }

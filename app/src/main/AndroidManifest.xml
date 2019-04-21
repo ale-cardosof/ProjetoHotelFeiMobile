@@ -14,6 +14,7 @@
         <activity android:name=".menuInsercaoQuarto"></activity>
         <activity android:name=".cadastroUser" />
         <activity android:name=".loginUser" />
+        <activity android:name=".menuEstruturaHotel" />
         <activity android:name=".menuCadastroNovoFuncionario" />
         <activity android:name=".menuVisualizarHotel" />
         <activity android:name=".menuAdministrador" /> <!-- <activity android:name=".teste"></activity>! -->
