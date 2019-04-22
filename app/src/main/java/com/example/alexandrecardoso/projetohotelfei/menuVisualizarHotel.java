@@ -24,17 +24,23 @@ public class menuVisualizarHotel extends AppCompatActivity {
             quartosReservados = findViewById(R.id.quartosReservados);
             quartosTotal = findViewById(R.id.quartosTotal);
 
-            // Seleciona
-            int disp,pre,reserv,total;
+            // Cria variaveis
+            int disp = 0;
+            int pre = 0;
+            int reserv = 0;
+            int total = 0;
 
-            //admsLogados.get(logado.posicao);
+            // Calcula valores
+            disp = admsLogados.get(logado.posicao).getMeuHotel().getNumQuartosDisponiveis();
+            pre = admsLogados.get(logado.posicao).getMeuHotel().getNumQuartosPreReservados();
+            reserv = admsLogados.get(logado.posicao).getMeuHotel().getNumQuartosReservados();
+            total = admsLogados.get(logado.posicao).getMeuHotel().getNumQuartosExistentes();
 
             // Altera valor da tela
-            quartosDisponiveis.setText(Integer.toString(6));
-            quantosPreReservados.setText(Integer.toString(2));
-            quartosReservados.setText(Integer.toString(13));
-            quartosTotal.setText(Integer.toString(150));
-
+            quartosDisponiveis.setText(Integer.toString(disp));
+            quantosPreReservados.setText(Integer.toString(pre));
+            quartosReservados.setText(Integer.toString(reserv));
+            quartosTotal.setText(Integer.toString(total));
 
         }else if(logado.tipoUser == 0){
             // Deslogado
