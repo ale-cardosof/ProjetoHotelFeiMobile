@@ -26,6 +26,8 @@ public class menuUsuario extends AppCompatActivity {
         // Cria o adm padrão
         Administrador admInicial = new Administrador("admin","Administrador Inicial","123456789","01/01/2019","admin@admin.com.br","11954546565","admin");
         admsLogados.add(admInicial);
+        // Cria quartos para o adm padrão
+
         // Cria o usuário padrão
         Usuario userInicial = new Usuario("user","User Inicial","123456789","01/01/2019","user@user.com.br","11954546565","user");
         usuariosLogados.add(userInicial);

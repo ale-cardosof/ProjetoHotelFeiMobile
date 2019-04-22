@@ -24,6 +24,7 @@ public class Administrador extends Pessoa {
     // 3. Insere novo Quarto
     void insereQuarto(){
 
+
     }
     // 4. Remove Quarto
     void removeQuarto(){
