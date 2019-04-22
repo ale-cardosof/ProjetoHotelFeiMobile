@@ -7,8 +7,17 @@ public class Quarto {
     private int qntdCamas;
     private int qntdChuveiros;
     private boolean possuiTv;
+    private int imagemQuarto;
 
     public Quarto() {
+    }
+
+    public int getImagemQuarto() {
+        return imagemQuarto;
+    }
+
+    public void setImagemQuarto(int imagemQuarto) {
+        this.imagemQuarto = imagemQuarto;
     }
 
     public int getNumPorta() {

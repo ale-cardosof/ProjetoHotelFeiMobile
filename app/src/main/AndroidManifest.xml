@@ -19,7 +19,9 @@
         <activity android:name=".menuVisualizarHotel" />
         <activity android:name=".menuAdministrador" /> <!-- <activity android:name=".teste"></activity>! -->
         <activity android:name=".loginAdm" />
-        <activity android:name=".menuUsuario">
+        <activity android:name=".menuUsuario" />
+        <activity android:name=".UsuarioReservas" />
+        <activity android:name=".usuarioMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
