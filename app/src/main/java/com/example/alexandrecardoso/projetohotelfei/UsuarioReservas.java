@@ -1,14 +1,9 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class UsuarioReservas extends AppCompatActivity {
@@ -20,8 +15,7 @@ public class UsuarioReservas extends AppCompatActivity {
         ListView lista = findViewById(R.id.lvReservas);
         ArrayAdapter adapter = new ReservaAdapter(this, addReservas());
 
-        String TAG = UsuarioReservas.class.getSimpleName();
-        Log.d(TAG, "Passou no Count." + adapter.getCount());
+        //String TAG = UsuarioReservas.class.getSimpleName();
         //ArrayAdapter ad = new ArrayAdapter()
         lista.setAdapter(adapter);
     }
