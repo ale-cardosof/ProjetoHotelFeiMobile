@@ -9,4 +9,6 @@ public class infoLogado {
         this.tipoUser = tipoUser;
         this.posicao = posicao;
     }
+
+
 }

@@ -7,9 +7,22 @@ public class Quarto {
     private int qntdCamas;
     private int qntdChuveiros;
     private boolean possuiTv;
-    private int imagemQuarto;
+    private int status; // 0 - Desocupado, 1 - Pré-Reservado, 2 - Reservado
+    private int diasReservado; // Dias de reserva
+    private int imagemQuarto; // Estudar maneira de armazenar a imagem do quarto
 
-    public Quarto() {
+    public Quarto(){
+
+    }
+    public Quarto(int numeroPorta, double valorDiaria, int qntdCamas, int qntdChuveiro, boolean possuiTv) {
+        this.numPorta = numeroPorta;
+        this.valorDiaria = valorDiaria;
+        this.avaliacao = -1; // -1 Representa sem avaliações
+        this.qntdCamas = qntdCamas;
+        this.qntdChuveiros = qntdChuveiro;
+        this.possuiTv = possuiTv;
+        this.status = 0;
+        this.diasReservado = 0;
     }
 
     public int getImagemQuarto() {
