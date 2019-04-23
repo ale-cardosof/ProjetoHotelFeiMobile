@@ -20,8 +20,8 @@
         <activity android:name=".menuAdministrador" /> <!-- <activity android:name=".teste"></activity>! -->
         <activity android:name=".loginAdm" />
         <activity android:name=".usuarioMenu" />
-        <activity android:name=".UsuarioReservas" />
         <activity android:name=".UsuarioBuscarQuarto" />
+        <activity android:name=".UsuarioReservas" />
         <activity android:name=".menuUsuario">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
