@@ -10,6 +10,7 @@ public class Quarto {
     private int status; // 0 - Desocupado, 1 - Pré-Reservado, 2 - Reservado
     private int diasReservado; // Dias de reserva
     private int imagemQuarto; // Estudar maneira de armazenar a imagem do quarto
+    //private Imagens fotos;
 
     public Quarto(){
 
@@ -32,6 +33,16 @@ public class Quarto {
     public void setImagemQuarto(int imagemQuarto) {
         this.imagemQuarto = imagemQuarto;
     }
+    /*
+    public boolean adicionarImagem(int referencia){
+        fotos.getReferencias().insere(referencia);
+        return true;
+    }
+
+    public boolean removerImagem(int referencia){
+        fotos.getReferencias().removeN(referencia);
+        return true;
+    }*/
 
     public int getNumPorta() {
         return numPorta;
