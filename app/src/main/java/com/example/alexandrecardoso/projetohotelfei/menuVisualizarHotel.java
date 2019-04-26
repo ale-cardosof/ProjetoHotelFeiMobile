@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsLogados;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 
 public class menuVisualizarHotel extends AppCompatActivity {
@@ -31,10 +31,10 @@ public class menuVisualizarHotel extends AppCompatActivity {
             int total = 0;
 
             // Calcula valores
-            disp = admsLogados.get(logado.posicao).getMeuHotel().getNumQuartosDisponiveis();
-            pre = admsLogados.get(logado.posicao).getMeuHotel().getNumQuartosPreReservados();
-            reserv = admsLogados.get(logado.posicao).getMeuHotel().getNumQuartosReservados();
-            total = admsLogados.get(logado.posicao).getMeuHotel().getNumQuartosExistentes();
+            disp = admsCadastrados.get(logado.posicao).getMeuHotel().getNumQuartosDisponiveis();
+            pre = admsCadastrados.get(logado.posicao).getMeuHotel().getNumQuartosPreReservados();
+            reserv = admsCadastrados.get(logado.posicao).getMeuHotel().getNumQuartosReservados();
+            total = admsCadastrados.get(logado.posicao).getMeuHotel().getNumQuartosExistentes();
 
             // Altera valor da tela
             quartosDisponiveis.setText(Integer.toString(disp));

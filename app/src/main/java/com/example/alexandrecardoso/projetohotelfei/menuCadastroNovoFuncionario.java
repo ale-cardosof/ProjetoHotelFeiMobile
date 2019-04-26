@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsLogados;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
 
 public class menuCadastroNovoFuncionario extends AppCompatActivity {
     private EditText edUsuario, edNome, edCPF,edData, edEmail, edCelular, edSenha;
@@ -35,7 +35,7 @@ public class menuCadastroNovoFuncionario extends AppCompatActivity {
         novoUser.setEmail(edEmail.getText().toString());
         novoUser.setCelular(edCelular.getText().toString());
         novoUser.setSenha(edSenha.getText().toString());
-        admsLogados.add(novoUser);
+        admsCadastrados.add(novoUser);
 
     }
 }
