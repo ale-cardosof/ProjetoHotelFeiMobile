@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsLogados;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 
 public class loginAdm extends AppCompatActivity {
@@ -41,11 +42,11 @@ public class loginAdm extends AppCompatActivity {
     public boolean tryLogin(String admProcurado, String senhaDigitada){
         boolean aux = false;
         // Percorrendo o vetor de Administradores Cadastrados
-        for(int i=0; i < admsLogados.size(); i++){
+        for(int i=0; i < admsCadastrados.size(); i++){
             // Usuário encontrado
-            if(admsLogados.get(i).getUsername().equals(admProcurado)){
+            if(admsCadastrados.get(i).getUsername().equals(admProcurado)){
                 // Senha correta
-                if(admsLogados.get(i).getSenha().equals(senhaDigitada)){
+                if(admsCadastrados.get(i).getSenha().equals(senhaDigitada)){
                     // Login efetuado
                     // Guarda o usuario logado
                     logado.tipoUser = 1;

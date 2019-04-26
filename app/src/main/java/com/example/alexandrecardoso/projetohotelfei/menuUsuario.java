@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class menuUsuario extends AppCompatActivity {
     // Cria variáveis globais (COLOCAR NA PRIMEIRA TELA CHAMADA PELO APP)
-    public static ArrayList<Administrador> admsLogados = new ArrayList();
-    public static ArrayList<Usuario> usuariosLogados = new ArrayList();
+    public static ArrayList<Administrador> admsCadastrados = new ArrayList();
+    public static ArrayList<Usuario> usuariosCadastrados = new ArrayList();
     public static ArrayList<Quarto> quartosCriados = new ArrayList();
     public static infoLogado logado = new infoLogado(0,0);
 
@@ -25,7 +25,7 @@ public class menuUsuario extends AppCompatActivity {
         getSupportActionBar().hide();
         // Cria o adm padrão
         Administrador admInicial = new Administrador("admin","Administrador Inicial","123456789","01/01/2019","admin@admin.com.br","11954546565","admin");
-        admsLogados.add(admInicial);
+        admsCadastrados.add(admInicial);
 
         // Cria 10 quartos automáticos para o adm padrão
         for(int i=0; i < 10; i++){
@@ -33,7 +33,7 @@ public class menuUsuario extends AppCompatActivity {
         }
         // Cria o usuário padrão
         Usuario userInicial = new Usuario("user","User Inicial","123456789","01/01/2019","user@user.com.br","11954546565","user");
-        usuariosLogados.add(userInicial);
+        usuariosCadastrados.add(userInicial);
     }
 
     public void abrirTelaADM(View view){
