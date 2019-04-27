@@ -2,7 +2,6 @@ package com.example.alexandrecardoso.projetohotelfei;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +18,6 @@ public class AdapterAvaliacao extends ArrayAdapter<Avaliacao> {
         super(context, R.layout.layout_usuario_reservas_item);
         this.context = context;
         this.alAvaliacoes = alAvaliacoes;
-        String TAG = UsuarioReservas.class.getSimpleName();
-        Log.d(TAG, "Passou no Construtor." + alAvaliacoes.size());
     }
 
     @Override

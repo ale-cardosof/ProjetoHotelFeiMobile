@@ -3,6 +3,7 @@ package com.example.alexandrecardoso.projetohotelfei;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -28,7 +29,55 @@ public class UsuarioExibirQuarto extends AppCompatActivity {
         // Passar o vetor de imagens do qaurto especifico
         int[] quartos = {R.drawable.imgbanco, R.drawable.imgcasa, R.drawable.imgchale,
                 R.drawable.imgfronteira, R.drawable.imghotel};
+        String TAG = "Fila Class";
+        Log.d(TAG, "Antes Fila Class ");
+        Fila f = new Fila(10);
+        f.enfileira(10);
+        f.enfileira(70);
+        f.enfileira(30);
+        f.enfileira(40);
+        f.enfileira(60);
+
+        f.imprime();
 //
+        f.desenfileira();
+        f.desenfileira();
+//
+        f.imprime();
+//
+        f.enfileira(30);
+        f.enfileira(40);
+        f.enfileira(10);
+        f.enfileira(70);
+        f.enfileira(30);
+        f.enfileira(40);
+        f.enfileira(60);
+//
+        f.imprime();
+        f.desenfileira();
+        f.enfileira(40);
+        f.enfileira(60);
+        f.imprime();
+        f.limpa();
+        f.imprime();
+        f.enfileira(30);
+        f.imprime();
+        f.desenfileira();
+        f.desenfileira();
+        f.imprime();
+
+//        GenericClass<String> gf = new GenericClass<>();
+//
+//        gf.valor = "Teste Generico";
+//
+//        String TAG = GenericClass.class.getSimpleName();
+//        Log.d(TAG, "Passou no Generico." + gf.valor);
+//
+//        GenericClass<Integer> gi = new GenericClass<>();
+//
+//        gi.valor = 150;
+//        Log.d(TAG, "Passou no Generico." + gi.valor);
+
         ViewPager vpExibeQuarto = findViewById(R.id.vpExibeQuarto);
         vpExibeQuarto.setAdapter(new AdapterQuartos(UsuarioExibirQuarto.this, quartos));
 
