@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.pessoasCadastradas;
 
 public class cadastroUser extends AppCompatActivity {
     private EditText edUsuario, edNome, edCPF,edData, edEmail, edCelular, edSenha;
@@ -26,6 +27,7 @@ public class cadastroUser extends AppCompatActivity {
 
     public void cadastraUsuario(View view){
         Usuario novoUser = new Usuario();
+        novoUser.setId(pessoasCadastradas);
         novoUser.setUsername(edUsuario.getText().toString());
         novoUser.setNome(edNome.getText().toString());
         novoUser.setCpf(edCPF.getText().toString());
@@ -34,6 +36,7 @@ public class cadastroUser extends AppCompatActivity {
         novoUser.setCelular(edCelular.getText().toString());
         novoUser.setSenha(edSenha.getText().toString());
         usuariosCadastrados.add(novoUser);
+        pessoasCadastradas++;
         // Volta para tela de Login
         Intent intent = new Intent(this, loginUser.class);
         startActivity(intent);

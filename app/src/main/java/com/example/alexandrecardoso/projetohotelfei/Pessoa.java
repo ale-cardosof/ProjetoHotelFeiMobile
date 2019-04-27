@@ -1,6 +1,7 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
 abstract public class Pessoa {
+    private int id; // Chave
     private String username;
     private String nome;
     private String cpf;
@@ -12,7 +13,8 @@ abstract public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
+    public Pessoa(int id, String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
+        this.id = id;
         this.username = username;
         this.nome = nome;
         this.cpf = cpf;
@@ -20,6 +22,14 @@ abstract public class Pessoa {
         this.email = email;
         this.celular = celular;
         this.senha = senha;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {

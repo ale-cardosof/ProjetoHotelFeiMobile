@@ -12,8 +12,8 @@ public class Administrador extends Pessoa {
 
     }
 
-    public Administrador(String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
-        super(username, nome, cpf, dataNascimento, email, celular, senha);
+    public Administrador(int id, String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
+        super(id, username, nome, cpf, dataNascimento, email, celular, senha);
     }
     // 1. Cria Quarto
     Quarto criaQuarto(int numeroPorta, double valorDiaria, int qntdCamas, int qntdChuveiro, boolean possuiTv){
