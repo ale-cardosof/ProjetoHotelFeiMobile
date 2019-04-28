@@ -31,10 +31,10 @@ public class menuVisualizarHotel extends AppCompatActivity {
             int total = 0;
 
             // Calcula valores
-            disp = admsCadastrados.get(logado.posicao).getMeuHotel().getNumQuartosDisponiveis();
-            pre = admsCadastrados.get(logado.posicao).getMeuHotel().getNumQuartosPreReservados();
-            reserv = admsCadastrados.get(logado.posicao).getMeuHotel().getNumQuartosReservados();
-            total = admsCadastrados.get(logado.posicao).getMeuHotel().getNumQuartosExistentes();
+            disp = admsCadastrados.v[logado.posicao].getMeuHotel().getNumQuartosDisponiveis();
+            pre = admsCadastrados.v[logado.posicao].getMeuHotel().getNumQuartosPreReservados();
+            reserv = admsCadastrados.v[logado.posicao].getMeuHotel().getNumQuartosReservados();
+            total = admsCadastrados.v[logado.posicao].getMeuHotel().getNumQuartosExistentes();
 
             // Altera valor da tela
             quartosDisponiveis.setText(Integer.toString(disp));

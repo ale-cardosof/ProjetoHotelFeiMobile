@@ -9,8 +9,8 @@ public class Usuario extends Pessoa {
     public Usuario() {
     }
 
-    public Usuario(int id, String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
-        super(id, username, nome, cpf, dataNascimento, email, celular, senha);
+    public Usuario(String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
+        super(username, nome, cpf, dataNascimento, email, celular, senha);
     }
 
 

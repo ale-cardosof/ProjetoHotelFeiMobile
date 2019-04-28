@@ -1,35 +1,49 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
 abstract public class Pessoa {
-    private int id; // Chave
     private String username;
+    private Long usernameASC; // Chave
+    private String senha;
+    private Long senhaASC; // Chave
     private String nome;
     private String cpf;
     private String dataNascimento;
     private String email;
     private String celular;
-    private String senha;
+
 
     public Pessoa() {
     }
 
-    public Pessoa(int id, String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
-        this.id = id;
+    public Pessoa(String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
         this.username = username;
+        this.senha = senha;
+        this.usernameASC = this.geraAsc(this.username);
+        this.senhaASC = this.geraAsc(this.senha);
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
         this.email = email;
         this.celular = celular;
-        this.senha = senha;
+
     }
 
-    public int getId() {
-        return id;
+    public Long geraAsc(String entrada) {
+        /* Converte String pra ASC */
+        String provisorio = "";
+        char[] ascii2 = entrada.toCharArray();
+        for(char ch:ascii2){
+            provisorio = provisorio + (int)ch;
+        }
+        return Long.parseLong(provisorio);
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Long getSenhaASC() {
+        return senhaASC;
+    }
+
+    public Long getUsernameASC() {
+        return usernameASC;
     }
 
     public String getUsername() {

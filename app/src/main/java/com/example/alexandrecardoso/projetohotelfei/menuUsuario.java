@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 public class menuUsuario extends AppCompatActivity {
     // Variáveis Globais
-    public static int pessoasCadastradas = 0; // Usado para gerar ID's
-    public static ArrayList<Administrador> admsCadastrados = new ArrayList();
+    public static LES_teste admsCadastrados = new LES_teste();
     public static ArrayList<Usuario> usuariosCadastrados = new ArrayList();
     public static ArrayList<Quarto> quartosCriados = new ArrayList();
     public static infoLogado logado = new infoLogado(0,0);
@@ -25,18 +24,16 @@ public class menuUsuario extends AppCompatActivity {
         // Retira barra superior com o nome do app
         getSupportActionBar().hide();
         // Cria o adm padrão
-        Administrador admInicial = new Administrador(0,"admin","Administrador Inicial","123456789","01/01/2019","admin@admin.com.br","11954546565","admin");
-        admsCadastrados.add(admInicial);
-        pessoasCadastradas++;
+        Administrador admInicial = new Administrador("admin","Administrador Inicial","123456789","01/01/2019","admin@admin.com.br","11954546565","admin");
+        admsCadastrados.insere(admInicial);
 
         // Cria 10 quartos automáticos para o adm padrão
         for(int i=0; i < 10; i++){
             admInicial.insereQuarto(i,15,2,1,true);
         }
         // Cria o usuário padrão
-        Usuario userInicial = new Usuario(1,"user","User Inicial","123456789","01/01/2019","user@user.com.br","11954546565","user");
+        Usuario userInicial = new Usuario("user","User Inicial","123456789","01/01/2019","user@user.com.br","11954546565","user");
         usuariosCadastrados.add(userInicial);
-        pessoasCadastradas++;
     }
 
     public void abrirTelaADM(View view){

@@ -24,42 +24,46 @@ public class loginAdm extends AppCompatActivity {
     }
 
     public void loginAdm(View view){
-        Boolean login = false;
+        int login;
         String admProcurado = input_username.getText().toString();
         String senhaDigitada = input_password.getText().toString();
         login = tryLogin(admProcurado,senhaDigitada);
 
         // Caso o login seja efetuado abre o menu principal
-        if(login){
+        if(login == 0){
             Toast.makeText(getApplicationContext(), "Logado com sucesso!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, menuAdministrador.class);
             startActivity(intent);
-        }else{
-            Toast.makeText(getApplicationContext(), "Falha ao Logar. Tente novamente", Toast.LENGTH_SHORT).show();
+        }else if(login == 1){
+            Toast.makeText(getApplicationContext(), "Falha ao Logar (Senha Incorreta). Tente novamente", Toast.LENGTH_SHORT).show();
+        }else if(login == 2){
+            Toast.makeText(getApplicationContext(), "Falha ao Logar (Usuário Inválido). Tente novamente", Toast.LENGTH_SHORT).show();
+        }else if(login == 3){
+            Toast.makeText(getApplicationContext(), "Falha ao Logar (Erro Inesperado). Tente novamente", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public boolean tryLogin(String admProcurado, String senhaDigitada){
-        boolean aux = false;
+    public int tryLogin(String admProcurado, String senhaDigitada){
+        int aux=3;
         // Percorrendo o vetor de Administradores Cadastrados
-        for(int i=0; i < admsCadastrados.size(); i++){
+        for(int i=0; i < admsCadastrados.n; i++){
             // Usuário encontrado
-            if(admsCadastrados.get(i).getUsername().equals(admProcurado)){
+            if(admsCadastrados.busca(admProcurado) != -1){
                 // Senha correta
-                if(admsCadastrados.get(i).getSenha().equals(senhaDigitada)){
+                if(admsCadastrados.v[i].getSenha().equals(senhaDigitada)){
                     // Login efetuado
                     // Guarda o usuario logado
                     logado.tipoUser = 1;
                     logado.posicao = i;
-                    aux = true;
+                    aux = 0;
                     break;
-                }else{// Senha incorreta
-                    // Aviso sobre senha incorreta
-                    aux = false;
+                }else{ // Senha incorreta
+                    // Senha incorreta
+                    aux = 1;
                 }
             }else{ // Usuário não existe
-                // Aviso sobre usuario não existente
-                aux = false;
+                // Usuario não existente
+                aux = 2;
             }
         }
         return aux;
