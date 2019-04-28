@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
 
 public class cadastroUser extends AppCompatActivity {
@@ -25,18 +27,11 @@ public class cadastroUser extends AppCompatActivity {
     }
 
     public void cadastraUsuario(View view){
-        Usuario novoUser = new Usuario();
-        novoUser.setUsername(edUsuario.getText().toString());
-        novoUser.setNome(edNome.getText().toString());
-        novoUser.setCpf(edCPF.getText().toString());
-        novoUser.setDataNascimento(edData.getText().toString());
-        novoUser.setEmail(edEmail.getText().toString());
-        novoUser.setCelular(edCelular.getText().toString());
-        novoUser.setSenha(edSenha.getText().toString());
-        usuariosCadastrados.add(novoUser);
+        Usuario novoUser = new Usuario(edUsuario.getText().toString(),edNome.getText().toString(),edCPF.getText().toString(),edData.getText().toString(),edEmail.getText().toString(),edCelular.getText().toString(),edSenha.getText().toString());
+        usuariosCadastrados.insere(novoUser);
+        tela.exibir(getApplicationContext(),"Usuário cadastrado com sucesso!");
         // Volta para tela de Login
         Intent intent = new Intent(this, loginUser.class);
         startActivity(intent);
-
     }
 }

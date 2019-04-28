@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 
@@ -22,43 +23,47 @@ public class loginUser extends AppCompatActivity {
     }
 
     public void loginUser(View view){
-        Boolean login = false;
+        int login;
         String userProcurado = input_username.getText().toString();
         String senhaDigitada = input_password.getText().toString();
         login = tryLogin(userProcurado,senhaDigitada);
 
         // Caso o login seja efetuado abre o menu principal
-        if(login){
-            Toast.makeText(getApplicationContext(), "Logado com sucesso!", Toast.LENGTH_SHORT).show();
-            /* Abrir menu principal do Cliente
-            Intent intent = new Intent(this, menuAdministrador.class);
-            startActivity(intent);*/
-        }else{
-            Toast.makeText(getApplicationContext(), "Falha ao Logar. Tente novamente", Toast.LENGTH_SHORT).show();
+        if(login == 0){
+            tela.exibir(getApplicationContext(),"Logado com sucesso!");
+            Intent intent = new Intent(this, usuarioMenu.class);
+            startActivity(intent);
+        }else if(login == 1){
+            tela.exibir(getApplicationContext(),"Falha ao Logar (Senha Incorreta). Tente novamente");
+        }else if(login == 2){
+            tela.exibir(getApplicationContext(),"Falha ao Logar (Usuário Inválido). Tente novamente");
+        }else if(login == 3){
+            tela.exibir(getApplicationContext(),"Falha ao Logar (Erro Inesperado). Tente novamente");
         }
     }
 
-    public boolean tryLogin(String userProcurado, String senhaDigitada){
-        boolean aux = false;
+    public int tryLogin(String userProcurado, String senhaDigitada){
+        int aux = 3;
         // Percorrendo o vetor de Administradores Cadastrados
-        for(int i=0; i < usuariosCadastrados.size(); i++){
+        for(int i=0; i < usuariosCadastrados.n; i++){
             // Usuário encontrado
-            if(usuariosCadastrados.get(i).getUsername().equals(userProcurado)){
+            if(usuariosCadastrados.v[i].getUsername().equals(userProcurado)){
                 // Senha correta
-                if(usuariosCadastrados.get(i).getSenha().equals(senhaDigitada)){
+                if(usuariosCadastrados.v[i].getSenha().equals(senhaDigitada)){
                     // Login efetuado
                     // Guarda o usuario logado
+                    logado.username = userProcurado;
                     logado.tipoUser = 2;
                     logado.posicao = i;
-                    aux = true;
+                    aux = 0;
                     break;
                 }else{// Senha incorreta
                     // Aviso sobre senha incorreta
-                    aux = false;
+                    aux = 1;
                 }
             }else{ // Usuário não existe
                 // Aviso sobre usuario não existente
-                aux = false;
+                aux = 2;
             }
         }
         return aux;

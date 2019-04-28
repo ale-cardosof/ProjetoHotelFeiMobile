@@ -8,12 +8,12 @@
     android:background="@drawable/back">
 
     <Button
-        android:id="@+id/btnFormasPgto2"
+        android:id="@+id/btnFormasPgto"
         android:layout_width="315dp"
         android:layout_height="101dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/btnno"
@@ -26,23 +26,26 @@
         app:layout_constraintTop_toBottomOf="@+id/btnInfo" />
 
     <Button
-        android:id="@+id/btnFormasPgto"
+        android:id="@+id/btnDeslogar"
         android:layout_width="124dp"
         android:layout_height="63dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/btnno"
+        android:onClick="deslogar"
         android:text="DESLOGAR"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.965"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFormasPgto2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnFormasPgto" />
 
     <Button
         android:id="@+id/btnInfo"
@@ -50,7 +53,7 @@
         android:layout_height="101dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/btnno"
@@ -101,7 +104,7 @@
         android:layout_height="101dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/btnno"

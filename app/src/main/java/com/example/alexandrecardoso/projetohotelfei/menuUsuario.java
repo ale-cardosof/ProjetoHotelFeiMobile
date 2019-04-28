@@ -9,13 +9,14 @@ import java.util.ArrayList;
 
 
 public class menuUsuario extends AppCompatActivity {
+
     // Variáveis Globais
     public static MensagemToast tela = new MensagemToast();
     public static LES_adm admsCadastrados = new LES_adm();
-    public static ArrayList<Usuario> usuariosCadastrados = new ArrayList();
+    public static LES_usu usuariosCadastrados = new LES_usu();
+
     public static ArrayList<Quarto> quartosCriados = new ArrayList();
     public static infoLogado logado = new infoLogado("",0,0);
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class menuUsuario extends AppCompatActivity {
         }
         // Cria o usuário padrão
         Usuario userInicial = new Usuario("user","User Inicial","123456789","01/01/2019","user@user.com.br","11954546565","user");
-        usuariosCadastrados.add(userInicial);
+        usuariosCadastrados.insere(userInicial);
     }
 
     public void abrirTelaADM(View view){
