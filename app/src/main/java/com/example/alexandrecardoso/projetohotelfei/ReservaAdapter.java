@@ -41,14 +41,13 @@ public class ReservaAdapter extends ArrayAdapter<Quarto> {
         else
             rowView.setBackgroundColor(Color.parseColor("#BFF0E68C"));
 
-        TextView lblNomeHotel = rowView.findViewById(R.id.lblNomeHotel);
-        TextView lblDataReserva = rowView.findViewById(R.id.lblDataReserva);
+        TextView lblNomeHotel = rowView.findViewById(R.id.TextView1);
+        TextView lblDataReserva = rowView.findViewById(R.id.lblValorDiaria);
         ImageView imvHotelItem = rowView.findViewById(R.id.imvHotelItem);
 
         lblNomeHotel.setText("WOWTEL");
 
         Date c = Calendar.getInstance().getTime();
-        System.out.println("Current time => " + c);
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String data = df.format(c);
         lblDataReserva.setText(data);

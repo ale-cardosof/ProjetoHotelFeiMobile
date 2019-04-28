@@ -181,9 +181,9 @@
         </FrameLayout>
 
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="118dp"
-            android:layout_height="35dp"
+            android:id="@+id/lblDetalhes"
+            android:layout_width="360dp"
+            android:layout_height="38dp"
             android:layout_marginStart="17dp"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="28dp"
@@ -207,6 +207,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frameLayout"
             tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnReservar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Reservar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
 
     </android.support.constraint.ConstraintLayout>

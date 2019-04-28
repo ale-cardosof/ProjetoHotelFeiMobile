@@ -8,30 +8,34 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class UsuarioExibirQuarto extends AppCompatActivity {
 
-    private Quarto quarto;
-
-    public UsuarioExibirQuarto(Quarto quarto) {
-        this.quarto = quarto;
-    }
-
-    public UsuarioExibirQuarto() {
-    }
+    public static Quarto quartoAtual;
+    private Quarto quartoExibido;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_exibir_quarto);
-
         // Passar o vetor de imagens do qaurto especifico
         int[] quartos = {R.drawable.imgbanco, R.drawable.imgcasa, R.drawable.imgchale,
                 R.drawable.imgfronteira, R.drawable.imghotel};
-        String TAG = "Fila Class";
-        Log.d(TAG, "Antes Fila Class ");
-        Fila f = new Fila(10);
+        Log.d("Usuario", "Antes de criar o quarto");
+        quartoExibido = quartoAtual;
+        quartoAtual = null;
+
+        Log.d("Usuario", "Antes de setar tudo");
+
+        ((TextView)findViewById(R.id.lblNumCamas)).setText(String.valueOf(quartoExibido.getQntdCamas()));
+        ((TextView)findViewById(R.id.lblDetalhes)).setText("Detalhes - Quarto : " +quartoExibido.getNumPorta());
+        ((TextView)findViewById(R.id.lblPossuiTV)).setText(quartoExibido.isPossuiTv() ? "Sim" : "Não");
+        ((TextView)findViewById(R.id.lblNumChuveiros)).setText(String.valueOf(quartoExibido.getQntdChuveiros()));
+        ((TextView)findViewById(R.id.lblValorDiaria)).setText(String.valueOf(quartoExibido.getValorDiaria()));
+
+        /*Fila f = new Fila(10);
         f.enfileira(10);
         f.enfileira(70);
         f.enfileira(30);
@@ -64,7 +68,7 @@ public class UsuarioExibirQuarto extends AppCompatActivity {
         f.imprime();
         f.desenfileira();
         f.desenfileira();
-        f.imprime();
+        f.imprime();*/
 
 //        GenericClass<String> gf = new GenericClass<>();
 //
@@ -79,12 +83,15 @@ public class UsuarioExibirQuarto extends AppCompatActivity {
 //        Log.d(TAG, "Passou no Generico." + gi.valor);
 
         ViewPager vpExibeQuarto = findViewById(R.id.vpExibeQuarto);
-        vpExibeQuarto.setAdapter(new AdapterQuartos(UsuarioExibirQuarto.this, quartos));
+        vpExibeQuarto.setAdapter(new AdapterQuartos(UsuarioExibirQuarto.this, quartoExibido));
 
         ListView lista = findViewById(R.id.lvAvaliacoes);
         ArrayAdapter adapter = new AdapterAvaliacao(this, addAvaliacoes());
 
         lista.setAdapter(adapter);
+
+
+
     }
 
     private ArrayList<Avaliacao> addAvaliacoes() {

@@ -11,7 +11,7 @@ import android.widget.Toast;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
-public class usuarioMenu extends AppCompatActivity {
+public class UsuarioMenu extends AppCompatActivity {
 
     private Button btnBuscarQuartos, btnReservas, btnInfo, btnFormasPgto, btnDeslogar;
 
@@ -29,7 +29,7 @@ public class usuarioMenu extends AppCompatActivity {
         btnBuscarQuartos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(usuarioMenu.this, UsuarioReservas.class);
+                Intent intent = new Intent(UsuarioMenu.this, UsuarioBuscarQuarto.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +37,7 @@ public class usuarioMenu extends AppCompatActivity {
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(usuarioMenu.this, UsuarioReservas.class);
+                Intent intent = new Intent(UsuarioMenu.this, UsuarioReservas.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +45,7 @@ public class usuarioMenu extends AppCompatActivity {
         btnFormasPgto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(usuarioMenu.this, UsuarioReservas.class);
+                Intent intent = new Intent(UsuarioMenu.this, UsuarioReservas.class);
                 startActivity(intent);
             }
         });
@@ -53,7 +53,7 @@ public class usuarioMenu extends AppCompatActivity {
         btnReservas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(usuarioMenu.this, UsuarioReservas.class);
+                Intent intent = new Intent(UsuarioMenu.this, UsuarioReservas.class);
                 startActivity(intent);
             }
         });
@@ -65,7 +65,7 @@ public class usuarioMenu extends AppCompatActivity {
                 /* Logado com Sucesso */
                 Toast.makeText(getApplicationContext(), "Usuário deslogado com sucesso!", Toast.LENGTH_SHORT).show();
                 /* Voltando para o login do Adm */
-                Intent intent = new Intent(usuarioMenu.this, loginUser.class);
+                Intent intent = new Intent(UsuarioMenu.this, loginUser.class);
                 startActivity(intent);
             }
         });
@@ -83,7 +83,7 @@ public class usuarioMenu extends AppCompatActivity {
                                 /* Logado com Sucesso */
                                 tela.exibir(getApplicationContext(),"Usuário deslogado com sucesso!");
                                 /* Voltando para o login do Adm */
-                                Intent intent = new Intent(usuarioMenu.this, loginUser.class);
+                                Intent intent = new Intent(UsuarioMenu.this, loginUser.class);
                                 startActivity(intent);
                             }
                         })

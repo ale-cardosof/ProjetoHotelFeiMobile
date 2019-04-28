@@ -19,11 +19,12 @@
         <activity android:name=".menuVisualizarHotel" />
         <activity android:name=".menuAdministrador" /> <!-- <activity android:name=".teste"></activity>! -->
         <activity android:name=".loginAdm" />
-        <activity android:name=".usuarioMenu" />
-        <activity android:name=".UsuarioBuscarQuarto" />
+        <activity android:name=".UsuarioNovaReserva" />
         <activity android:name=".UsuarioReservas" />
         <activity android:name=".UsuarioExibirQuarto" />
-        <activity android:name=".menuUsuario">
+        <activity android:name=".UsuarioBuscarQuarto" />
+        <activity android:name=".menuUsuario" />
+        <activity android:name=".UsuarioMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
