@@ -1,9 +1,8 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
 // Função LES adptada para funcionamento junta a Classe Usuário
-public class LES_usu{
+public class LES_usu extends LES{
     public Usuario v[] = new Usuario[10]; // Vetor de Usuários
-    public int n; // Número de Administradores existentes
     /* 0 - Construtor */
     public LES_usu(){
         this.n = 0;
@@ -46,14 +45,6 @@ public class LES_usu{
         // Retorna -1, indicando que não achou
         return -1;
     }
-    /* 3 - Função que converte String pra ASC */
-    public Long geraAsc(String entrada) {
-        String provisorio = "";
-        char[] ascii2 = entrada.toCharArray();
-        for(char ch:ascii2){
-            provisorio = provisorio + (int)ch;
-        }
-        return Long.parseLong(provisorio);
-    }
+
 
 }

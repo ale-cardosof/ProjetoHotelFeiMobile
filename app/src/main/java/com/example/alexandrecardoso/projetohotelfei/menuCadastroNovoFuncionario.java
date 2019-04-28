@@ -30,11 +30,17 @@ public class menuCadastroNovoFuncionario extends AppCompatActivity {
     }
 
     public void cadastraFuncionario(View view){
-        Administrador novoUser = new Administrador(edUsuario.getText().toString(),edNome.getText().toString(),edCPF.getText().toString(),edData.getText().toString(),edEmail.getText().toString(),edCelular.getText().toString(),edSenha.getText().toString());
-        admsCadastrados.insere(novoUser);
-        logado.atualizaPosicao(); // Atualizando a posição do Logado
-        tela.exibir(getApplicationContext(),"Novo Administrador Cadastrado com sucesso.");
-        Intent intent = new Intent(this, menuAdministrador.class);
-        startActivity(intent);
+        // Verifica se o username digitado tem menos de 6 caracteres
+        if(edUsuario.getText().toString().length() <= 6){
+            Administrador novoUser = new Administrador(edUsuario.getText().toString(),edNome.getText().toString(),edCPF.getText().toString(),edData.getText().toString(),edEmail.getText().toString(),edCelular.getText().toString(),edSenha.getText().toString());
+            admsCadastrados.insere(novoUser);
+            logado.atualizaPosicao(); // Atualizando a posição do Logado
+            tela.exibir(getApplicationContext(),"Novo Administrador Cadastrado com sucesso.");
+            Intent intent = new Intent(this, menuAdministrador.class);
+            startActivity(intent);
+        }else{
+            edUsuario.setText("");
+            tela.exibir(getApplicationContext(),"Nome do Usuário inválido (mais de 6 caracteres)");
+        }
     }
 }

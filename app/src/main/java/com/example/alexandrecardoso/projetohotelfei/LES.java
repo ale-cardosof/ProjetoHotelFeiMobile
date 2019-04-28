@@ -89,4 +89,14 @@ public class LES{
             }
         }
     }
+
+    /* 3 - Função que converte String pra ASC */
+    public Long geraAsc(String entrada) {
+        String provisorio = "";
+        char[] ascii2 = entrada.toCharArray();
+        for(char ch:ascii2){
+            provisorio = provisorio + (int)ch;
+        }
+        return Long.parseLong(provisorio);
+    }
 }

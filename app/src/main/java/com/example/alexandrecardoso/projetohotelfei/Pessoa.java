@@ -4,7 +4,6 @@ abstract public class Pessoa {
     private String username;
     private Long usernameASC; // Chave
     private String senha;
-    private Long senhaASC; // Chave
     private String nome;
     private String cpf;
     private String dataNascimento;
@@ -19,7 +18,6 @@ abstract public class Pessoa {
         this.username = username;
         this.senha = senha;
         this.usernameASC = this.geraAsc(this.username);
-        this.senhaASC = this.geraAsc(this.senha);
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
@@ -36,10 +34,6 @@ abstract public class Pessoa {
             provisorio = provisorio + (int)ch;
         }
         return Long.parseLong(provisorio);
-    }
-
-    public Long getSenhaASC() {
-        return senhaASC;
     }
 
     public Long getUsernameASC() {
