@@ -8,10 +8,6 @@ public class Administrador extends Pessoa {
 
     /* Métodos */
     // 0. Construtor
-    public Administrador(){
-
-    }
-
     public Administrador(String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
         super( username, nome, cpf, dataNascimento, email, celular, senha);
     }
@@ -20,7 +16,6 @@ public class Administrador extends Pessoa {
         Quarto novoQuarto = new Quarto(numeroPorta,valorDiaria,qntdCamas,qntdChuveiro,possuiTv);
         return novoQuarto;
     }
-
     // 2. Insere novo Quarto
     ArrayList<Integer> insereQuarto(int numeroPorta, double valorDiaria, int qntdCamas, int qntdChuveiro, boolean possuiTv){
         ArrayList<Integer> erros = new ArrayList(); // Vetor de Erros
@@ -38,12 +33,10 @@ public class Administrador extends Pessoa {
         }
         return erros; // Retorna um vetor de erros, assim, podemos empilhar vários sinalizadores
     }
-
     // 3. Retorna Hotel
     public Hotel getMeuHotel() {
         return meuHotel;
     }
-
     // 4. Exibe Solicitações
     void exibeSolicita(){
 

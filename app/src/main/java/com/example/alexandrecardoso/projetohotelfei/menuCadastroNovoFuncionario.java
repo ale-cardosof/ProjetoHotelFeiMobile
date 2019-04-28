@@ -1,5 +1,6 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.EditText;
 
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class menuCadastroNovoFuncionario extends AppCompatActivity {
     private EditText edUsuario, edNome, edCPF,edData, edEmail, edCelular, edSenha;
@@ -28,16 +30,11 @@ public class menuCadastroNovoFuncionario extends AppCompatActivity {
     }
 
     public void cadastraFuncionario(View view){
-        Administrador novoUser = new Administrador();
-        novoUser.setUsername(edUsuario.getText().toString());
-        novoUser.setNome(edNome.getText().toString());
-        novoUser.setCpf(edCPF.getText().toString());
-        novoUser.setDataNascimento(edData.getText().toString());
-        novoUser.setEmail(edEmail.getText().toString());
-        novoUser.setCelular(edCelular.getText().toString());
-        novoUser.setSenha(edSenha.getText().toString());
+        Administrador novoUser = new Administrador(edUsuario.getText().toString(),edNome.getText().toString(),edCPF.getText().toString(),edData.getText().toString(),edEmail.getText().toString(),edCelular.getText().toString(),edSenha.getText().toString());
         admsCadastrados.insere(novoUser);
         logado.atualizaPosicao(); // Atualizando a posição do Logado
-
+        tela.exibir(getApplicationContext(),"Novo Administrador Cadastrado com sucesso.");
+        Intent intent = new Intent(this, menuAdministrador.class);
+        startActivity(intent);
     }
 }

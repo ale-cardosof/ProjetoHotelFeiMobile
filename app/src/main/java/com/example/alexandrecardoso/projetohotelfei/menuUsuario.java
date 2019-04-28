@@ -10,7 +10,8 @@ import java.util.ArrayList;
 
 public class menuUsuario extends AppCompatActivity {
     // Variáveis Globais
-    public static LES_teste admsCadastrados = new LES_teste();
+    public static MensagemToast tela = new MensagemToast();
+    public static LES_adm admsCadastrados = new LES_adm();
     public static ArrayList<Usuario> usuariosCadastrados = new ArrayList();
     public static ArrayList<Quarto> quartosCriados = new ArrayList();
     public static infoLogado logado = new infoLogado("",0,0);

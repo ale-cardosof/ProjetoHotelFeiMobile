@@ -5,11 +5,10 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class loginAdm extends AppCompatActivity {
     TextInputEditText input_username, input_password;
@@ -31,15 +30,15 @@ public class loginAdm extends AppCompatActivity {
 
         // Caso o login seja efetuado abre o menu principal
         if(login == 0){
-            Toast.makeText(getApplicationContext(), "Logado com sucesso!", Toast.LENGTH_SHORT).show();
+            tela.exibir(getApplicationContext(),"Logado com sucesso!");
             Intent intent = new Intent(this, menuAdministrador.class);
             startActivity(intent);
         }else if(login == 1){
-            Toast.makeText(getApplicationContext(), "Falha ao Logar (Senha Incorreta). Tente novamente", Toast.LENGTH_SHORT).show();
+            tela.exibir(getApplicationContext(),"Falha ao Logar (Senha Incorreta). Tente novamente");
         }else if(login == 2){
-            Toast.makeText(getApplicationContext(), "Falha ao Logar (Usuário Inválido). Tente novamente", Toast.LENGTH_SHORT).show();
+            tela.exibir(getApplicationContext(),"Falha ao Logar (Usuário Inválido). Tente novamente");
         }else if(login == 3){
-            Toast.makeText(getApplicationContext(), "Falha ao Logar (Erro Inesperado). Tente novamente", Toast.LENGTH_SHORT).show();
+            tela.exibir(getApplicationContext(),"Falha ao Logar (Erro Inesperado). Tente novamente");
         }
     }
 
