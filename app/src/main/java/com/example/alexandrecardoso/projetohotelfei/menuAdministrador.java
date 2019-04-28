@@ -1,12 +1,15 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class menuAdministrador extends AppCompatActivity {
 
@@ -36,10 +39,32 @@ public class menuAdministrador extends AppCompatActivity {
     public void deslogar(View view){
         logado.desloga();
         /* Logado com Sucesso */
-        Toast.makeText(getApplicationContext(), "Administrador deslogado com sucesso!", Toast.LENGTH_SHORT).show();
+        tela.exibir(getApplicationContext(),"Administrador deslogado com sucesso!");
         /* Voltando para o login do Adm */
         Intent intent = new Intent(menuAdministrador.this, loginAdm.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed(){
+        boolean deslogar = true;
+        new AlertDialog.Builder(this)
+                .setTitle("Você esta prestes a deslogar.")
+                .setMessage("Tem certeza que deseja deslogar?")
+                .setPositiveButton("Sim",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                logado.desloga();
+                                /* Logado com Sucesso */
+                                tela.exibir(getApplicationContext(),"Administrador deslogado com sucesso!");
+                                /* Voltando para o login do Adm */
+                                Intent intent = new Intent(menuAdministrador.this, loginAdm.class);
+                                startActivity(intent);
+                            }
+                        })
+                .setNegativeButton("Não", null)
+                .show();
     }
 
 }

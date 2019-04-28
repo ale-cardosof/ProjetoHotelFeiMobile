@@ -36,7 +36,6 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/btnno"
-        android:onClick="deslogar"
         android:text="DESLOGAR"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"

@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
 
@@ -40,9 +38,5 @@ public class cadastroUser extends AppCompatActivity {
             edUsuario.setText("");
             tela.exibir(getApplicationContext(),"Nome do Usuário inválido (mais de 6 caracteres)");
         }
-
-
-
-
     }
 }
