@@ -13,7 +13,7 @@ public class menuUsuario extends AppCompatActivity {
     public static LES_teste admsCadastrados = new LES_teste();
     public static ArrayList<Usuario> usuariosCadastrados = new ArrayList();
     public static ArrayList<Quarto> quartosCriados = new ArrayList();
-    public static infoLogado logado = new infoLogado(0,0);
+    public static infoLogado logado = new infoLogado("",0,0);
 
 
     @Override

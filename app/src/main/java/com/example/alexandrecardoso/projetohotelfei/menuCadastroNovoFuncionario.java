@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 
 public class menuCadastroNovoFuncionario extends AppCompatActivity {
     private EditText edUsuario, edNome, edCPF,edData, edEmail, edCelular, edSenha;
@@ -36,6 +37,7 @@ public class menuCadastroNovoFuncionario extends AppCompatActivity {
         novoUser.setCelular(edCelular.getText().toString());
         novoUser.setSenha(edSenha.getText().toString());
         admsCadastrados.insere(novoUser);
+        logado.atualizaPosicao(); // Atualizando a posição do Logado
 
     }
 }

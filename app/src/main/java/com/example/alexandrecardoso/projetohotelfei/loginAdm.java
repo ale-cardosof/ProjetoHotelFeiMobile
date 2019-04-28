@@ -53,6 +53,7 @@ public class loginAdm extends AppCompatActivity {
                 if(admsCadastrados.v[i].getSenha().equals(senhaDigitada)){
                     // Login efetuado
                     // Guarda o usuario logado
+                    logado.username = admProcurado;
                     logado.tipoUser = 1;
                     logado.posicao = i;
                     aux = 0;

@@ -39,11 +39,11 @@ public class LES_teste {
                 System.out.println(v[i].getUsernameASC());
                 System.out.println(usernameProcura);
                 if(v[i].getUsernameASC().equals(usernameProcura)){
-                        // Retorna true, indicando que achou
+                        // Retorna a posição
                         return i;
                 }
             }
-            // Retorna false, indicando que não achou
+            // Retorna -1, indicando que não achou
             return -1;
         }
         /* 3 - Função que converte String pra ASC */
