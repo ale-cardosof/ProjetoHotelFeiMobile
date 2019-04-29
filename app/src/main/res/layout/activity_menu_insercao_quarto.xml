@@ -8,23 +8,6 @@
     android:background="@drawable/back">
 
     <EditText
-        android:id="@+id/edAvaliacao"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:hint="Avaliação"
-        android:inputType="numberSigned|textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edValDiaria" />
-
-    <EditText
         android:id="@+id/edValDiaria"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -35,7 +18,6 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Valor diária"
-        android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,10 +81,10 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Quantidade Camas"
-        android:inputType="date|numberSigned"
+        android:inputType="date|numberSigned|text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edAvaliacao" />
+        app:layout_constraintTop_toBottomOf="@+id/edValDiaria" />
 
     <EditText
         android:id="@+id/edqtdChuveiro"
@@ -131,6 +113,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/btnno"
+        android:onClick="cadastraQuarto"
         android:text="CADASTRAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class menuUsuario extends AppCompatActivity {
@@ -15,7 +16,7 @@ public class menuUsuario extends AppCompatActivity {
     public static LES_adm admsCadastrados = new LES_adm();
     public static LES_usu usuariosCadastrados = new LES_usu();
 
-    public static ArrayList<Quarto> quartosCriados = new ArrayList();
+    public static List<Quarto> quartosCriados = new ArrayList();
     public static infoLogado logado = new infoLogado("",0,0);
 
     @Override

@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 public class MensagemToast {
 
-    public void exibir(Context a,String mensagem){
+    public static void exibir(Context a,String mensagem){
         Toast.makeText(a, mensagem, Toast.LENGTH_SHORT).show();
     }
 

@@ -16,7 +16,6 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         setContentView(R.layout.activity_menu_insercao_quarto);
         edNumPorta = findViewById(R.id.ednumPorta);
         edValorDiaria = findViewById(R.id.edValDiaria);
-        edAvaliacao = findViewById(R.id.edAvaliacao);
         edqdtCama = findViewById(R.id.edqtdCama);
         edqtdChuveiro = findViewById(R.id.edqtdChuveiro);
 
@@ -29,9 +28,10 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         Quarto novoQuarto = new Quarto();
         novoQuarto.setNumPorta(Integer.parseInt(edNumPorta.getText().toString()));
         novoQuarto.setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
-        novoQuarto.setAvaliacao(Double.parseDouble(edAvaliacao.getText().toString()));
         novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
         novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
+        novoQuarto.setPossuiTv(true);
+        MensagemToast.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
         quartosCriados.add(novoQuarto);
     }
 }

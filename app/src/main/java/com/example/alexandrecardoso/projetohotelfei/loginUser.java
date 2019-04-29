@@ -31,7 +31,7 @@ public class loginUser extends AppCompatActivity {
         // Caso o login seja efetuado abre o menu principal
         if(login == 0){
             tela.exibir(getApplicationContext(),"Logado com sucesso!");
-            Intent intent = new Intent(this, usuarioMenu.class);
+            Intent intent = new Intent(this, menuUsuario.class);
             startActivity(intent);
         }else if(login == 1){
             tela.exibir(getApplicationContext(),"Falha ao Logar (Senha Incorreta). Tente novamente");
