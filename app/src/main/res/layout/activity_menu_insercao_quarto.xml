@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menuInsercaoQuarto"
-    android:background="@drawable/back">
+    android:background="@color/laranja"
+    tools:context=".menuInsercaoQuarto">
 
     <EditText
         android:id="@+id/edValDiaria"
@@ -81,7 +81,7 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Quantidade Camas"
-        android:inputType="date|numberSigned|text"
+        android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edValDiaria" />
@@ -97,7 +97,7 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Quantidade Chuveiro"
-        android:inputType="numberSigned|textEmailAddress"
+        android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edqtdCama" />

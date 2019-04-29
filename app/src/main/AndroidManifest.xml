@@ -14,7 +14,7 @@
         <activity android:name=".menuInsercaoQuarto" />
         <activity android:name=".cadastroUser" />
         <activity android:name=".loginUser" />
-        <activity android:name=".menuEstruturaHotel" />
+        <!--activity android:name=".menuEstruturaHotel" /-->
         <activity android:name=".menuCadastroNovoFuncionario" />
         <activity android:name=".menuVisualizarHotel" />
         <activity android:name=".menuAdministrador" /> <!-- <activity android:name=".teste"></activity>! -->
@@ -24,7 +24,7 @@
         <activity android:name=".UsuarioExibirQuarto" />
         <activity android:name=".UsuarioBuscarQuarto" />
         <activity android:name=".menuUsuario" />
-        <activity android:name=".UsuarioMenu">
+        <activity android:name=".menuEstruturaHotel">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

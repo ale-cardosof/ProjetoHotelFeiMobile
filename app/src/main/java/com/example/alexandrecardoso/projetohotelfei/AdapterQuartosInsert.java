@@ -36,8 +36,6 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
         myViewHolder.quantidadeCama.setText("Quantidade de cama:" + quarto.getQntdCamas());
         myViewHolder.quantidadeChuveiro.setText("Numero de chuveiro:" + quarto.getQntdChuveiros());
 
-
-
     }
 
     @Override

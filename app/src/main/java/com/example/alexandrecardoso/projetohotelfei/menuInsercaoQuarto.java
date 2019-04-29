@@ -24,6 +24,13 @@ public class menuInsercaoQuarto extends AppCompatActivity {
 
     }
 
+    public void limparCampos(){
+        edNumPorta.setText("");
+        edValorDiaria.setText("");
+        edqdtCama.setText("");
+        edqtdChuveiro.setText("");
+    }
+
     public void cadastraQuarto(View view){
         Quarto novoQuarto = new Quarto();
         novoQuarto.setNumPorta(Integer.parseInt(edNumPorta.getText().toString()));
@@ -33,5 +40,6 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         novoQuarto.setPossuiTv(true);
         MensagemToast.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
         quartosCriados.add(novoQuarto);
+        limparCampos();
     }
 }
