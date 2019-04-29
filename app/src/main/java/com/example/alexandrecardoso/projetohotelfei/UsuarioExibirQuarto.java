@@ -29,11 +29,61 @@ public class UsuarioExibirQuarto extends AppCompatActivity {
 
         Log.d("Usuario", "Antes de setar tudo");
 
+        quartoExibido = new Quarto();
+        quartoExibido.setPossuiTv(true);
+        quartoExibido.setValorDiaria(120);
+        quartoExibido.setQntdChuveiros(3);
+        quartoExibido.setQntdCamas(1);
+        quartoExibido.setNumPorta(10);
+
+
         ((TextView)findViewById(R.id.lblNumCamas)).setText(String.valueOf(quartoExibido.getQntdCamas()));
         ((TextView)findViewById(R.id.lblDetalhes)).setText("Detalhes - Quarto : " +quartoExibido.getNumPorta());
         ((TextView)findViewById(R.id.lblPossuiTV)).setText(quartoExibido.isPossuiTv() ? "Sim" : "Não");
         ((TextView)findViewById(R.id.lblNumChuveiros)).setText(String.valueOf(quartoExibido.getQntdChuveiros()));
         ((TextView)findViewById(R.id.lblValorDiaria)).setText(String.valueOf(quartoExibido.getValorDiaria()));
+
+
+        /*
+        LDE<Integer> lde = new LDE<>();
+
+        lde.insere(10);
+        lde.insere(12);
+        lde.insere(14);
+        lde.insere(16);
+
+        LDE<Quarto> ldq = new LDE<>();
+
+        Quarto q1 = new Quarto();
+        q1.setValorDiaria(120);
+        ldq.insere(q1);
+
+        q1 = new Quarto();
+        q1.setValorDiaria(150);
+        ldq.insere(q1);
+
+        q1 = new Quarto();
+        q1.setValorDiaria(180);
+        ldq.insere(q1);
+
+        int i = 0;
+        Quarto q2 = ldq.getByIndex(i);
+        while (q2 != null) {
+            Log.d("NOLDE", "Valor Diaria" + q2.getValorDiaria());
+            i++;
+            q2 = ldq.getByIndex(i);
+        }
+
+        ldq.removeByIndex(2);
+        i = 0;
+        q2 = ldq.getByIndex(i);
+        while (q2 != null) {
+            Log.d("NOLDE", "Valor Diaria" + q2.getValorDiaria());
+            i++;
+            q2 = ldq.getByIndex(i);
+        }
+
+        lde.imprime();*/
 
         /*Fila f = new Fila(10);
         f.enfileira(10);
