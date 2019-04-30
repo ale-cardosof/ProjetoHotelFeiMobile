@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Estruturas{
 
 
+    public static boolean criado = false;
     public static ArrayList<Quarto> alQuartos = new ArrayList<>();
 
     public static void criaEstru (){
@@ -48,5 +49,7 @@ public class Estruturas{
         q.setAvaliacao(5);
         q.setImagemQuarto(R.drawable.imgoregon);
         alQuartos.add(q);
+
+        criado = true;
     }
 }

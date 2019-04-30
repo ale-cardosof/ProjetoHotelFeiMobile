@@ -10,10 +10,13 @@ public class Quarto {
     private int status; // 0 - Desocupado, 1 - Pré-Reservado, 2 - Reservado
     private int diasReservado; // Dias de reserva
     private int imagemQuarto; // Estudar maneira de armazenar a imagem do quarto
+    private LDE<Avaliacao> ldeAvaliacoes = new LDE<>();
+
     //private Imagens fotos;
 
     public Quarto(){
-
+        // SÓ PARA TESTES
+        addAvaliacoes();
     }
     public Quarto(int numeroPorta, double valorDiaria, int qntdCamas, int qntdChuveiro, boolean possuiTv) {
         this.numPorta = numeroPorta;
@@ -24,7 +27,23 @@ public class Quarto {
         this.possuiTv = possuiTv;
         this.status = 0;
         this.diasReservado = 0;
+
+        // SÓ PARA TESTES
+        addAvaliacoes();
     }
+
+    // SÓ PARA TESTES - REMOVERRR
+    private void addAvaliacoes() {
+
+        Avaliacao av = new Avaliacao("Otimo Quarto!", 5.0, "Otimo Quarto! Cabe toda a Familia, só os buscapés, nordestino sem dente.");
+        ldeAvaliacoes.insere(av);
+        av = new Avaliacao("Bom pra suruba!", 5.0, "Por que tudo depende do quanto voce quer comer alguém.");
+        ldeAvaliacoes.insere(av);
+        av = new Avaliacao("Sem spoiler", 1.0, "Thanos morre no final.");
+        ldeAvaliacoes.insere(av);
+
+    }
+
 
     public int getImagemQuarto() {
         return imagemQuarto;
@@ -43,6 +62,14 @@ public class Quarto {
         fotos.getReferencias().removeN(referencia);
         return true;
     }*/
+
+    public LDE<Avaliacao> getLdeAvaliacoes() {
+        return ldeAvaliacoes;
+    }
+
+    public void setLdeAvaliacoes(Avaliacao avaliacao) {
+        this.ldeAvaliacoes.insere(avaliacao);
+    }
 
     public int getNumPorta() {
         return numPorta;

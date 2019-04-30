@@ -8,13 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class AdapterAvaliacao extends ArrayAdapter<Avaliacao> {
     private final Context context;
-    private final ArrayList<Avaliacao> alAvaliacoes;
+    private final LDE<Avaliacao> alAvaliacoes;
 
-    public AdapterAvaliacao(Context context, ArrayList<Avaliacao> alAvaliacoes) {
+    public AdapterAvaliacao(Context context, LDE<Avaliacao> alAvaliacoes) {
         super(context, R.layout.layout_usuario_reservas_item);
         this.context = context;
         this.alAvaliacoes = alAvaliacoes;
@@ -26,22 +24,21 @@ public class AdapterAvaliacao extends ArrayAdapter<Avaliacao> {
         View rowView = inflater.inflate(R.layout.layout_usuario_avaliacao_item, parent, false);
 
         rowView.setBackgroundColor(Color.parseColor("#4D808080"));
-
         if (position % 2 == 0) {
             rowView.setBackgroundColor(Color.parseColor("#4D808080"));
         }
         else
             rowView.setBackgroundColor(Color.parseColor("#BFF0E68C"));
 
-        ((TextView)rowView.findViewById(R.id.lblTituloAvaliacao)).setText(alAvaliacoes.get(position).getTitulo());
-        ((TextView)rowView.findViewById(R.id.lblNotaAvaliacao)).setText(String.valueOf(alAvaliacoes.get(position).getNota()));
-        ((TextView)rowView.findViewById(R.id.lblMensagemAvaliacao)).setText(alAvaliacoes.get(position).getMensagem());
+        ((TextView)rowView.findViewById(R.id.lblTituloAvaliacao)).setText(alAvaliacoes.getByIndex(position).getTitulo());
+        ((TextView)rowView.findViewById(R.id.lblNotaAvaliacao)).setText(String.valueOf(alAvaliacoes.getByIndex(position).getNota()));
+        ((TextView)rowView.findViewById(R.id.lblMensagemAvaliacao)).setText(alAvaliacoes.getByIndex(position).getMensagem());
 
         return rowView;
     }
 
     @Override
     public int getCount() {
-        return alAvaliacoes.size();
+        return alAvaliacoes.getSize();
     }
 }

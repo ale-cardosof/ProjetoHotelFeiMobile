@@ -6,7 +6,7 @@ import android.util.Log;
 public class LDE<T> {
 
     private NoLDE<T> noPrim; // Primeiro No da LDE
-    private int tam; // tamanho da LDE
+    private int tam = 0; // tamanho da LDE
 
     //Construtor que define as inicia as variaveis da LDE
     public LDE() {

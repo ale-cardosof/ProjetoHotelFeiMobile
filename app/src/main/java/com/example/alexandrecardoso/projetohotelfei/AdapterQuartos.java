@@ -58,15 +58,6 @@ public class AdapterQuartos extends PagerAdapter {
         liImgs.setLayoutParams(liParams);
         container.addView(liImgs);
 
-        View page = inflater.inflate(R.layout.activity_usuario_buscar_quartos, null);
-        Log.i("AdapterQuartos", " " + position);
-        page.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                //this will log the page number that was click
-                Log.i("AdapterQuartos", "This page was clicked: " + position);
-            }
-        });
-
         ImageView imvQuartos = new ImageView(context);
         imvQuartos.setImageResource(imgsQuartos[position]);
         liImgs.addView(imvQuartos);
