@@ -37,12 +37,12 @@ public class LDE<T> {
     }
 
     // Retorna um objeto pelo indice
-    T getByIndex(int i) {
+    NoLDE<T> getByIndex(int i) {
         NoLDE<T> noAtual = noPrim;
         int iAtual = 0;
         while (noAtual != null) {
             if (i == iAtual)
-                return noAtual.valor;
+                return noAtual;
             else if (iAtual > i)
                 return null;
             noAtual = noAtual.prox;
