@@ -6,7 +6,7 @@ import android.util.Log;
 public class LDE<T> {
 
     private NoLDE<T> noPrim; // Primeiro No da LDE
-    private int tam = 0; // tamanho da LDE
+    private int tam; // tamanho da LDE
 
     //Construtor que define as inicia as variaveis da LDE
     public LDE() {
@@ -24,11 +24,11 @@ public class LDE<T> {
 
         while (noProx != null) {
             noAnt = noProx;
-            noProx = noProx.getProxNo();
+            noProx = noProx.getProx();
         }
 
         if (noAnt != null) {
-            noAnt.setValor(valor);
+            noAnt.setProx(noAtual);
         } else {
             noPrim = noAtual;
         }
@@ -37,19 +37,30 @@ public class LDE<T> {
     }
 
     // Retorna um objeto pelo indice
-    NoLDE<T> getByNo(int i) {
+    T getByIndex(int i) {
         NoLDE<T> noAtual = noPrim;
         int iAtual = 0;
         while (noAtual != null) {
             if (i == iAtual)
-                return noAtual;
+                return noAtual.getValor();
             else if (iAtual > i)
                 return null;
-            noAtual = noAtual.getProxNo();
+            noAtual = noAtual.getProx();
             iAtual++;
         }
         return null;
     }
+
+    NoLDE<T> getByValor(T noBusca) {
+        NoLDE<T> noAtual = noPrim;
+        while (noAtual != null) {
+            if (noBusca == noAtual.getValor())
+                return noAtual;
+            noAtual = noAtual.getProx();
+        }
+        return null;
+    }
+
 
     // Imprime no LogCat (Para testes)
     void imprime() {
@@ -57,7 +68,7 @@ public class LDE<T> {
 
         while (noAtual != null) {
             Log.d("NOLDE", "Valor" + noAtual.getValor());
-            noAtual = noAtual.getProxNo();
+            noAtual = noAtual.getProx();
         }
     }
 
@@ -72,35 +83,37 @@ public class LDE<T> {
         while (noAtual != null) {
             if (i == iAtual) {
                 if (noAnt != null)
-                    noAnt.setProxNo(noAtual.getProxNo());
+                    noAnt.setProx(noAtual.getProx());
                 else
-                    noPrim = noAtual.getProxNo();
+                    noPrim = noAtual.getProx();
                 noAtual = null;
                 tam--;
                 return true;
             }
             noAnt = noAtual;
-            noAtual = noAtual.getProxNo();
+            noAtual = noAtual.getProx();
             iAtual++;
         }
         return false;
     }
 
-    boolean removeByNo(NoLDE<T> noRemove){
+    boolean removeByNo(T noRemove) {
+
         NoLDE<T> noAtual = noPrim;
         NoLDE<T> noAnt = null;
+
         while (noAtual != null) {
-            if (noRemove == noAtual) {
+            if (noRemove == noAtual.getValor()) {
                 if (noAnt != null)
-                    noAnt.setProxNo(noAtual.getProxNo());
+                    noAnt.setProx(noAtual.getProx());
                 else
-                    noPrim = noAtual.getProxNo();
+                    noPrim = noAtual.getProx();
                 noAtual = null;
                 tam--;
                 return true;
             }
             noAnt = noAtual;
-            noAtual = noAtual.getProxNo();
+            noAtual = noAtual.getProx();
         }
         return false;
     }
