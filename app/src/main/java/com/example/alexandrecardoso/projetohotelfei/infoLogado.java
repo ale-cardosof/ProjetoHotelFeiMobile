@@ -13,7 +13,7 @@ public class infoLogado {
     }
 
     public void atualizaPosicao(){
-        posicao = admsCadastrados.busca(this.username);
+        posicao = admsCadastrados.buscaPos(this.username);
     }
 
     public void desloga(){

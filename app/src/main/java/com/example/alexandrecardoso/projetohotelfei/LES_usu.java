@@ -1,6 +1,6 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
-// Função LES adptada para funcionamento junta a Classe Usuário
+// Função LES adptada para funcionamento junta a Classe Usuário, inserindo ordenamente pelo código ASC do username
 public class LES_usu extends LES{
     public Usuario v[] = new Usuario[10]; // Vetor de Usuários
     /* 0 - Construtor */
@@ -26,7 +26,7 @@ public class LES_usu extends LES{
         return true;
     }
     /* 2 - Função de busca */
-    int busca(String username){
+    Usuario busca(String username){
         /* Converte String pra ASC */
         Long usernameProcura = this.geraAsc(username);
 
@@ -39,11 +39,11 @@ public class LES_usu extends LES{
             System.out.println(usernameProcura);
             if(v[i].getUsernameASC().equals(usernameProcura)){
                 // Retorna a posição
-                return i;
+                return v[i];
             }
         }
         // Retorna -1, indicando que não achou
-        return -1;
+        return null;
     }
 
 

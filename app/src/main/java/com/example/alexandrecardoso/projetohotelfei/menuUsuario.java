@@ -15,7 +15,6 @@ public class menuUsuario extends AppCompatActivity {
     public static MensagemToast tela = new MensagemToast();
     public static LES_adm admsCadastrados = new LES_adm();
     public static LES_usu usuariosCadastrados = new LES_usu();
-
     public static List<Quarto> quartosCriados = new ArrayList();
     public static infoLogado logado = new infoLogado("",0,0);
 

@@ -11,10 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".usuario_editarSenha"></activity>
+        <activity android:name=".usuario_editarinfo" />
         <activity android:name=".menuInsercaoQuarto" />
         <activity android:name=".cadastroUser" />
         <activity android:name=".loginUser" />
-        <!--activity android:name=".menuEstruturaHotel" /-->
         <activity android:name=".menuCadastroNovoFuncionario" />
         <activity android:name=".menuVisualizarHotel" />
         <activity android:name=".menuAdministrador" /> <!-- <activity android:name=".teste"></activity>! -->
@@ -23,8 +24,9 @@
         <activity android:name=".UsuarioReservas" />
         <activity android:name=".UsuarioExibirQuarto" />
         <activity android:name=".UsuarioBuscarQuarto" />
-        <activity android:name=".menuUsuario" />
-        <activity android:name=".menuEstruturaHotel">
+        <activity android:name=".menuEstruturaHotel" />
+        <activity android:name=".UsuarioMenu" />
+        <activity android:name=".menuUsuario">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

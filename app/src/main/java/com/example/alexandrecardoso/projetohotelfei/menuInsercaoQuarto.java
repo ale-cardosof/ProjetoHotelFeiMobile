@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.quartosCriados;
+import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class menuInsercaoQuarto extends AppCompatActivity {
     EditText edNumPorta, edValorDiaria, edAvaliacao, edqdtCama, edqtdChuveiro;
@@ -15,8 +16,8 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_insercao_quarto);
         edNumPorta = findViewById(R.id.ednumPorta);
-        edValorDiaria = findViewById(R.id.edValDiaria);
-        edqdtCama = findViewById(R.id.edqtdCama);
+        edValorDiaria = findViewById(R.id.edSenhaAntiga);
+        edqdtCama = findViewById(R.id.edSenhaNovaDois);
         edqtdChuveiro = findViewById(R.id.edqtdChuveiro);
 
         // Retira barra superior com o nome do app
@@ -38,7 +39,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
         novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
         novoQuarto.setPossuiTv(true);
-        MensagemToast.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
+        tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
         quartosCriados.add(novoQuarto);
         limparCampos();
     }

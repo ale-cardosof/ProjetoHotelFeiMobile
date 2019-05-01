@@ -17,9 +17,9 @@ public class cadastroUser extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_user);
         getSupportActionBar().hide();
         edUsuario = findViewById(R.id.ednumPorta);
-        edNome = findViewById(R.id.edValDiaria);
-        edCPF = findViewById(R.id.edAvaliacao);
-        edData = findViewById(R.id.edqtdCama);
+        edNome = findViewById(R.id.edSenhaAntiga);
+        edCPF = findViewById(R.id.edSenhaNova);
+        edData = findViewById(R.id.edSenhaNovaDois);
         edEmail = findViewById(R.id.edqtdChuveiro);
         edCelular = findViewById(R.id.edCelular);
         edSenha = findViewById(R.id.edSenha);

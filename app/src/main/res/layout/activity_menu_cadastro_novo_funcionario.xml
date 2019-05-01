@@ -8,7 +8,7 @@
     android:background="@drawable/back">
 
     <EditText
-        android:id="@+id/edAvaliacao"
+        android:id="@+id/edSenhaNova"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -22,10 +22,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edValDiaria" />
+        app:layout_constraintTop_toBottomOf="@+id/edSenhaAntiga" />
 
     <EditText
-        android:id="@+id/edValDiaria"
+        android:id="@+id/edSenhaAntiga"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -57,7 +57,7 @@
         app:srcCompat="@drawable/wowtellog" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nomeDoUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -86,10 +86,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/nomeDoUser" />
 
     <EditText
-        android:id="@+id/edqtdCama"
+        android:id="@+id/edSenhaNovaDois"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -102,7 +102,7 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edAvaliacao" />
+        app:layout_constraintTop_toBottomOf="@+id/edSenhaNova" />
 
     <EditText
         android:id="@+id/edqtdChuveiro"
@@ -118,7 +118,7 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edqtdCama" />
+        app:layout_constraintTop_toBottomOf="@+id/edSenhaNovaDois" />
 
     <EditText
         android:id="@+id/edCelular"

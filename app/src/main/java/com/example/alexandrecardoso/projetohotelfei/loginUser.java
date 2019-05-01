@@ -1,11 +1,12 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
@@ -31,7 +32,7 @@ public class loginUser extends AppCompatActivity {
         // Caso o login seja efetuado abre o menu principal
         if(login == 0){
             tela.exibir(getApplicationContext(),"Logado com sucesso!");
-            Intent intent = new Intent(this, menuUsuario.class);
+            Intent intent = new Intent(loginUser.this, UsuarioMenu.class);
             startActivity(intent);
         }else if(login == 1){
             tela.exibir(getApplicationContext(),"Falha ao Logar (Senha Incorreta). Tente novamente");
@@ -74,5 +75,8 @@ public class loginUser extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    public void onBackPressed(){
+        Intent intent = new Intent(loginUser.this, menuUsuario.class);
+        startActivity(intent);
+    }
 }

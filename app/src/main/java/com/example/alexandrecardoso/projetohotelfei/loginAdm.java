@@ -1,7 +1,9 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,7 +49,7 @@ public class loginAdm extends AppCompatActivity {
         // Percorrendo o vetor de Administradores Cadastrados
         for(int i=0; i < admsCadastrados.n; i++){
             // Usuário encontrado
-            if(admsCadastrados.busca(admProcurado) != -1){
+            if(admsCadastrados.buscaPos(admProcurado) != -1){
                 // Senha correta
                 if(admsCadastrados.v[i].getSenha().equals(senhaDigitada)){
                     // Login efetuado
@@ -68,6 +70,10 @@ public class loginAdm extends AppCompatActivity {
         }
         return aux;
     }
-
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(loginAdm.this, menuUsuario.class);
+        startActivity(intent);
+    }
 
 }

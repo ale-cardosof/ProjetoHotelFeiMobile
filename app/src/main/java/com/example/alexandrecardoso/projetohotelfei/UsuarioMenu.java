@@ -37,7 +37,7 @@ public class UsuarioMenu extends AppCompatActivity {
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UsuarioMenu.this, UsuarioReservas.class);
+                Intent intent = new Intent(UsuarioMenu.this, usuario_editarinfo.class);
                 startActivity(intent);
             }
         });
