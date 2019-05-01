@@ -85,6 +85,26 @@ public class LDE<T> {
         }
         return false;
     }
+
+    boolean removeByNo(NoLDE<T> noRemove){
+        NoLDE<T> noAtual = noPrim;
+        NoLDE<T> noAnt = null;
+        while (noAtual != null) {
+            if (noRemove == noAtual) {
+                if (noAnt != null)
+                    noAnt.prox = noAtual.prox;
+                else
+                    noPrim = noAtual.prox;
+                noAtual = null;
+                tam--;
+                return true;
+            }
+            noAnt = noAtual;
+            noAtual = noAtual.prox;
+        }
+        return false;
+    }
+
     // retorna o tamanho da funcao
     int getSize(){
         return tam;
