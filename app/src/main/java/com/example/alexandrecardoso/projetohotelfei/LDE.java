@@ -17,18 +17,18 @@ public class LDE<T> {
     //Insere um No à LDE a partir do Objeto recebido
     void insere(T valor) {
         NoLDE<T> noAtual = new NoLDE<>();
-        noAtual.valor = valor;
+        noAtual.setValor(valor);
 
         NoLDE<T> noProx = noPrim;
         NoLDE<T> noAnt = null;
 
         while (noProx != null) {
             noAnt = noProx;
-            noProx = noProx.prox;
+            noProx = noProx.getProxNo();
         }
 
         if (noAnt != null) {
-            noAnt.prox = noAtual;
+            noAnt.setValor(valor);
         } else {
             noPrim = noAtual;
         }
@@ -37,7 +37,7 @@ public class LDE<T> {
     }
 
     // Retorna um objeto pelo indice
-    NoLDE<T> getByIndex(int i) {
+    NoLDE<T> getByNo(int i) {
         NoLDE<T> noAtual = noPrim;
         int iAtual = 0;
         while (noAtual != null) {
@@ -45,7 +45,7 @@ public class LDE<T> {
                 return noAtual;
             else if (iAtual > i)
                 return null;
-            noAtual = noAtual.prox;
+            noAtual = noAtual.getProxNo();
             iAtual++;
         }
         return null;
@@ -56,8 +56,8 @@ public class LDE<T> {
         NoLDE<T> noAtual = noPrim;
 
         while (noAtual != null) {
-            Log.d("NOLDE", "Valor" + noAtual.valor);
-            noAtual = noAtual.prox;
+            Log.d("NOLDE", "Valor" + noAtual.getValor());
+            noAtual = noAtual.getProxNo();
         }
     }
 
@@ -72,15 +72,15 @@ public class LDE<T> {
         while (noAtual != null) {
             if (i == iAtual) {
                 if (noAnt != null)
-                    noAnt.prox = noAtual.prox;
+                    noAnt.setProxNo(noAtual.getProxNo());
                 else
-                    noPrim = noAtual.prox;
+                    noPrim = noAtual.getProxNo();
                 noAtual = null;
                 tam--;
                 return true;
             }
             noAnt = noAtual;
-            noAtual = noAtual.prox;
+            noAtual = noAtual.getProxNo();
             iAtual++;
         }
         return false;
@@ -92,15 +92,15 @@ public class LDE<T> {
         while (noAtual != null) {
             if (noRemove == noAtual) {
                 if (noAnt != null)
-                    noAnt.prox = noAtual.prox;
+                    noAnt.setProxNo(noAtual.getProxNo());
                 else
-                    noPrim = noAtual.prox;
+                    noPrim = noAtual.getProxNo();
                 noAtual = null;
                 tam--;
                 return true;
             }
             noAnt = noAtual;
-            noAtual = noAtual.prox;
+            noAtual = noAtual.getProxNo();
         }
         return false;
     }
