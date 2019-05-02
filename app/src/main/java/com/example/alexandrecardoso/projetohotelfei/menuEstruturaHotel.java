@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -19,6 +20,8 @@ import android.widget.Toast;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.quartosCriados;
 
 public class menuEstruturaHotel extends AppCompatActivity {
+
+    public static int numeroQuarto;
 
     private RecyclerView listHoteis;
 
@@ -85,6 +88,11 @@ public class menuEstruturaHotel extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getApplicationContext(),":",
                         Toast.LENGTH_SHORT).show();
+                numeroQuarto = quartosCriados.get(position).getNumPorta();
+                Log.d("Valor", ""+numeroQuarto);
+                Intent intent = new Intent(menuEstruturaHotel.this, menuAlterarQuarto.class);
+                startActivity(intent);
+
             }
         });
         dialog.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {

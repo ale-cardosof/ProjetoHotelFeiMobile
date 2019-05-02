@@ -118,4 +118,5 @@ public class Quarto {
     public void setPossuiTv(boolean possuiTv) {
         this.possuiTv = possuiTv;
     }
+
 }

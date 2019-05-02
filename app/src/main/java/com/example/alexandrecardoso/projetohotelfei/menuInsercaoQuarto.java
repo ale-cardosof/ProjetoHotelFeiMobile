@@ -16,8 +16,8 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_insercao_quarto);
         edNumPorta = findViewById(R.id.ednumPorta);
-        edValorDiaria = findViewById(R.id.edSenhaAntiga);
-        edqdtCama = findViewById(R.id.edSenhaNovaDois);
+        edValorDiaria = findViewById(R.id.edValorDiaria);
+        edqdtCama = findViewById(R.id.edQtdCama);
         edqtdChuveiro = findViewById(R.id.edqtdChuveiro);
 
         // Retira barra superior com o nome do app
@@ -32,8 +32,17 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         edqtdChuveiro.setText("");
     }
 
+    public boolean verificaPreenchimento(){
+        if(edNumPorta.getText().toString().equals("") ||edValorDiaria.getText().toString().equals("")
+        || edqdtCama.getText().toString().equals("") || edqtdChuveiro.getText().toString().equals("")){
+            return  false;
+        }
+        return  true;
+    }
+
     public void cadastraQuarto(View view){
-        Quarto novoQuarto = new Quarto();
+        if(verificaPreenchimento()){
+            Quarto novoQuarto = new Quarto();
         novoQuarto.setNumPorta(Integer.parseInt(edNumPorta.getText().toString()));
         novoQuarto.setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
         novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
@@ -42,5 +51,9 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
         quartosCriados.add(novoQuarto);
         limparCampos();
+        }
+        else{
+            tela.exibir(getApplicationContext(),"Todos os campos precisam estar preenchidos!");
+        }
     }
 }

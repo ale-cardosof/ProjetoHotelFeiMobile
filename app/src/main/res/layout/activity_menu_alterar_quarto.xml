@@ -5,23 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/laranja"
-    tools:context=".menuInsercaoQuarto">
+    tools:context=".menuAlterarQuarto">
 
     <EditText
-        android:id="@+id/edValorDiaria"
-        android:layout_width="319dp"
-        android:layout_height="39dp"
+        android:id="@+id/edValDiaria_"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Valor diária"
-        android:inputType="number|textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ednumPorta" />
+        app:layout_constraintTop_toBottomOf="@+id/ednumPorta_" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -29,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:scaleType="centerCrop"
@@ -39,40 +40,43 @@
         app:srcCompat="@drawable/wowtellog" />
 
     <TextView
-        android:id="@+id/nomeDoUser"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="ALTERAR QUARTO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/ednumPorta_"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="INSERÇÃO QUARTO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <EditText
-        android:id="@+id/ednumPorta"
-        android:layout_width="319dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:editable="false"
         android:ems="10"
+        android:enabled="false"
         android:hint="Número da Porta"
         android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeDoUser" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/edQtdCama"
-        android:layout_width="319dp"
-        android:layout_height="39dp"
+        android:id="@+id/edqtdCama_"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -83,12 +87,12 @@
         android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edValorDiaria" />
+        app:layout_constraintTop_toBottomOf="@+id/edValDiaria_" />
 
     <EditText
-        android:id="@+id/edqtdChuveiro"
-        android:layout_width="319dp"
-        android:layout_height="39dp"
+        android:id="@+id/edqtdChuveiro_"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -99,7 +103,7 @@
         android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edQtdCama" />
+        app:layout_constraintTop_toBottomOf="@+id/edqtdCama_" />
 
     <Button
         android:id="@+id/btnCadastrar"
@@ -112,12 +116,14 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/btnno"
-        android:onClick="cadastraQuarto"
-        android:text="CADASTRAR"
+        android:onClick="alteraQuarto"
+        android:text="ALTERAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.729" />
 
     <TextView
         android:id="@+id/textView2"
@@ -131,7 +137,7 @@
         android:text="Possui TV?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro" />
+        app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro_" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
