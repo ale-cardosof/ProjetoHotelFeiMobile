@@ -37,7 +37,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
             <ImageView
-                android:id="@+id/imvHotelItem"
+                android:id="@+id/imvQuarto"
                 android:layout_width="156dp"
                 android:layout_height="115dp"
                 android:layout_margin="5dp"
@@ -50,7 +50,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/TextView1"
+                    android:id="@+id/lblNumeroQuarto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -72,8 +72,8 @@
             android:id="@+id/btnDataEntrada"
             android:layout_width="157dp"
             android:layout_height="62dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
             android:text="Data de entrada"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvDataReserva" />
@@ -100,8 +100,8 @@
             android:id="@+id/btnDataSaida"
             android:layout_width="157dp"
             android:layout_height="62dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginRight="36dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
             android:text="Data de saida"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvDataReserva" />
@@ -113,51 +113,54 @@
             android:layout_height="285dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/borda_linear_layout"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.333"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cvDataReserva">
+            app:layout_constraintTop_toBottomOf="@+id/btnVerificarDisp">
 
             <TextView
                 android:id="@+id/lblValTotal"
-                android:layout_width="133dp"
-                android:layout_height="39dp"
+                android:layout_width="154dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.468"
                 app:layout_constraintStart_toEndOf="@+id/textView20"
-                app:layout_constraintTop_toBottomOf="@+id/lbDiasTotal" />
+                app:layout_constraintTop_toBottomOf="@+id/lblDiasTotal" />
 
             <TextView
-                android:id="@+id/lbDiasTotal"
-                android:layout_width="133dp"
-                android:layout_height="39dp"
+                android:id="@+id/lblDiasTotal"
+                android:layout_width="154dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView19"
                 app:layout_constraintTop_toBottomOf="@+id/lblValorDia" />
 
             <TextView
-                android:id="@+id/lblNumQuartos"
-                android:layout_width="133dp"
-                android:layout_height="39dp"
+                android:id="@+id/lblNumQuarto"
+                android:layout_width="154dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView17"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -171,7 +174,6 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_weight="1"
                 android:text="Total a pagar"
                 android:textColor="#000000"
                 android:textSize="24sp"
@@ -237,69 +239,48 @@
 
             <TextView
                 android:id="@+id/lblValorDia"
-                android:layout_width="133dp"
-                android:layout_height="39dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView18"
-                app:layout_constraintTop_toBottomOf="@+id/lblNumQuartos" />
-
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout2"
-            android:layout_width="359dp"
-            android:layout_height="84dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/borda_linear_layout"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.333"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="251dp"
-                android:layout_height="39dp"
+                android:layout_width="154dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:text="Formas de pagamento"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                android:textStyle="bold"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/textView18"
+                app:layout_constraintTop_toBottomOf="@+id/lblNumQuarto" />
+
         </android.support.constraint.ConstraintLayout>
 
         <Button
-            android:id="@+id/btnPagar"
-            android:layout_width="157dp"
+            android:id="@+id/btnReservar"
+            android:layout_width="133dp"
             android:layout_height="62dp"
-            android:layout_marginStart="124dp"
-            android:layout_marginLeft="124dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:text="Pagar"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:enabled="false"
+            android:text="Reservar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <Button
+            android:id="@+id/btnVerificarDisp"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="Verificar disponibilidade"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvDataReserva" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

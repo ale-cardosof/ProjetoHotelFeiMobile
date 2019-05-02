@@ -2,8 +2,8 @@ package com.example.alexandrecardoso.projetohotelfei;
 
 // Implementar Futuramente
 public class Usuario extends Pessoa {
-    //private Reserva minhasReservas[];
 
+    private LDE<Reserva> ldeMinhasReservas = new LDE<>();
     // Construtor
 
     public Usuario() {
@@ -13,7 +13,11 @@ public class Usuario extends Pessoa {
         super(username, nome, cpf, dataNascimento, email, celular, senha);
     }
 
+    public LDE<Reserva> getMinhasReservas() {
+        return ldeMinhasReservas;
+    }
 
-
-
+    public void setMinhasReservas(Reserva novaReserva) {
+        this.ldeMinhasReservas.insere(novaReserva);
+    }
 }

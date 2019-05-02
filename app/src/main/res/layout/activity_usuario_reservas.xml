@@ -7,6 +7,7 @@
     tools:context=".UsuarioReservas"
     android:background="@drawable/back">
 
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -21,7 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wowtellog" />
-
     <ListView
         android:id="@+id/lvReservas"
         android:layout_width="399dp"

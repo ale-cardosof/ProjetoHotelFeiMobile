@@ -6,7 +6,10 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+
+import java.util.Date;
 
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
@@ -57,6 +60,12 @@ public class loginUser extends AppCompatActivity {
                     logado.tipoUser = 2;
                     logado.posicao = i;
                     aux = 0;
+                    Log.d("UsuarioLogado", "Antes de criar user");
+                    if(!Estruturas.criado) {
+                        Estruturas.UsuarioLogado = usuariosCadastrados.v[i];
+                        Estruturas.criaEstru();
+                        Estruturas.montarUsuario();
+                    }
                     break;
                 }else{// Senha incorreta
                     // Aviso sobre senha incorreta

@@ -3,8 +3,6 @@ package com.example.alexandrecardoso.projetohotelfei;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -16,6 +14,14 @@ public class AdapterQuartos extends PagerAdapter {
     private Context context;
     private int[] imgsQuartos = new int[5];
     private int qtdQuartos;
+
+    public AdapterQuartos(Context context, LDE<Quarto> ldeQuartos) {
+        this.context = context;
+        this.qtdQuartos =  ldeQuartos.getSize();
+        for (int i = 0; i < this.qtdQuartos; i++)
+            this.imgsQuartos[i] = ldeQuartos.getByIndex(i).getImagemQuarto();
+
+    }
 
     public AdapterQuartos(Context context, ArrayList<Quarto> alQuartos) {
         this.context = context;
@@ -50,7 +56,7 @@ public class AdapterQuartos extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
 
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         LinearLayout liImgs = new LinearLayout(context);
         liImgs.setOrientation(LinearLayout.VERTICAL);

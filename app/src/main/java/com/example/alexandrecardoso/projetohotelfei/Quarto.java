@@ -63,11 +63,11 @@ public class Quarto {
         return true;
     }*/
 
-    public LDE<Avaliacao> getLdeAvaliacoes() {
+    public LDE<Avaliacao> getAvaliacoes() {
         return ldeAvaliacoes;
     }
 
-    public void setLdeAvaliacoes(Avaliacao avaliacao) {
+    public void setAvaliacoes(Avaliacao avaliacao) {
         this.ldeAvaliacoes.insere(avaliacao);
     }
 
