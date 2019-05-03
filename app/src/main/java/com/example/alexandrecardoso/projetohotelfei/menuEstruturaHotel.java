@@ -38,8 +38,6 @@ public class menuEstruturaHotel extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         listHoteis.setLayoutManager(layoutManager);
         listHoteis.setHasFixedSize(true);
-        listHoteis.setItemViewCacheSize(20);
-        listHoteis.setDrawingCacheEnabled(true);
         listHoteis.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
         listHoteis.setAdapter(adapter);
 
