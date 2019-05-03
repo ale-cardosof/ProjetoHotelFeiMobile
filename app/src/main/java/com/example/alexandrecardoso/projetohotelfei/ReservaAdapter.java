@@ -1,12 +1,16 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -15,6 +19,8 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
 
     private final Context context;
     private final LDE<Reserva> ldeReserva;
+    private Reserva reservaAtual;
+    public Button btnAvaliar;
 
     public ReservaAdapter(Context context, LDE<Reserva>  ldeReserva){
         super(context, R.layout.layout_usuario_reservas_item);
@@ -35,16 +41,28 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
 
         DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(context.getApplicationContext());
 
+        btnAvaliar = rowView.findViewById(R.id.btnAvaliar);
+        reservaAtual = ldeReserva.getByIndex(position);
+
+        (rowView.findViewById(R.id.btnAvaliar)).setVisibility(
+                (reservaAtual.isAvaliada()) ? View.INVISIBLE : View.VISIBLE);
         ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageResource(
-                ldeReserva.getByIndex(position).getQuartoReserva().getImagemQuarto());
+                reservaAtual.getQuartoReserva().getImagemQuarto());
         ((TextView)rowView.findViewById(R.id.lblNumeroQuarto)).setText(String.valueOf(
-                ldeReserva.getByIndex(position).getQuartoReserva().getNumPorta()));
+                reservaAtual.getQuartoReserva().getNumPorta()));
         ((TextView)rowView.findViewById(R.id.lblValTotal)).setText(String.valueOf(
-                ldeReserva.getByIndex(position).getValor()));
+                reservaAtual.getValor()));
         ((TextView)rowView.findViewById(R.id.lblDataEntrada)).setText(dateFormat.format(
-                ldeReserva.getByIndex(position).getDtEntrada()));
+                reservaAtual.getDtEntrada()));
         ((TextView)rowView.findViewById(R.id.lblDataSaida)).setText(dateFormat.format(
-                ldeReserva.getByIndex(position).getDtSaida()));
+                reservaAtual.getDtSaida()));
+
+        btnAvaliar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("TESTECLICK", "CLICOU");
+            }
+        });
 
         return rowView;
     }

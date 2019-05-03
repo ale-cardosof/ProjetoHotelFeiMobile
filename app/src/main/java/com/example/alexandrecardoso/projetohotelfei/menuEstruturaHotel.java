@@ -81,7 +81,7 @@ public class menuEstruturaHotel extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getApplicationContext(),":",
                         Toast.LENGTH_SHORT).show();
-                numeroQuarto = quartosCriados.get(position).getNumPorta();
+                numeroQuarto = Estruturas.alQuartos.getByIndex(position).getNumPorta();
                 Log.d("Valor", ""+numeroQuarto);
                 Intent intent = new Intent(menuEstruturaHotel.this, menuAlterarQuarto.class);
                 startActivity(intent);

@@ -75,7 +75,7 @@ public class Estruturas{
         }
     }
 
-    public static void montarUsuario(){
+    public static void montarReservasUsuario(){
 
         Date dtEntrada = new Date(2019 - 1900, 5, 1);
         Date dtSaida = new Date(2019 - 1900, 5, 4);

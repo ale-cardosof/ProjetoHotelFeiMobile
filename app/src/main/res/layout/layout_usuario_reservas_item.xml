@@ -5,24 +5,36 @@
 
     <ImageView
         android:id="@+id/imvQuarto"
-        android:layout_width="80dp"
-        android:layout_height="115dp"
+        android:layout_width="111dp"
+        android:layout_height="126dp"
         android:layout_margin="5dp"
         android:src="@drawable/imghotel" />
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="117dp"
+        android:layout_width="282dp"
+        android:layout_height="130dp"
         android:layout_gravity="right"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/lblNumeroQuarto"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Nome do Hotel"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lblNumeroQuarto"
+                android:layout_width="177dp"
+                android:layout_height="38dp"
+                android:text="Seu Quarto"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <Button
+                android:id="@+id/btnAvaliar"
+                android:layout_width="122dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Avaliar" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

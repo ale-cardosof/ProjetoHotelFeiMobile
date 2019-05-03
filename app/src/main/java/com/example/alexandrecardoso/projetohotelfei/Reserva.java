@@ -7,6 +7,7 @@ public class Reserva {
     private Date dtEntrada, dtSaida;
     private double valor;
     private Quarto quartoReserva;
+    private boolean avaliada;
 
     public Reserva(Date dtEntrada,Date dtSaida, Quarto quartoReserva, double valor){
         this.dtEntrada = dtEntrada;
@@ -41,6 +42,14 @@ public class Reserva {
 
     public Quarto getQuartoReserva() {
         return quartoReserva;
+    }
+
+    public boolean isAvaliada() {
+        return avaliada;
+    }
+
+    public void setAvaliada(boolean avaliada) {
+        this.avaliada = avaliada;
     }
 
     public void setQuartoReserva(Quarto quartoReserva) {

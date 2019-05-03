@@ -36,6 +36,7 @@ class No<T>{
         proximo = anterior = null;
     }
 }
+
 public class LDDE<T> {
 
     private No primeiro,ultimo;
