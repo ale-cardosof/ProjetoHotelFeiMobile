@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
 
 public class cadastroUser extends AppCompatActivity {
     private EditText edUsuario, edNome, edCPF,edData, edEmail, edCelular, edSenha;
@@ -29,7 +28,7 @@ public class cadastroUser extends AppCompatActivity {
         // Verifica se o username digitado tem menos de 6 caracteres
         if(edUsuario.getText().toString().length() <= 6){
             Usuario novoUser = new Usuario(edUsuario.getText().toString(),edNome.getText().toString(),edCPF.getText().toString(),edData.getText().toString(),edEmail.getText().toString(),edCelular.getText().toString(),edSenha.getText().toString());
-            usuariosCadastrados.insere(novoUser);
+            Estruturas.usuariosCadastrados.insere(novoUser);
             tela.exibir(getApplicationContext(),"Usuário cadastrado com sucesso!");
             // Volta para tela de Login
             Intent intent = new Intent(this, loginUser.class);

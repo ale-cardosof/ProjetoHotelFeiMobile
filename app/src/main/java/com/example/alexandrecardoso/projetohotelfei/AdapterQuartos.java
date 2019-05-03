@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import java.util.ArrayList;
 
 public class AdapterQuartos extends PagerAdapter {
     private Context context;
@@ -20,14 +19,6 @@ public class AdapterQuartos extends PagerAdapter {
         this.qtdQuartos =  ldeQuartos.getSize();
         for (int i = 0; i < this.qtdQuartos; i++)
             this.imgsQuartos[i] = ldeQuartos.getByIndex(i).getImagemQuarto();
-
-    }
-
-    public AdapterQuartos(Context context, ArrayList<Quarto> alQuartos) {
-        this.context = context;
-        this.qtdQuartos =  alQuartos.size();
-        for (int i = 0; i < alQuartos.size(); i++)
-            this.imgsQuartos[i] = alQuartos.get(i).getImagemQuarto();
 
     }
 

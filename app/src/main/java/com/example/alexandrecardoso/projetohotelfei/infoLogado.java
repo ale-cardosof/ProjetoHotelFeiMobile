@@ -1,5 +1,6 @@
 package com.example.alexandrecardoso.projetohotelfei;
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
+
+
 public class infoLogado {
     // Diz em qual vetor devemos procura-lo
     public String username;
@@ -13,7 +14,7 @@ public class infoLogado {
     }
 
     public void atualizaPosicao(){
-        posicao = admsCadastrados.buscaPos(this.username);
+        posicao = Estruturas.admsCadastrados.buscaPos(this.username);
     }
 
     public void desloga(){

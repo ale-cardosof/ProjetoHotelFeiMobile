@@ -8,9 +8,21 @@ public class Estruturas{
 
     public static boolean criado = false;
     public static LDE<Quarto> alQuartos = new LDE<>();
+    public static LES_usu usuariosCadastrados = new LES_usu();
     public static Usuario UsuarioLogado;
+    public static LES_adm admsCadastrados = new LES_adm();
+    public static infoLogado logado = new infoLogado("",0,0);
 
     public static void criaEstru (){
+        criaQuartos();
+        criaAvaliacoes();
+        insereUsuarios();
+        criarAdm();
+
+        criado = true;
+    }
+
+    public static void criaQuartos(){
         Quarto q = new Quarto();
 
         q.setNumPorta(1);
@@ -52,13 +64,15 @@ public class Estruturas{
         q.setImagemQuarto(R.drawable.imgoregon);
         alQuartos.insere(q);
 
+    }
+
+    public static void criaAvaliacoes(){
         for (int i = 0; i < alQuartos.getSize(); i++){
             for (int j =0; j < i; j++) {
                 Avaliacao aval = new Avaliacao("Titulo" + (i+j), i, "Mensagem" + i);
                 alQuartos.getByIndex(i).setAvaliacoes(aval);
             }
         }
-        criado = true;
     }
 
     public static void montarUsuario(){
@@ -83,5 +97,18 @@ public class Estruturas{
         criado = false;
         alQuartos = null;
         UsuarioLogado = null;
+    }
+
+    public static void insereUsuarios(){
+        // Cria o usuário padrão
+        Usuario userInicial = new Usuario("user","User Inicial","123456789",
+                "01/01/2019","user@user.com.br","11954546565","user");
+        usuariosCadastrados.insere(userInicial);
+    }
+
+    public static void criarAdm(){
+        // Cria o adm padrão
+        Administrador admInicial = new Administrador("admin","Administrador Inicial","123456789","01/01/2019","admin@admin.com.br","11954546565","admin");
+        admsCadastrados.insere(admInicial);
     }
 }

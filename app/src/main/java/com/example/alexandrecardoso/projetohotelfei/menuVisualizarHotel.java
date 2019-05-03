@@ -2,11 +2,8 @@ package com.example.alexandrecardoso.projetohotelfei;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 
 public class menuVisualizarHotel extends AppCompatActivity {
     TextView quartosDisponiveis,quantosPreReservados,quartosReservados,quartosTotal;
@@ -17,7 +14,7 @@ public class menuVisualizarHotel extends AppCompatActivity {
         setContentView(R.layout.activity_menu_visualizar_hotel);
         getSupportActionBar().hide();
         // Verifica se esta logado
-        if(logado.tipoUser == 1){
+        if(Estruturas.logado.tipoUser == 1){
             // Cria conecções
             quartosDisponiveis = findViewById(R.id.quartosDisponiveis);
             quantosPreReservados = findViewById(R.id.quantosPreReservados);
@@ -31,10 +28,10 @@ public class menuVisualizarHotel extends AppCompatActivity {
             int total = 0;
 
             // Calcula valores
-            disp = admsCadastrados.v[logado.posicao].getMeuHotel().getNumQuartosDisponiveis();
-            pre = admsCadastrados.v[logado.posicao].getMeuHotel().getNumQuartosPreReservados();
-            reserv = admsCadastrados.v[logado.posicao].getMeuHotel().getNumQuartosReservados();
-            total = admsCadastrados.v[logado.posicao].getMeuHotel().getNumQuartosExistentes();
+            disp = Estruturas.admsCadastrados.v[Estruturas.logado.posicao].getMeuHotel().getNumQuartosDisponiveis();
+            pre = Estruturas.admsCadastrados.v[Estruturas.logado.posicao].getMeuHotel().getNumQuartosPreReservados();
+            reserv = Estruturas.admsCadastrados.v[Estruturas.logado.posicao].getMeuHotel().getNumQuartosReservados();
+            total = Estruturas.admsCadastrados.v[Estruturas.logado.posicao].getMeuHotel().getNumQuartosExistentes();
 
             // Altera valor da tela
             quartosDisponiveis.setText(Integer.toString(disp));
@@ -42,10 +39,10 @@ public class menuVisualizarHotel extends AppCompatActivity {
             quartosReservados.setText(Integer.toString(reserv));
             quartosTotal.setText(Integer.toString(total));
 
-        }else if(logado.tipoUser == 0){
+        }else if(Estruturas.logado.tipoUser == 0){
             // Deslogado
 
-        }else if(logado.tipoUser == 0){
+        }else if(Estruturas.logado.tipoUser == 0){
             // Logado como usuário (nunca deve acontecer, já que está tela é uma tela de adm)
         }
     }

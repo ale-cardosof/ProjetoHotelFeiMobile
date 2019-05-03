@@ -6,9 +6,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class menuAdministrador extends AppCompatActivity {
@@ -37,7 +35,7 @@ public class menuAdministrador extends AppCompatActivity {
     }
 
     public void deslogar(View view){
-        logado.desloga();
+        Estruturas.logado.desloga();
         /* Logado com Sucesso */
         tela.exibir(getApplicationContext(),"Administrador deslogado com sucesso!");
         /* Voltando para o login do Adm */
@@ -55,7 +53,7 @@ public class menuAdministrador extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                logado.desloga();
+                                Estruturas.logado.desloga();
                                 /* Logado com Sucesso */
                                 tela.exibir(getApplicationContext(),"Administrador deslogado com sucesso!");
                                 /* Voltando para o login do Adm */

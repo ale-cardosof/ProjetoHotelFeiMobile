@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.quartosCriados;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class menuInsercaoQuarto extends AppCompatActivity {
@@ -49,7 +48,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
         novoQuarto.setPossuiTv(true);
         tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
-        quartosCriados.add(novoQuarto);
+        Estruturas.alQuartos.insere(novoQuarto);
         limparCampos();
         }
         else{

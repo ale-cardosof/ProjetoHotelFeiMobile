@@ -1,19 +1,13 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import java.util.Date;
-
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 
 public class loginUser extends AppCompatActivity {
     TextInputEditText input_username, input_password;
@@ -49,23 +43,19 @@ public class loginUser extends AppCompatActivity {
     public int tryLogin(String userProcurado, String senhaDigitada){
         int aux = 3;
         // Percorrendo o vetor de Administradores Cadastrados
-        for(int i=0; i < usuariosCadastrados.n; i++){
+        for(int i=0; i < Estruturas.usuariosCadastrados.n; i++){
             // Usuário encontrado
-            if(usuariosCadastrados.v[i].getUsername().equals(userProcurado)){
+            if(Estruturas.usuariosCadastrados.v[i].getUsername().equals(userProcurado)){
                 // Senha correta
-                if(usuariosCadastrados.v[i].getSenha().equals(senhaDigitada)){
+                if(Estruturas.usuariosCadastrados.v[i].getSenha().equals(senhaDigitada)){
                     // Login efetuado
                     // Guarda o usuario logado
-                    logado.username = userProcurado;
-                    logado.tipoUser = 2;
-                    logado.posicao = i;
+                    Estruturas.logado.username = userProcurado;
+                    Estruturas.logado.tipoUser = 2;
+                    Estruturas.logado.posicao = i;
                     aux = 0;
+                    Estruturas.UsuarioLogado = Estruturas.usuariosCadastrados.v[i];
                     Log.d("UsuarioLogado", "Antes de criar user");
-                    if(!Estruturas.criado) {
-                        Estruturas.UsuarioLogado = usuariosCadastrados.v[i];
-                        Estruturas.criaEstru();
-                        Estruturas.montarUsuario();
-                    }
                     break;
                 }else{// Senha incorreta
                     // Aviso sobre senha incorreta

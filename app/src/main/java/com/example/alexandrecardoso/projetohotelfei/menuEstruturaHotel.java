@@ -10,14 +10,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Toast;
-
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.quartosCriados;
 
 public class menuEstruturaHotel extends AppCompatActivity {
 
@@ -33,7 +28,7 @@ public class menuEstruturaHotel extends AppCompatActivity {
         listHoteis = findViewById(R.id.recyclerHotel);
 
         //Configuraando adapter
-        AdapterQuartosInsert adapter = new AdapterQuartosInsert(quartosCriados);
+        AdapterQuartosInsert adapter = new AdapterQuartosInsert(Estruturas.alQuartos);
         //Configurar recyclerview
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         listHoteis.setLayoutManager(layoutManager);
@@ -98,7 +93,7 @@ public class menuEstruturaHotel extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getApplicationContext(),"O quarto foi excluido.",
                         Toast.LENGTH_SHORT).show();
-                quartosCriados.remove(position);
+                Estruturas.alQuartos.removeByIndex(position);
             }
         });
 

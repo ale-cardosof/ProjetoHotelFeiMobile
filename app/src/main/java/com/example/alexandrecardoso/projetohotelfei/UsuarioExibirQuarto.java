@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -21,8 +20,9 @@ public class UsuarioExibirQuarto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_exibir_quarto);
+
         getSupportActionBar().hide();
-        Log.d("UsuarioAvaliacoes", "Tela Exibir");
+
         btnReservar = findViewById(R.id.btnReservar);
 
         quartoExibido = quartoAtual;
@@ -36,18 +36,17 @@ public class UsuarioExibirQuarto extends AppCompatActivity {
 
         ViewPager vpExibeQuarto = findViewById(R.id.vpExibeQuarto);
         vpExibeQuarto.setAdapter(new AdapterQuartos(UsuarioExibirQuarto.this, quartoExibido));
-        Log.d("UsuarioAvaliacoes", "Adapter Qaurto");
 
         ListView lvAvaliacoes = findViewById(R.id.lvAvaliacoes);
         ArrayAdapter adapter = new AdapterAvaliacao(this, quartoExibido.getAvaliacoes());
         lvAvaliacoes.setAdapter(adapter);
-        Log.d("UsuarioAvaliacoes", "Adapter Avaliação");
+
         // Seta o tamanho da ListView de acordo com o tamanho da lista
         ViewGroup.LayoutParams params = lvAvaliacoes.getLayoutParams();
         params.height = 450 * lvAvaliacoes.getCount();
         lvAvaliacoes.setLayoutParams(params);
         lvAvaliacoes.requestLayout();
-        Log.d("UsuarioAvaliacoes", "Adapter Parametros");
+
         btnReservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

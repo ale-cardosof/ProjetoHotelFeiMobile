@@ -1,15 +1,11 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class loginAdm extends AppCompatActivity {
@@ -47,16 +43,16 @@ public class loginAdm extends AppCompatActivity {
     public int tryLogin(String admProcurado, String senhaDigitada){
         int aux=3;
         // Percorrendo o vetor de Administradores Cadastrados
-        for(int i=0; i < admsCadastrados.n; i++){
+        for(int i=0; i < Estruturas.admsCadastrados.n; i++){
             // Usuário encontrado
-            if(admsCadastrados.buscaPos(admProcurado) != -1){
+            if(Estruturas.admsCadastrados.buscaPos(admProcurado) != -1){
                 // Senha correta
-                if(admsCadastrados.v[i].getSenha().equals(senhaDigitada)){
+                if(Estruturas.admsCadastrados.v[i].getSenha().equals(senhaDigitada)){
                     // Login efetuado
                     // Guarda o usuario logado
-                    logado.username = admProcurado;
-                    logado.tipoUser = 1;
-                    logado.posicao = i;
+                    Estruturas.logado.username = admProcurado;
+                    Estruturas.logado.tipoUser = 1;
+                    Estruturas.logado.posicao = i;
                     aux = 0;
                     break;
                 }else{ // Senha incorreta
@@ -75,5 +71,4 @@ public class loginAdm extends AppCompatActivity {
         Intent intent = new Intent(loginAdm.this, menuUsuario.class);
         startActivity(intent);
     }
-
 }

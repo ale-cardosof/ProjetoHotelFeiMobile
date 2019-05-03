@@ -7,14 +7,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.usuariosCadastrados;
 
 public class usuario_editarSenha extends AppCompatActivity {
     private EditText edSenhaAntiga, edSenhaNova,edSenhaNovaDois;
     private TextView edUsuario;
-    Usuario meuUsuario = usuariosCadastrados.busca(logado.username);
+    Usuario meuUsuario = Estruturas.usuariosCadastrados.busca(Estruturas.logado.username);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

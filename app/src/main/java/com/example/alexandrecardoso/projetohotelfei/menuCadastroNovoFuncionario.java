@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.admsCadastrados;
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class menuCadastroNovoFuncionario extends AppCompatActivity {
@@ -33,8 +31,8 @@ public class menuCadastroNovoFuncionario extends AppCompatActivity {
         // Verifica se o username digitado tem menos de 6 caracteres
         if(edUsuario.getText().toString().length() <= 6){
             Administrador novoUser = new Administrador(edUsuario.getText().toString(),edNome.getText().toString(),edCPF.getText().toString(),edData.getText().toString(),edEmail.getText().toString(),edCelular.getText().toString(),edSenha.getText().toString());
-            admsCadastrados.insere(novoUser);
-            logado.atualizaPosicao(); // Atualizando a posição do Logado
+            Estruturas.admsCadastrados.insere(novoUser);
+            Estruturas.logado.atualizaPosicao(); // Atualizando a posição do Logado
             tela.exibir(getApplicationContext(),"Novo Administrador Cadastrado com sucesso.");
             Intent intent = new Intent(this, menuAdministrador.class);
             startActivity(intent);

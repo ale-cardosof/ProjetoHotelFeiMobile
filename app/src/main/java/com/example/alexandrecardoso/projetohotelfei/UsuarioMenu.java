@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.logado;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class UsuarioMenu extends AppCompatActivity {
@@ -61,7 +60,7 @@ public class UsuarioMenu extends AppCompatActivity {
         btnDeslogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logado.desloga();
+                Estruturas.logado.desloga();
                 /* Logado com Sucesso */
                 Toast.makeText(getApplicationContext(), "Usuário deslogado com sucesso!", Toast.LENGTH_SHORT).show();
                 /* Voltando para o login do Adm */
@@ -79,7 +78,7 @@ public class UsuarioMenu extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                logado.desloga();
+                                Estruturas.logado.desloga();
                                 /* Logado com Sucesso */
                                 tela.exibir(getApplicationContext(),"Usuário deslogado com sucesso!");
                                 /* Voltando para o login do Adm */

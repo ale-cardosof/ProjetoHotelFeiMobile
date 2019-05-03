@@ -5,19 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.List;
-
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.quartosCriados;
 
 public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosInsert.MyViewHolder> {
 
-    private List<Quarto> listaQuartos;
+    LDE<Quarto> ldeQuartos = new LDE<>();
 
-    public AdapterQuartosInsert(List<Quarto> listQuarto) {
-        this.listaQuartos = listQuarto;
+    public AdapterQuartosInsert(LDE<Quarto> listQuarto) {
+        this.ldeQuartos = listQuarto;
     }
 
     @NonNull
@@ -30,7 +25,7 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        Quarto quarto = quartosCriados.get(i);
+        Quarto quarto = Estruturas.alQuartos.getByIndex(i);
         myViewHolder.numeroPorta.setText("Numero da porta: " +quarto.getNumPorta());
         myViewHolder.valorDiaria.setText("Valor da diária: R$"+quarto.getValorDiaria());
         myViewHolder.quantidadeCama.setText("Quantidade de cama:" + quarto.getQntdCamas());
@@ -40,7 +35,7 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
 
     @Override
     public int getItemCount() {
-        return quartosCriados.size();
+        return ldeQuartos.getSize();
     }
 
     //Inner Class  - classe para armazenar os dados dentro de cada elemento de lista

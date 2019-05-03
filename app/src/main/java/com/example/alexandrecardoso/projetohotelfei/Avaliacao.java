@@ -6,10 +6,6 @@ public class Avaliacao {
     private String titulo;
     private String mensagem;
 
-    public Avaliacao(float nota){
-        this.nota = nota;
-    }
-
     public Avaliacao(String titulo, double nota, String mensagem){
         this.nota = nota;
         this.mensagem = mensagem;
