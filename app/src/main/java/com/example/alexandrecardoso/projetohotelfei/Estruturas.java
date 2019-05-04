@@ -1,6 +1,5 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
-import android.util.Log;
 import java.util.Date;
 
 // Classe que guardará todas as estruturas do aplicativo

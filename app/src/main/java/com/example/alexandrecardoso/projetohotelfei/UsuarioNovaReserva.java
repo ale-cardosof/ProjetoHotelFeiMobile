@@ -19,7 +19,7 @@ public class UsuarioNovaReserva extends AppCompatActivity {
     private CalendarView cvDataReserva;
     private Quarto quartoReserva;
     private Date dataEntradaReserva, dataSaidaReserva;
-    private double valDiaria = 0;
+    private double valDiaria = 0,valTotal;
     public static Quarto quarto;
 
     @Override
@@ -107,7 +107,6 @@ public class UsuarioNovaReserva extends AppCompatActivity {
                 try {
 
                     int diasHosp;
-                    double  valTotal;
 
 //                    String dataEntrada = btnDataEntrada.getText().toString();
 //                    String dataSaida = btnDataSaida.getText().toString();
@@ -148,6 +147,13 @@ public class UsuarioNovaReserva extends AppCompatActivity {
                 }
             }
         });
+        btnReservar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((Usuario)logado.user).setMinhasReservas(new Reserva(dataEntradaReserva, dataSaidaReserva,quartoReserva, valTotal ));
+                tela.exibir(UsuarioNovaReserva.this, "Reserva realizada com sucesso!!");
+            }
+        });
     }
 
 
@@ -186,7 +192,7 @@ public class UsuarioNovaReserva extends AppCompatActivity {
         btnDataEntrada.setText("Data de entrada");
         ((TextView)findViewById(R.id.lblValTotal)).setText("");
         ((TextView)findViewById(R.id.lblDiasTotal)).setText("");
-
+        valTotal = 0;
         btnReservar.setEnabled(false);
     }
 }
