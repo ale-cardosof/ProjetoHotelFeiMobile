@@ -20,7 +20,6 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
     private final Context context;
     private final LDE<Reserva> ldeReserva;
     private Reserva reservaAtual;
-    public Button btnAvaliar;
 
     public ReservaAdapter(Context context, LDE<Reserva>  ldeReserva){
         super(context, R.layout.layout_usuario_reservas_item);
@@ -40,12 +39,8 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
             rowView.setBackgroundColor(Color.parseColor("#BFF0E68C"));
 
         DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(context.getApplicationContext());
-
-        btnAvaliar = rowView.findViewById(R.id.btnAvaliar);
         reservaAtual = ldeReserva.getByIndex(position);
 
-        (rowView.findViewById(R.id.btnAvaliar)).setVisibility(
-                (reservaAtual.isAvaliada()) ? View.INVISIBLE : View.VISIBLE);
         ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageResource(
                 reservaAtual.getQuartoReserva().getImagemQuarto());
         ((TextView)rowView.findViewById(R.id.lblNumeroQuarto)).setText(String.valueOf(
@@ -57,18 +52,16 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
         ((TextView)rowView.findViewById(R.id.lblDataSaida)).setText(dateFormat.format(
                 reservaAtual.getDtSaida()));
 
-        btnAvaliar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("TESTECLICK", "CLICOU");
-            }
-        });
-
         return rowView;
     }
 
     @Override
     public int getCount() {
         return ldeReserva.getSize();
+    }
+
+    @Override
+    public Reserva getItem(int position) {
+        return super.getItem(position);
     }
 }

@@ -17,6 +17,10 @@ public class Usuario extends Pessoa {
         return ldeMinhasReservas;
     }
 
+    public Reserva getMinhasReservas(int posicao) {
+        return ldeMinhasReservas.getByIndex(posicao);
+    }
+
     public void setMinhasReservas(Reserva novaReserva) {
         this.ldeMinhasReservas.insere(novaReserva);
     }
