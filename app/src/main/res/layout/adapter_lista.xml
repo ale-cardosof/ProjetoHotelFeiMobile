@@ -53,20 +53,31 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imgQuarto1"
+            android:id="@+id/imgQuartos1"
             android:layout_width="75dp"
             android:layout_height="75dp"
             app:srcCompat="@drawable/border_laranja" />
 
         <ImageView
-            android:id="@+id/imgQuarto2"
+            android:id="@+id/imgQuartos2"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/border_laranja" />
 
         <ImageView
-            android:id="@+id/imgQuarto3"
+            android:id="@+id/imgQuartos3"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:srcCompat="@drawable/border_laranja" />
+
+        <ImageView
+            android:id="@+id/imgQuartos4"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:srcCompat="@drawable/border_laranja" />
+        <ImageView
+            android:id="@+id/imgQuartos5"
             android:layout_width="75dp"
             android:layout_height="75dp"
             app:srcCompat="@drawable/border_laranja" />

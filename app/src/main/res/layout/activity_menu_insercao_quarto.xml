@@ -15,6 +15,75 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="16dp">
 
+        <ImageView
+            android:id="@+id/imgQuarto1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/imgQuarto2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
+            app:srcCompat="@drawable/hotelfund" />
+
+        <ImageView
+            android:id="@+id/imgQuarto2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/imgQuarto3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imgQuarto1"
+            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
+            app:srcCompat="@drawable/hotelfund" />
+
+        <ImageView
+            android:id="@+id/imgQuarto3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="28dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@+id/imgQuarto4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imgQuarto2"
+            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
+            app:srcCompat="@drawable/hotelfund" />
+
+        <ImageView
+            android:id="@+id/imgQuarto4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/imgQuarto5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imgQuarto3"
+            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
+            app:layout_constraintVertical_bias="0.6"
+            app:srcCompat="@drawable/hotelfund" />
+
+        <ImageView
+            android:id="@+id/imgQuarto5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imgQuarto4"
+            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
+            app:srcCompat="@drawable/hotelfund" />
+
         <EditText
             android:id="@+id/edValorDiaria"
             android:layout_width="319dp"
@@ -133,13 +202,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="96dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="Possui TV?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro" />
+            app:layout_constraintTop_toBottomOf="@+id/imgQuarto3" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -171,6 +240,29 @@
                 android:layout_weight="1"
                 android:text="Não" />
         </RadioGroup>
+
+        <ImageButton
+            android:id="@+id/imgCamera"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgQuarto1"
+            app:layout_constraintStart_toStartOf="@+id/imgQuarto1"
+            app:layout_constraintTop_toTopOf="@+id/imgQuarto1"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <ImageButton
+            android:id="@+id/imgGaleria"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgQuarto1"
+            app:layout_constraintEnd_toEndOf="@+id/imgQuarto1"
+            app:layout_constraintStart_toEndOf="@+id/imgCamera"
+            app:layout_constraintTop_toTopOf="@+id/imgQuarto1"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     </android.support.constraint.ConstraintLayout>
 

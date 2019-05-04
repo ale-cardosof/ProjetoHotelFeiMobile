@@ -1,5 +1,9 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import android.graphics.Bitmap;
+
+import java.util.ArrayList;
+
 public class Quarto {
     private int numPorta; // Chave
     private double valorDiaria;
@@ -9,7 +13,9 @@ public class Quarto {
     private int status; // 0 - Desocupado, 1 - Pré-Reservado, 2 - Reservado
     private int diasReservado; // Dias de reserva
     private int imagemQuarto; // Estudar maneira de armazenar a imagem do quarto
+    private ArrayList<Bitmap> imagensQuarto = new ArrayList();
     private LDE<Avaliacao> ldeAvaliacoes = new LDE<>();
+
 
     //private Imagens fotos;
 
