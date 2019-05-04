@@ -1,7 +1,5 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
-import android.util.Log;
-
 class No<T>{
     T valor;
     No proximo;

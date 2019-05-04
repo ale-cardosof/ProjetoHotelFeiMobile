@@ -1,5 +1,6 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+
 public class HASH{
     // Vetor em que cada posição é uma LDE diferente
     public LDE<Integer> vetorHash[];

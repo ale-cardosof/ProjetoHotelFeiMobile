@@ -42,32 +42,43 @@ public class loginUser extends AppCompatActivity {
 
     public int tryLogin(String userProcurado, String senhaDigitada){
         int aux = 3;
-        // Percorrendo o vetor de Administradores Cadastrados
-        for(int i=0; i < Estruturas.usuariosCadastrados.n; i++){
-            // Usuário encontrado
-            if(Estruturas.usuariosCadastrados.v[i].getUsername().equals(userProcurado)){
-                // Senha correta
-                if(Estruturas.usuariosCadastrados.v[i].getSenha().equals(senhaDigitada)){
-                    // Login efetuado
-                    // Guarda o usuario logado
-                    Estruturas.logado.username = userProcurado;
-                    Estruturas.logado.tipoUser = 2;
-                    Estruturas.logado.posicao = i;
-                    aux = 0;
-                    Estruturas.UsuarioLogado = Estruturas.usuariosCadastrados.v[i];
-                    Estruturas.montarReservasUsuario();
-                    Log.d("UsuarioLogado", "Antes de criar user");
-                    break;
-                }else{// Senha incorreta
-                    // Aviso sobre senha incorreta
-                    aux = 1;
-                }
-            }else{ // Usuário não existe
-                // Aviso sobre usuario não existente
-                aux = 2;
+        Long userProcuradoAsc = this.geraAsc(userProcurado);
+        Usuario usuarioBuscado = Estruturas.usuariosCadastrados.busca(userProcuradoAsc);
+        // Usuário encontrado
+        if(usuarioBuscado != null){
+            // Senha correta
+            if(usuarioBuscado.getSenha().equals(senhaDigitada)){
+                // Login efetuado
+                // Guarda o usuario logado
+                Estruturas.logado.user = usuarioBuscado;
+                Estruturas.logado.username = userProcurado;
+                Estruturas.logado.usernameASC = userProcuradoAsc;
+                Estruturas.logado.tipoUser = 2;
+                aux = 0;
+                Estruturas.montarReservasUsuario();
+                Log.d("UsuarioLogado", "Antes de criar user");
+            }else{// Senha incorreta
+                // Aviso sobre senha incorreta
+                aux = 1;
             }
+        }else{ // Usuário não existe
+            // Aviso sobre usuario não existente
+            aux = 2;
+        }return aux;
+    }
+
+    public Long geraAsc(String entrada) {
+        if(entrada.equals("")){
+            return Long.parseLong("0");
+        }else{
+            /* Converte String pra ASC */
+            String provisorio = "";
+            char[] ascii2 = entrada.toCharArray();
+            for(char ch:ascii2){
+                provisorio = provisorio + (int)ch;
+            }
+            return Long.parseLong(provisorio);
         }
-        return aux;
     }
 
     public void novoCadastro(View view){

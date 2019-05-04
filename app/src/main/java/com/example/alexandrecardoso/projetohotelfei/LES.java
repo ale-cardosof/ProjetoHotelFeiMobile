@@ -1,5 +1,7 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import com.example.alexandrecardoso.projetohotelfei.Estruturas;
+
 public class LES{
     public int v[] = new int[5];
     public int n;

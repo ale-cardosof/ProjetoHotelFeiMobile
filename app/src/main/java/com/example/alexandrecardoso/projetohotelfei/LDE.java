@@ -2,6 +2,9 @@ package com.example.alexandrecardoso.projetohotelfei;
 
 import android.util.Log;
 
+import com.example.alexandrecardoso.projetohotelfei.Estruturas;
+import com.example.alexandrecardoso.projetohotelfei.NoLDE;
+
 //Estrutura de dado LDE
 public class LDE<T> {
 

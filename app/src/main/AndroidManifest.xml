@@ -24,10 +24,9 @@
         <activity android:name=".UsuarioNovaReserva" />
         <activity android:name=".UsuarioReservas" />
         <activity android:name=".UsuarioExibirQuarto" />
-        <activity android:name=".UsuarioMenu" />
         <activity android:name=".UsuarioBuscarQuarto" />
         <activity android:name=".menuEstruturaHotel" />
-        <activity android:name=".UsuarioAvaliacao" />
+        <activity android:name=".UsuarioMenu" />
         <activity android:name=".menuUsuario">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -40,6 +40,10 @@ abstract public class Pessoa {
         return usernameASC;
     }
 
+    public void setUsernameASC(Long usernameASC) {
+        this.usernameASC = usernameASC;
+    }
+
     public String getUsername() {
         return username;
     }

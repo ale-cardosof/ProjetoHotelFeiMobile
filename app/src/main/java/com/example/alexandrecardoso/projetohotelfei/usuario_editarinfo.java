@@ -7,12 +7,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.logado;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class usuario_editarinfo extends AppCompatActivity {
     private EditText edNome, edCPF,edData, edEmail, edCelular;
     private TextView edUsuario;
-    Usuario meuUsuario = Estruturas.usuariosCadastrados.busca(Estruturas.logado.username);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,21 +32,21 @@ public class usuario_editarinfo extends AppCompatActivity {
          edCelular = findViewById(R.id.edCelular);
 
          // Edita as caixas com os valores atuais do usuário logado
-         edUsuario.setText("Alterando as informações de: " + meuUsuario.getUsername());
-         edNome.setText(meuUsuario.getNome());
-         edCPF.setText(meuUsuario.getCpf());
-         edData.setText(meuUsuario.getDataNascimento());
-         edEmail.setText(meuUsuario.getEmail());
-         edCelular.setText(meuUsuario.getCelular());
+         edUsuario.setText("Alterando as informações de: " + logado.user.getUsername());
+         edNome.setText(logado.user.getNome());
+         edCPF.setText(logado.user.getCpf());
+         edData.setText(logado.user.getDataNascimento());
+         edEmail.setText(logado.user.getEmail());
+         edCelular.setText(logado.user.getCelular());
 
      }
 
      public void editaInfo(View view){
-         meuUsuario.setNome(edNome.getText().toString());
-         meuUsuario.setCpf(edCPF.getText().toString());
-         meuUsuario.setDataNascimento(edData.getText().toString());
-         meuUsuario.setEmail(edEmail.getText().toString());
-         meuUsuario.setCelular(edCelular.getText().toString());
+         logado.user.setNome(edNome.getText().toString());
+         logado.user.setCpf(edCPF.getText().toString());
+         logado.user.setDataNascimento(edData.getText().toString());
+         logado.user.setEmail(edEmail.getText().toString());
+         logado.user.setCelular(edCelular.getText().toString());
          tela.exibir(getApplicationContext(),"Informações atualizadas com sucesso.");
          this.atualizaInfo();
      }

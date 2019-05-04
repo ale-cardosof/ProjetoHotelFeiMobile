@@ -3,7 +3,9 @@ package com.example.alexandrecardoso.projetohotelfei;
 
 public class infoLogado {
     // Diz em qual vetor devemos procura-lo
+    public Usuario user;
     public String username;
+    public Long usernameASC;
     public int tipoUser; // 0 - Deslogado, 1 - Adm, 2 - Usuario
     public int posicao; // Posição na referência
 

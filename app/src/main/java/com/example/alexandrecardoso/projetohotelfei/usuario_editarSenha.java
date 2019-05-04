@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.logado;
 import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
 
 public class usuario_editarSenha extends AppCompatActivity {
     private EditText edSenhaAntiga, edSenhaNova,edSenhaNovaDois;
     private TextView edUsuario;
-    Usuario meuUsuario = Estruturas.usuariosCadastrados.busca(Estruturas.logado.username);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +28,11 @@ public class usuario_editarSenha extends AppCompatActivity {
 
     public void alteraSenha(View view){
         // Verifica se a senha atual está correta
-        if(edSenhaAntiga.getText().toString().equals(meuUsuario.getSenha())){
+        if(edSenhaAntiga.getText().toString().equals(logado.user.getSenha())){
             // Verifica se as novas senhas são iguais
             if(edSenhaNova.getText().toString().equals(edSenhaNovaDois.getText().toString())){
                 // Altera a senha
-                meuUsuario.setSenha(edSenhaNova.toString());
+                logado.user.setSenha(edSenhaNova.toString());
                 tela.exibir(getApplicationContext(),"Senha Alterada com sucesso.");
                 Intent intent = new Intent(this, usuario_editarinfo.class);
                 startActivity(intent);
