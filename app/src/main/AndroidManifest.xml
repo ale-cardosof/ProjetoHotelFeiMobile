@@ -25,6 +25,7 @@
         <activity android:name=".UsuarioReservas" />
         <activity android:name=".UsuarioExibirQuarto" />
         <activity android:name=".UsuarioBuscarQuarto" />
+        <activity android:name=".UsuarioAvaliacao" />
         <activity android:name=".menuEstruturaHotel" />
         <activity android:name=".UsuarioMenu" />
         <activity android:name=".menuUsuario">

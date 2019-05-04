@@ -22,6 +22,10 @@ public class Usuario extends Pessoa {
         return ldeMinhasReservas;
     }
 
+    public Reserva getMinhasReservas(int position){
+        return ldeMinhasReservas.getByIndex(position);
+    }
+
     public void copiaUser(Usuario clone){
         this.setUsername(clone.getUsername());
         this.setNome(clone.getNome());
@@ -37,6 +41,7 @@ public class Usuario extends Pessoa {
 
     public void setMinhasReservas(Reserva novaReserva) {
         this.ldeMinhasReservas.insere(novaReserva);
+        Estruturas.ldeReservas.insere(novaReserva);
     }
 
     public Usuario getEsquerda() {

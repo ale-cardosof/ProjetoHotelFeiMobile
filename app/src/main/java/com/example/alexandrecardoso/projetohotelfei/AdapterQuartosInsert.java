@@ -25,7 +25,7 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        Quarto quarto = Estruturas.alQuartos.getByIndex(i);
+        Quarto quarto = Estruturas.ldeQuartos.getByIndex(i);
         myViewHolder.numeroPorta.setText("Numero da porta: " +quarto.getNumPorta());
         myViewHolder.valorDiaria.setText("Valor da diária: R$"+quarto.getValorDiaria());
         myViewHolder.quantidadeCama.setText("Quantidade de cama:" + quarto.getQntdCamas());

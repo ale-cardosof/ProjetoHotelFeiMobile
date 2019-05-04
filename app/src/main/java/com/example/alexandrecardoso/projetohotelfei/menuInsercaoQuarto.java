@@ -48,7 +48,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
         novoQuarto.setPossuiTv(true);
         tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
-        Estruturas.alQuartos.insere(novoQuarto);
+        Estruturas.ldeQuartos.insere(novoQuarto);
         limparCampos();
         }
         else{

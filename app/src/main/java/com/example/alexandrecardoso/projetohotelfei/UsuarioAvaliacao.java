@@ -36,8 +36,12 @@ public class UsuarioAvaliacao extends AppCompatActivity {
                  || String.valueOf(txtMensagem.getText()).isEmpty()
                  || String.valueOf(txtNota.getText()).isEmpty()){
                     tela.exibir(UsuarioAvaliacao.this, "Por favor, preencha todos os campos!");
-                }else{
-                    Avaliacao avUsuario = new Avaliacao("Bosta", 5, "BostaTeste");
+                }else if(Integer.parseInt(txtNota.getText().toString()) < 0
+                    || Integer.parseInt(txtNota.getText().toString()) > 5 ){
+                    tela.exibir(UsuarioAvaliacao.this, "A nota deve ser de 0 a 5.");
+                }
+                else{
+                    Avaliacao avUsuario = new Avaliacao(txtTitulo.getText().toString(), Double.parseDouble(txtNota.getText().toString()), String.valueOf(txtMensagem.getText()));
                     quartoAtual.setAvaliacoes(avUsuario);
                 }
             }

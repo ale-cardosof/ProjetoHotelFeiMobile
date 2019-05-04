@@ -3,7 +3,6 @@ package com.example.alexandrecardoso.projetohotelfei;
 public class Quarto {
     private int numPorta; // Chave
     private double valorDiaria;
-    private double avaliacao;
     private int qntdCamas;
     private int qntdChuveiros;
     private boolean possuiTv;
@@ -21,7 +20,6 @@ public class Quarto {
     public Quarto(int numeroPorta, double valorDiaria, int qntdCamas, int qntdChuveiro, boolean possuiTv) {
         this.numPorta = numeroPorta;
         this.valorDiaria = valorDiaria;
-        this.avaliacao = -1; // -1 Representa sem avaliações
         this.qntdCamas = qntdCamas;
         this.qntdChuveiros = qntdChuveiro;
         this.possuiTv = possuiTv;
@@ -85,14 +83,6 @@ public class Quarto {
 
     public void setValorDiaria(double valorDiaria) {
         this.valorDiaria = valorDiaria;
-    }
-
-    public double getAvaliacao() {
-        return avaliacao;
-    }
-
-    public void setAvaliacao(double avaliacao) {
-        this.avaliacao = avaliacao;
     }
 
     public int getQntdCamas() {

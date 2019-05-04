@@ -35,13 +35,13 @@ public class menuAlterarQuarto extends AppCompatActivity {
 
     public void setDadosQuarto(){
         int i;
-       for(i=0; i <= Estruturas.alQuartos.getSize();i++){
-            if(numeroQuarto == Estruturas.alQuartos.getByIndex(i).getNumPorta()){
-                Log.d("Eita", "Diaria=" +Estruturas.alQuartos.getByIndex(i).getValorDiaria());
-                edNumPorta.setText(""+Estruturas.alQuartos.getByIndex(i).getNumPorta());
-                edValorDiaria.setText(""+Estruturas.alQuartos.getByIndex(i).getValorDiaria());
-                edqdtCama.setText(""+ Estruturas.alQuartos.getByIndex(i).getQntdCamas());
-                edqtdChuveiro.setText(""+Estruturas.alQuartos.getByIndex(i).getQntdChuveiros());
+       for(i=0; i <= Estruturas.ldeQuartos.getSize();i++){
+            if(numeroQuarto == Estruturas.ldeQuartos.getByIndex(i).getNumPorta()){
+                Log.d("Eita", "Diaria=" +Estruturas.ldeQuartos.getByIndex(i).getValorDiaria());
+                edNumPorta.setText(""+Estruturas.ldeQuartos.getByIndex(i).getNumPorta());
+                edValorDiaria.setText(""+Estruturas.ldeQuartos.getByIndex(i).getValorDiaria());
+                edqdtCama.setText(""+ Estruturas.ldeQuartos.getByIndex(i).getQntdCamas());
+                edqtdChuveiro.setText(""+Estruturas.ldeQuartos.getByIndex(i).getQntdChuveiros());
                 break;
 
             }
@@ -56,11 +56,11 @@ public class menuAlterarQuarto extends AppCompatActivity {
 
     public void alteraQuarto(View view){
         int i;
-        for(i=0; i <= Estruturas.alQuartos.getSize();i++){
-            if(numeroQuarto == Estruturas.alQuartos.getByIndex(i).getNumPorta()){
-                Estruturas.alQuartos.getByIndex(i).setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
-                Estruturas.alQuartos.getByIndex(i).setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
-                Estruturas.alQuartos.getByIndex(i).setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
+        for(i=0; i <= Estruturas.ldeQuartos.getSize();i++){
+            if(numeroQuarto == Estruturas.ldeQuartos.getByIndex(i).getNumPorta()){
+                Estruturas.ldeQuartos.getByIndex(i).setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
+                Estruturas.ldeQuartos.getByIndex(i).setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
+                Estruturas.ldeQuartos.getByIndex(i).setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
                 break;
             }
             else{

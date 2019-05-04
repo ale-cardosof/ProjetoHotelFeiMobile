@@ -8,16 +8,25 @@ public class Reserva {
     private double valor;
     private Quarto quartoReserva;
     private boolean avaliada;
+    private static int IDRESERVA = 0;
+    private int idReserva = 0;
+    private boolean checkin = false;
+    private boolean checkout = false;
 
     public Reserva(Date dtEntrada,Date dtSaida, Quarto quartoReserva, double valor){
         this.dtEntrada = dtEntrada;
         this.dtSaida = dtSaida;
         this.quartoReserva = quartoReserva;
         this.valor = valor;
+        this.idReserva = IDRESERVA++;
     }
 
     public Date getDtEntrada() {
         return dtEntrada;
+    }
+
+    public int getIdReserva() {
+        return idReserva;
     }
 
     public void setDtEntrada(Date dtEntrada) {
@@ -54,5 +63,21 @@ public class Reserva {
 
     public void setQuartoReserva(Quarto quartoReserva) {
         this.quartoReserva = quartoReserva;
+    }
+
+    public boolean isCheckin() {
+        return checkin;
+    }
+
+    public void setCheckin(boolean checkin) {
+        this.checkin = checkin;
+    }
+
+    public boolean isCheckout() {
+        return checkout;
+    }
+
+    public void setCheckout(boolean checkout) {
+        this.checkout = checkout;
     }
 }

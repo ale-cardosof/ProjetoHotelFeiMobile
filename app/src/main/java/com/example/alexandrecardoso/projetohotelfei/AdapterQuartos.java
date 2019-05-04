@@ -3,6 +3,7 @@ package com.example.alexandrecardoso.projetohotelfei;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,14 +13,13 @@ import android.widget.LinearLayout;
 public class AdapterQuartos extends PagerAdapter {
     private Context context;
     private int[] imgsQuartos = new int[5];
+    private LDE<Quarto> ldeQuartos;
     private int qtdQuartos;
 
     public AdapterQuartos(Context context, LDE<Quarto> ldeQuartos) {
         this.context = context;
         this.qtdQuartos =  ldeQuartos.getSize();
-        for (int i = 0; i < this.qtdQuartos; i++)
-            this.imgsQuartos[i] = ldeQuartos.getByIndex(i).getImagemQuarto();
-
+        this.ldeQuartos = ldeQuartos;
     }
 
     public AdapterQuartos(Context context, Quarto quarto) {
@@ -56,7 +56,10 @@ public class AdapterQuartos extends PagerAdapter {
         container.addView(liImgs);
 
         ImageView imvQuartos = new ImageView(context);
-        imvQuartos.setImageResource(imgsQuartos[position]);
+        if(ldeQuartos != null)
+            imvQuartos.setImageResource(ldeQuartos.getByIndex(position).getImagemQuarto());
+        else
+            imvQuartos.setImageResource(imgsQuartos[position]);
         liImgs.addView(imvQuartos);
 
         return liImgs;
