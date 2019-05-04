@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
 
 public class menuInsercaoQuarto extends AppCompatActivity {
     EditText edNumPorta, edValorDiaria, edAvaliacao, edqdtCama, edqtdChuveiro;

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
 
 public class loginAdm extends AppCompatActivity {
     TextInputEditText input_username, input_password;
@@ -44,7 +44,7 @@ public class loginAdm extends AppCompatActivity {
     public int tryLogin(String admProcurado, String senhaDigitada){
         int aux = 3;
         Long admProcuradoAsc = this.geraAsc(admProcurado);
-        Administrador admBuscado = Estruturas.admsCadastrados.busca(admProcuradoAsc);
+        Administrador admBuscado = Estruturas.admsCadastrados.buscaASC(admProcuradoAsc);
         // Usuário encontrado
         if(admBuscado != null){
             // Senha correta

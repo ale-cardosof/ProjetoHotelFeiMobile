@@ -12,13 +12,13 @@ public class Estruturas{
     public static Arvore_user usuariosCadastrados = new Arvore_user();
     public static Arvore_adm admsCadastrados = new Arvore_adm();
     public static infoLogado logado = new infoLogado("",0);
+    public static MensagemToast tela = new MensagemToast();
 
     public static void criaEstru (){
         criaQuartos();
         criaAvaliacoes();
         insereUsuarios();
         criarAdm();
-        insereUsuarios();
         criado = true;
     }
 

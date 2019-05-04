@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
 
 public class UsuarioNovaReserva extends AppCompatActivity {
 

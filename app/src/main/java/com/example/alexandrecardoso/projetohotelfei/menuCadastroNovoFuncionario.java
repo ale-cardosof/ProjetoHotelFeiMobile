@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
 
 public class menuCadastroNovoFuncionario extends AppCompatActivity {
     private EditText edUsuario, edNome, edCPF,edData, edEmail, edCelular, edSenha;

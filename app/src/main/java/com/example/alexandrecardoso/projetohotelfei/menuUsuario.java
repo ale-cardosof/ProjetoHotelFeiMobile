@@ -7,9 +7,6 @@ import android.view.View;
 
 public class menuUsuario extends AppCompatActivity {
 
-    // Variáveis Globais
-    public static MensagemToast tela = new MensagemToast();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Inicia o Programa na Tela de seleção de Usuário
@@ -17,8 +14,11 @@ public class menuUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_menu_usuario);
         // Retira barra superior com o nome do app
         getSupportActionBar().hide();
-        if(!Estruturas.criado)
+        // Cria Estruturas Iniciais do programa
+        if(!Estruturas.criado){
             Estruturas.criaEstru();
+        }
+
     }
 
     public void abrirTelaADM(View view){

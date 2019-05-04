@@ -6,10 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
 
 public class cadastroUser extends AppCompatActivity {
-    private EditText edUsuario, edNome, edCPF,edData, edEmail, edCelular, edSenha;
+    private EditText edUsuario, edNome, edCPF,edData, edEmail, edCelular, edSenha, edSenhaConf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +22,20 @@ public class cadastroUser extends AppCompatActivity {
         edEmail = findViewById(R.id.edqtdChuveiro);
         edCelular = findViewById(R.id.edCelular);
         edSenha = findViewById(R.id.edSenha);
+        edSenhaConf = findViewById(R.id.edSenhaConf);
     }
 
     public void cadastraUsuario(View view){
-        // Verifica se o username digitado tem menos de 6 caracteres
+        // Verifica se todos os campos estão preenchidos
+
+        // Verifica se tem acento ou ponto
+
+        // Verifica se o tamanho do username digitado tem 8 ou menos caracteres e mais de 3 caracteres
+
+        // Verifica se já existe
+
+
+
         if(edUsuario.getText().toString().length() <= 6){
             Usuario novoUser = new Usuario(edUsuario.getText().toString(),edNome.getText().toString(),edCPF.getText().toString(),edData.getText().toString(),edEmail.getText().toString(),edCelular.getText().toString(),edSenha.getText().toString());
             Estruturas.usuariosCadastrados.insere(novoUser);

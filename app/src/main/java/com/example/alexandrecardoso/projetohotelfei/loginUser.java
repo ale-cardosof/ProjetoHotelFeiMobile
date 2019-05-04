@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import static com.example.alexandrecardoso.projetohotelfei.menuUsuario.tela;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
 
 public class loginUser extends AppCompatActivity {
     TextInputEditText input_username, input_password;
@@ -43,7 +43,7 @@ public class loginUser extends AppCompatActivity {
     public int tryLogin(String userProcurado, String senhaDigitada){
         int aux = 3;
         Long userProcuradoAsc = this.geraAsc(userProcurado);
-        Usuario usuarioBuscado = Estruturas.usuariosCadastrados.busca(userProcuradoAsc);
+        Usuario usuarioBuscado = Estruturas.usuariosCadastrados.buscaASC(userProcuradoAsc);
         // Usuário encontrado
         if(usuarioBuscado != null){
             // Senha correta
