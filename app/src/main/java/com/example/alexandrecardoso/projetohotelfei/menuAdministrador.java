@@ -24,6 +24,11 @@ public class menuAdministrador extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void checkincheckout(View view){
+        Intent intent = new Intent(menuAdministrador.this, CheckInAdm.class);
+        startActivity(intent);
+    }
+
     public void cadastrarFunc(View view){
         Intent intent = new Intent(menuAdministrador.this, menuCadastroNovoFuncionario.class);
         startActivity(intent);

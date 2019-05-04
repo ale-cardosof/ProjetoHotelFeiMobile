@@ -292,5 +292,4 @@ public class Arvore_user{
         }
         return Long.parseLong(provisorio);
     }
-
 }
