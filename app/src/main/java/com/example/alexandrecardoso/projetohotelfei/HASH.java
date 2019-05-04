@@ -1,21 +1,24 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import android.text.format.DateFormat;
 
 public class HASH{
     // Vetor em que cada posição é uma LDE diferente
-    public LDE<Integer> vetorHash[];
+    //public LDE_Reserva[] vetorHash = new LDE_Reserva[31];
+    private int MAX = 31;
+    public NoLDE_Reserva vetorHash[] = new NoLDE_Reserva[MAX];
     public int numInseridos;
-    public int MAX;
 
     // Construtor
-    public HASH(int MAX){
-        vetorHash = (LDE<Integer>[]) new Object[MAX];
+    public HASH(){
+        for(int i = 0; i < MAX; i++)
+           vetorHash[i] = new NoLDE_Reserva();
+
         this.numInseridos = 0;
-        this.MAX = MAX;
     }
 
     // Função Insere
-    boolean insere(int x){
+    boolean insere(Reserva x){
         if (numInseridos < MAX){
             // Função Hash
             int posicao = this.hash(x);
@@ -29,29 +32,42 @@ public class HASH{
     }
 
     // Função Hash
-    int hash(int x){
-        return ( x % MAX);
-    }
-
-    // Função Imprime
-    void imprime(){
-        System.out.println("---- My Hash Table ---- ");
-        for(int i=0 ; i < MAX ; i++){
-            vetorHash[i].imprime();
-        }
-        System.out.println("---- Finish ---- ");
+    int hash(Reserva x){
+        int dia  = Integer.parseInt((String)DateFormat.format("dd", x.getDtEntrada()));
+        return ( dia % MAX);
     }
 
     // Função Busca
-    NoLDE<Integer> busca(int x){
+    NoLDE_Reserva busca(Reserva x){
         int posicaoHash = this.hash(x);
         return (vetorHash[posicaoHash].getByValor(x)); // Busca pelo valor e traz No
     }
 
+    Reserva buscaById(int id){
+        for(int i = 0; i < MAX; i++){
+            Reserva reserAux = vetorHash[i].buscaById(id);
+            if (reserAux != null)
+                return reserAux;
+        }
+        return null; // Busca pelo valor e traz No
+    }
+
     // Função Remove
-    boolean remove(int x){
+    boolean remove(Reserva x){
         int posicaoHash = this.hash(x);
         return (vetorHash[posicaoHash].removeByNo(x)); // Remove pelo valor e retorna int
     }
 
+    NoLDE_Reserva imprimeTodasReservas(){
+        NoLDE_Reserva listaReserva = new NoLDE_Reserva();
+        for(int i = 0; i < MAX; i++){
+            NoLDE_Reserva reserAux = vetorHash[i];
+            while (reserAux != null){
+                if (reserAux.getValor() != null)
+                    listaReserva.insere(reserAux.getValor());
+                reserAux = reserAux.getProx();
+            }
+        }
+        return listaReserva; // Busca pelo valor e traz No
+    }
 };

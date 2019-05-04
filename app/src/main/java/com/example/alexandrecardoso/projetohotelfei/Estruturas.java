@@ -1,9 +1,6 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
-import android.text.format.DateFormat;
 import android.util.Log;
-
-import java.util.ArrayList;
 import java.util.Date;
 
 // Classe que guardará todas as estruturas do aplicativo
@@ -15,9 +12,9 @@ public class Estruturas{
     public static Arvore_user usuariosCadastrados = new Arvore_user();
     public static Arvore_adm admsCadastrados = new Arvore_adm();
     public static infoLogado logado = new infoLogado("",0);
-    public static LDE<Reserva> ldeReservas = new LDE<>();
+    //public static LDE<Reserva> ldeReservas = new LDE<>();
     public static MensagemToast tela = new MensagemToast();
-
+    public static HASH hash_reservas = new HASH();
 
     public static void criaEstru (){
         criaQuartos();
@@ -98,20 +95,42 @@ public class Estruturas{
         ldeQuartos.insere(q);
 
         Date dtEntrada = new Date(2019 - 1900, 5, 1);
+        Date dtEntrada2 = new Date(2017 - 1900, 7, 8);
         Date dtSaida = new Date(2019 - 1900, 5, 4);
 
         Reserva r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
 
-        LDE_Reserva lde_reserva_hash = new LDE_Reserva();
-        lde_reserva_hash.insere(r1);
-        r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(3), 150);
+        //LDE_Reserva lde_reserva_hash = new LDE_Reserva();
+        hash_reservas.insere(r1);
 
-        ldeReservas.insere(r1);
+        Reserva r2 = new Reserva(dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
+        hash_reservas.insere(r2);
+        Reserva r3 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
+        hash_reservas.insere(r3);
+        Reserva r4 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
+        hash_reservas.insere(r4);
 
-        Reserva r2 = lde_reserva_hash.getByIndex(0);
 
-        Log.d("HASH", "" + r2.getIdReserva());
+        /*
+        Log.d("HASH", "---------------------------------- MAIN");
+        if (hash_reservas.busca(r1) != null)
+            Log.d("HASH", ""+hash_reservas.busca(r3).getValor().getIdReserva());
+        if (hash_reservas.busca(r4) != null)
+            Log.d("HASH", ""+hash_reservas.busca(r4).getValor().getIdReserva());
+        if (hash_reservas.busca(r1) != null)
+            Log.d("HASH", ""+hash_reservas.busca(r1).getValor().getIdReserva());
+        if (hash_reservas.busca(r2) != null)
+            Log.d("HASH", ""+hash_reservas.busca(r2).getValor().getIdReserva());
+        Log.d("HASH", "---------------------------------- MAIN");
 
+        Reserva r10 = hash_reservas.buscaById(2);
+
+        if (r10 != null)
+            Log.d("HASH", ""+r10.getIdReserva() + " va" + r10.getDtEntrada());
+
+        NoLDE_Reserva lista =  hash_reservas.imprimeTodasReservas();
+
+        Log.d("HASH", " lista " + lista.getSize());*/
     }
 
 
