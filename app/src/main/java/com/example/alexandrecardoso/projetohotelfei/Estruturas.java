@@ -1,5 +1,6 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 // Classe que guardará todas as estruturas do aplicativo
@@ -8,9 +9,9 @@ public class Estruturas{
 
     public static boolean criado = false;
     public static LDE<Quarto> alQuartos = new LDE<>();
-    public static LES_adm admsCadastrados = new LES_adm();
-    public static infoLogado logado = new infoLogado("",0,0);
     public static Arvore_user usuariosCadastrados = new Arvore_user();
+    public static Arvore_adm admsCadastrados = new Arvore_adm();
+    public static infoLogado logado = new infoLogado("",0);
 
     public static void criaEstru (){
         criaQuartos();
@@ -79,17 +80,17 @@ public class Estruturas{
         Date dtEntrada = new Date(2019 - 1900, 5, 1);
         Date dtSaida = new Date(2019 - 1900, 5, 4);
         Reserva r1 = new Reserva(dtEntrada,dtSaida, alQuartos.getByIndex(1), 150);
-        logado.user.setMinhasReservas(r1);
+        ((Usuario)(logado.user)).setMinhasReservas(r1);
 
         dtEntrada = new Date(2019 - 1900, 7, 5);
         dtSaida = new Date(2019 - 1900, 7, 3);
         r1 = new Reserva(dtEntrada,dtSaida, alQuartos.getByIndex(2), 400);
-        logado.user.setMinhasReservas(r1);
+        ((Usuario)(logado.user)).setMinhasReservas(r1);
 
         dtEntrada = new Date(2019 - 1900, 8, 2);
         dtSaida = new Date(2019 - 1900, 8, 4);
         r1 = new Reserva(dtEntrada,dtSaida, alQuartos.getByIndex(3), 180);
-        logado.user.setMinhasReservas(r1);
+        ((Usuario)(logado.user)).setMinhasReservas(r1);
     }
 
     public static void destroiEstrutura(){

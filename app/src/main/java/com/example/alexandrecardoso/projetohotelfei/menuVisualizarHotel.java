@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.logado;
+
 
 public class menuVisualizarHotel extends AppCompatActivity {
     TextView quartosDisponiveis,quantosPreReservados,quartosReservados,quartosTotal;
@@ -14,7 +16,7 @@ public class menuVisualizarHotel extends AppCompatActivity {
         setContentView(R.layout.activity_menu_visualizar_hotel);
         getSupportActionBar().hide();
         // Verifica se esta logado
-        if(Estruturas.logado.tipoUser == 1){
+        if(logado.tipoUser == 1){
             // Cria conecções
             quartosDisponiveis = findViewById(R.id.quartosDisponiveis);
             quantosPreReservados = findViewById(R.id.quantosPreReservados);
@@ -28,10 +30,10 @@ public class menuVisualizarHotel extends AppCompatActivity {
             int total = 0;
 
             // Calcula valores
-            disp = Estruturas.admsCadastrados.v[Estruturas.logado.posicao].getMeuHotel().getNumQuartosDisponiveis();
-            pre = Estruturas.admsCadastrados.v[Estruturas.logado.posicao].getMeuHotel().getNumQuartosPreReservados();
-            reserv = Estruturas.admsCadastrados.v[Estruturas.logado.posicao].getMeuHotel().getNumQuartosReservados();
-            total = Estruturas.admsCadastrados.v[Estruturas.logado.posicao].getMeuHotel().getNumQuartosExistentes();
+            disp = ((Administrador)(Estruturas.logado.user)).getMeuHotel().getNumQuartosDisponiveis();
+            pre = ((Administrador)(Estruturas.logado.user)).getMeuHotel().getNumQuartosPreReservados();
+            reserv = ((Administrador)(Estruturas.logado.user)).getMeuHotel().getNumQuartosReservados();
+            total = ((Administrador)(Estruturas.logado.user)).getMeuHotel().getNumQuartosExistentes();
 
             // Altera valor da tela
             quartosDisponiveis.setText(Integer.toString(disp));
@@ -39,10 +41,10 @@ public class menuVisualizarHotel extends AppCompatActivity {
             quartosReservados.setText(Integer.toString(reserv));
             quartosTotal.setText(Integer.toString(total));
 
-        }else if(Estruturas.logado.tipoUser == 0){
+        }else if(logado.tipoUser == 0){
             // Deslogado
 
-        }else if(Estruturas.logado.tipoUser == 0){
+        }else if(logado.tipoUser == 0){
             // Logado como usuário (nunca deve acontecer, já que está tela é uma tela de adm)
         }
     }

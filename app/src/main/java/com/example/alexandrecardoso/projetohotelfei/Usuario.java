@@ -38,6 +38,7 @@ public class Usuario extends Pessoa {
     public void setMinhasReservas(Reserva novaReserva) {
         this.ldeMinhasReservas.insere(novaReserva);
     }
+
     public Usuario getEsquerda() {
         return esquerda;
     }

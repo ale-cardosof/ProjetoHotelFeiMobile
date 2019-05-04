@@ -32,7 +32,6 @@ public class menuCadastroNovoFuncionario extends AppCompatActivity {
         if(edUsuario.getText().toString().length() <= 6){
             Administrador novoUser = new Administrador(edUsuario.getText().toString(),edNome.getText().toString(),edCPF.getText().toString(),edData.getText().toString(),edEmail.getText().toString(),edCelular.getText().toString(),edSenha.getText().toString());
             Estruturas.admsCadastrados.insere(novoUser);
-            Estruturas.logado.atualizaPosicao(); // Atualizando a posição do Logado
             tela.exibir(getApplicationContext(),"Novo Administrador Cadastrado com sucesso.");
             Intent intent = new Intent(this, menuAdministrador.class);
             startActivity(intent);

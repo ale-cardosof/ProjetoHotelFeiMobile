@@ -13,7 +13,7 @@ public class UsuarioReservas extends AppCompatActivity {
         setContentView(R.layout.activity_usuario_reservas);
 
         ListView lista = findViewById(R.id.lvUsuarioReserva);
-        ArrayAdapter adapter = new ReservaAdapter(this, Estruturas.logado.user.getMinhasReservas());
+        ArrayAdapter adapter = new ReservaAdapter(this, ((Usuario)(Estruturas.logado.user)).getMinhasReservas());
         lista.setAdapter(adapter);
 
     }

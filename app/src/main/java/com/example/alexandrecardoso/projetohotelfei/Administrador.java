@@ -6,6 +6,9 @@ import java.util.ArrayList;
 
 public class Administrador extends Pessoa {
     /* Atributos */
+    private Administrador pai;
+    private Administrador esquerda; // Usados na árvore
+    private Administrador direita;
     private Hotel meuHotel = new Hotel(20);
 
     /* Métodos */
@@ -41,6 +44,42 @@ public class Administrador extends Pessoa {
     }
     // 4. Exibe Solicitações
     void exibeSolicita(){
+
+    }
+
+    public Administrador getEsquerda() {
+        return esquerda;
+    }
+
+    public void setEsquerda(Administrador esquerda) {
+        this.esquerda = esquerda;
+    }
+
+    public Administrador getDireita() {
+        return direita;
+    }
+
+    public void setDireita(Administrador direita) {
+        this.direita = direita;
+    }
+
+    public Administrador getPai() {
+        return pai;
+    }
+
+    public void setPai(Administrador pai) {
+        this.pai = pai;
+    }
+
+    public void copiaUser(Administrador clone){
+        this.setUsername(clone.getUsername());
+        this.setNome(clone.getNome());
+        this.setCpf(clone.getCpf());
+        this.setDataNascimento(clone.getDataNascimento());
+        this.setEmail(clone.getEmail());
+        this.setCelular(clone.getCelular());
+        this.setSenha(clone.getSenha());
+        this.setUsernameASC(clone.getUsernameASC());
 
     }
 
