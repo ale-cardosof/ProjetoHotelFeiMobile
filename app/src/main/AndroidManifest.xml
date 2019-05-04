@@ -11,8 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".usuario_editarSenha"></activity>
-        <activity android:name=".menuAlterarQuarto"></activity>
+        <activity android:name=".CheckAdmRealiza"></activity>
+        <activity android:name=".CheckInAdm_listar" />
+        <activity android:name=".CheckInAdm_BuscarUser" />
+        <activity android:name=".CheckInAdm" />
+        <activity android:name=".usuario_editarSenha" />
+        <activity android:name=".menuAlterarQuarto" />
         <activity android:name=".usuario_editarinfo" />
         <activity android:name=".menuInsercaoQuarto" />
         <activity android:name=".cadastroUser" />

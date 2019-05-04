@@ -102,15 +102,15 @@ public class Estruturas{
 
         Reserva r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
 
-        LDE_Reserva lde_reserva_hash = new LDE_Reserva();
-        lde_reserva_hash.insere(r1);
+        //LDE_Reserva lde_reserva_hash = new LDE_Reserva();
+        //lde_reserva_hash.insere(r1);
         r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(3), 150);
 
         ldeReservas.insere(r1);
 
-        Reserva r2 = lde_reserva_hash.getByIndex(0);
+        //Reserva r2 = lde_reserva_hash.getByIndex(0);
 
-        Log.d("HASH", "" + r2.getIdReserva());
+        //Log.d("HASH", "" + r2.getIdReserva());
 
     }
 

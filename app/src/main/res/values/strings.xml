@@ -5,4 +5,5 @@
     <string name="visualizaHotel_msgUm">Bem-Vindo a tela de visualização do Hotel. Abaixo, o status atual do seu hotel.</string>
     <string name="aviso_qntd">*Limite de 8 caracteres</string>
     <string name="title_activity_teste">teste</string>
+    <string name="areaLogin">Área \n de \n Check-IN e Check-OUT</string>
 </resources>
