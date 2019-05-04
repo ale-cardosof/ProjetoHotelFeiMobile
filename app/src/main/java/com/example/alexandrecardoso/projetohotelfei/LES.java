@@ -97,7 +97,7 @@ public class LES{
         String provisorio = "";
         char[] ascii2 = entrada.toCharArray();
         for(char ch:ascii2){
-            provisorio = provisorio + (int)ch;
+            provisorio = provisorio + ((int)ch - 48);
         }
         return Long.parseLong(provisorio);
     }

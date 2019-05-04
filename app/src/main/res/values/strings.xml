@@ -3,6 +3,6 @@
     <string name="login_adm">Bem-Vindo Administrador! Utilize os campos abaixo para realizar seu login.</string>
     <string name="login_user">Bem-Vindo Usuário! Utilize os campos abaixo para realizar seu login ou, se for novo aqui, selecione novo cadastro.</string>
     <string name="visualizaHotel_msgUm">Bem-Vindo a tela de visualização do Hotel. Abaixo, o status atual do seu hotel.</string>
-    <string name="aviso_qntd">*Limite de 6 caracteres</string>
+    <string name="aviso_qntd">*Limite de 8 caracteres</string>
     <string name="title_activity_teste">teste</string>
 </resources>

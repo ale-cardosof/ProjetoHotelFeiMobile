@@ -27,11 +27,14 @@ abstract public class Pessoa {
     }
 
     public Long geraAsc(String entrada) {
+        if(entrada.length() > 8){
+            return Long.parseLong("0");
+        }
         /* Converte String pra ASC */
         String provisorio = "";
         char[] ascii2 = entrada.toCharArray();
         for(char ch:ascii2){
-            provisorio = provisorio + (int)ch;
+            provisorio = provisorio + ((int)ch - 48); // Fazemos -47 pois queremos a tabela ASC a partir do 0
         }
         return Long.parseLong(provisorio);
     }
