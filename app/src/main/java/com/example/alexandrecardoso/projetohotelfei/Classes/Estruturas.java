@@ -29,9 +29,10 @@ public class Estruturas{
     public static HASH hash_reservas = new HASH();
 
     public static void criaEstru (){
-        criaQuartos();
+        //criaQuartos();
         insereUsuarios();
         criarAdm();
+        //criaHotel();
         criado = true;
     }
 
@@ -150,4 +151,8 @@ public class Estruturas{
         admsCadastrados.insere(admInicial);
     }
 
+    public  static  void criaHotel(){
+
+        Hotel nossoHotel = new Hotel(30);
+    }
 }

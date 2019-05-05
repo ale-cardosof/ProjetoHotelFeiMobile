@@ -8,10 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
 import com.example.alexandrecardoso.projetohotelfei.R;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
+
+import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.logado;
 
 public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosInsert.MyViewHolder> {
 
@@ -32,11 +35,16 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        Quarto quarto = Estruturas.ldeQuartos.getByIndex(i);
+        //Quarto quarto = Estruturas.ldeQuartos.getByIndex(i);
+        Quarto quarto = ((Administrador)(logado.user)).getMeuHotel().getQuartos().getByIndex(0);
         myViewHolder.numeroPorta.setText("Numero da porta: " +quarto.getNumPorta());
         myViewHolder.valorDiaria.setText("Valor da diária: R$"+quarto.getValorDiaria());
         myViewHolder.quantidadeCama.setText("Quantidade de cama:" + quarto.getQntdCamas());
         myViewHolder.quantidadeChuveiro.setText("Numero de chuveiro:" + quarto.getQntdChuveiros());
+        if(quarto.isPossuiTv())
+            myViewHolder.possuiTV.setText("Possui TV");
+        else
+            myViewHolder.possuiTV.setText("Não possui TV");
         myViewHolder.imgQuartos1.setImageBitmap(quarto.retornaImagem(0));
         myViewHolder.imgQuartos2.setImageBitmap(quarto.retornaImagem(1));
         myViewHolder.imgQuartos3.setImageBitmap(quarto.retornaImagem(2));
