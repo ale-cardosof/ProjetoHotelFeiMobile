@@ -23,11 +23,12 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             Manifest.permission.CAMERA
     };
     private EditText edNumPorta, edValorDiaria, edAvaliacao, edqdtCama, edqtdChuveiro;
-    private ImageButton imgCamera, imgGaleria;
-    private ImageView imgQuarto1;
+    private ImageButton imgCamera,imgCamera2,imgCamera3,imgCamera4,imgCamera5, imgGaleria, imgGaleria2, imgGaleria3, imgGaleria4,imgGaleria5;
+    private ImageView imgQuarto1,imgQuarto2,imgQuarto3,imgQuarto4,imgQuarto5;
     private  static  final int SELECAO_CAMERA = 100;
     private  static  final int SELECAO_GALERIA = 200;
     private static Quarto novoQuarto = new Quarto();
+    private static int posImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +38,23 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         edValorDiaria = findViewById(R.id.edValorDiaria);
         edqdtCama = findViewById(R.id.edQtdCama);
         edqtdChuveiro = findViewById(R.id.edqtdChuveiro);
+
         imgCamera = findViewById(R.id.imgCamera);
+        imgCamera2 = findViewById(R.id.imgCamera2);
+        imgCamera3 = findViewById(R.id.imgCamera3);
+        imgCamera4 = findViewById(R.id.imgCamera4);
+        imgCamera5 = findViewById(R.id.imgCamera5);
         imgGaleria = findViewById(R.id.imgGaleria);
+        imgGaleria2 = findViewById(R.id.imgGaleria2);
+        imgGaleria3 = findViewById(R.id.imgGaleria3);
+        imgGaleria4 = findViewById(R.id.imgGaleria4);
+        imgGaleria5 = findViewById(R.id.imgGaleria5);
         imgQuarto1 = findViewById(R.id.imgQuarto1);
+        imgQuarto2 = findViewById(R.id.imgQuarto2);
+        imgQuarto3 = findViewById(R.id.imgQuarto3);
+        imgQuarto4 = findViewById(R.id.imgQuarto4);
+        imgQuarto5 = findViewById(R.id.imgQuarto5);
+
 
         // Retira barra superior com o nome do app
         getSupportActionBar().hide();
@@ -51,8 +66,10 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if(i.resolveActivity(getPackageManager()) != null) {
+                    posImg=0;
                     //Start a activity e restaura a foto
                     startActivityForResult(i, SELECAO_CAMERA);
+
                 }
 
             }
@@ -63,22 +80,110 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 if(i.resolveActivity(getPackageManager()) != null) {
+                    posImg=0;
                     //Start a activity e restaura a foto
                     startActivityForResult(i, SELECAO_GALERIA);
                 }
             }
         });
 
-        imgGaleria.setOnClickListener(new View.OnClickListener(){
+        imgCamera2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if(i.resolveActivity(getPackageManager()) != null) {
+                    posImg=1;
+                    //Start a activity e restaura a foto
+                    startActivityForResult(i, SELECAO_CAMERA);
+
+                }
+
+            }
+        });
+        imgGaleria2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 if(i.resolveActivity(getPackageManager()) != null) {
+                    posImg=1;
                     //Start a activity e restaura a foto
                     startActivityForResult(i, SELECAO_GALERIA);
                 }
             }
         });
+        imgCamera3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if(i.resolveActivity(getPackageManager()) != null) {
+                    posImg=2;
+                    //Start a activity e restaura a foto
+                    startActivityForResult(i, SELECAO_CAMERA);
+
+                }
+
+            }
+        });
+        imgGaleria3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                if(i.resolveActivity(getPackageManager()) != null) {
+                    posImg=2;
+                    //Start a activity e restaura a foto
+                    startActivityForResult(i, SELECAO_GALERIA);
+                }
+            }
+        });
+        imgCamera4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if(i.resolveActivity(getPackageManager()) != null) {
+                    posImg=3;
+                    //Start a activity e restaura a foto
+                    startActivityForResult(i, SELECAO_CAMERA);
+
+                }
+
+            }
+        });
+        imgGaleria4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                if(i.resolveActivity(getPackageManager()) != null) {
+                    posImg=3;
+                    //Start a activity e restaura a foto
+                    startActivityForResult(i, SELECAO_GALERIA);
+                }
+            }
+        });
+        imgCamera5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if(i.resolveActivity(getPackageManager()) != null) {
+                    posImg=4;
+                    //Start a activity e restaura a foto
+                    startActivityForResult(i, SELECAO_CAMERA);
+
+                }
+
+            }
+        });
+        imgGaleria5.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                if(i.resolveActivity(getPackageManager()) != null) {
+                    posImg=4;
+                    //Start a activity e restaura a foto
+                    startActivityForResult(i, SELECAO_GALERIA);
+                }
+            }
+        });
+
 
     }
 
@@ -92,23 +197,38 @@ public class menuInsercaoQuarto extends AppCompatActivity {
 
         if(resultCode == RESULT_OK){
             Bitmap imagem = null;
-            novoQuarto.adicionaImagem(imagem);
+            novoQuarto.adicionaImagem(imagem,posImg);
+
             try{
                 switch (requestCode){
                     case SELECAO_CAMERA:
                         imagem = (Bitmap) data.getExtras().get("data");
-                        novoQuarto.adicionaImagem(imagem);
+                        novoQuarto.adicionaImagem(imagem,posImg);
 
                         break;
                     case SELECAO_GALERIA:
                         Uri localImagemSelecionada = data.getData();
                         imagem = MediaStore.Images.Media.getBitmap(getContentResolver(), localImagemSelecionada);
-                        novoQuarto.adicionaImagem(imagem);
+                        novoQuarto.adicionaImagem(imagem,posImg);
                         break;
                 }
 
                 if(imagem != null){
-                    imgQuarto1.setImageBitmap(imagem);
+                    if(posImg==0) {
+                        imgQuarto1.setImageBitmap(imagem);
+                    }
+                    if(posImg==1) {
+                        imgQuarto2.setImageBitmap(imagem);
+                    }
+                    if(posImg==2) {
+                        imgQuarto3.setImageBitmap(imagem);
+                    }
+                    if(posImg==3) {
+                        imgQuarto4.setImageBitmap(imagem);
+                    }
+                    if(posImg==4) {
+                        imgQuarto5.setImageBitmap(imagem);
+                    }
 
                 }
             }catch(Exception e){
@@ -138,6 +258,11 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         edValorDiaria.setText("");
         edqdtCama.setText("");
         edqtdChuveiro.setText("");
+        imgQuarto1.setImageBitmap(null);
+        imgQuarto2.setImageBitmap(null);
+        imgQuarto3.setImageBitmap(null);
+        imgQuarto4.setImageBitmap(null);
+        imgQuarto5.setImageBitmap(null);
     }
 
     public boolean verificaPreenchimento(){

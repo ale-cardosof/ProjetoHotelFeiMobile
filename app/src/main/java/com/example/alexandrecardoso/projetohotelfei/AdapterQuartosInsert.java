@@ -10,9 +10,10 @@ import android.widget.TextView;
 
 public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosInsert.MyViewHolder> {
 
-    LDE<Quarto> ldeQuartos = new LDE<>();
+    LDE<Quarto> ldeQuartos;
 
     public AdapterQuartosInsert(LDE<Quarto> listQuarto) {
+
         this.ldeQuartos = listQuarto;
     }
 
@@ -32,11 +33,16 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
         myViewHolder.quantidadeCama.setText("Quantidade de cama:" + quarto.getQntdCamas());
         myViewHolder.quantidadeChuveiro.setText("Numero de chuveiro:" + quarto.getQntdChuveiros());
         myViewHolder.imgQuartos1.setImageBitmap(quarto.retornaImagem(0));
+        myViewHolder.imgQuartos2.setImageBitmap(quarto.retornaImagem(1));
+        myViewHolder.imgQuartos3.setImageBitmap(quarto.retornaImagem(2));
+        myViewHolder.imgQuartos4.setImageBitmap(quarto.retornaImagem(3));
+        myViewHolder.imgQuartos5.setImageBitmap(quarto.retornaImagem(4));
 
     }
 
     @Override
     public int getItemCount() {
+
         return ldeQuartos.getSize();
     }
 

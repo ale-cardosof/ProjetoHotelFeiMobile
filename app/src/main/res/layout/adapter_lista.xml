@@ -62,7 +62,6 @@
             android:id="@+id/imgQuartos2"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:layout_weight="1"
             app:srcCompat="@drawable/border_laranja" />
 
         <ImageView
