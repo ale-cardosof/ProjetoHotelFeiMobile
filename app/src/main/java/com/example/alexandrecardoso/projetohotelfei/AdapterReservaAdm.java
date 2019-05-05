@@ -11,14 +11,14 @@ import android.widget.TextView;
 
 import java.text.DateFormat;
 
-public class ReservaAdapter extends ArrayAdapter<Reserva> {
+public class AdapterReservaAdm extends ArrayAdapter<Reserva> {
 
     private final Context context;
     private final LDE<Reserva> ldeReserva;
     private Reserva reservaAtual;
 
-    public ReservaAdapter(Context context, LDE<Reserva>  ldeReserva){
-        super(context, R.layout.layout_usuario_reservas_item);
+    public AdapterReservaAdm(Context context, LDE<Reserva>  ldeReserva){
+        super(context, R.layout.activity_check_in_adm__buscar_user);
         this.context = context;
         this.ldeReserva = ldeReserva;
     }
@@ -26,7 +26,7 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.layout_usuario_reservas_item, parent, false);
+        View rowView = inflater.inflate(R.layout.layout_checkin, parent, false);
 
         if (position % 2 == 0) {
             rowView.setBackgroundColor(Color.parseColor("#4D808080"));
@@ -39,14 +39,27 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
 
         ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageResource(
                 reservaAtual.getQuartoReserva().getImagemQuarto());
-        ((TextView)rowView.findViewById(R.id.nomeDoUsuario)).setText(String.valueOf(
+
+        ((TextView)rowView.findViewById(R.id.username3)).setText(String.valueOf(
+                reservaAtual.getUsuario()));
+
+        ((TextView)rowView.findViewById(R.id.idReserva)).setText(String.valueOf(
+                reservaAtual.getIdReserva()));
+
+        ((TextView)rowView.findViewById(R.id.idQuarto)).setText(String.valueOf(
                 reservaAtual.getQuartoReserva().getNumPorta()));
-        ((TextView)rowView.findViewById(R.id.boolCheckIN)).setText(String.valueOf(
-                reservaAtual.getValor()));
-        ((TextView)rowView.findViewById(R.id.idQuarto)).setText(dateFormat.format(
-                reservaAtual.getDtEntrada()));
+
         ((TextView)rowView.findViewById(R.id.dtEntrada)).setText(dateFormat.format(
+                reservaAtual.getDtEntrada()));
+
+        ((TextView)rowView.findViewById(R.id.dtSaida)).setText(dateFormat.format(
                 reservaAtual.getDtSaida()));
+
+        ((TextView)rowView.findViewById(R.id.dtCheckIn)).setText(reservaAtual.isCheckin() ? "Sim" : "Não");
+
+        ((TextView)rowView.findViewById(R.id.dtCheckout)).setText(reservaAtual.isCheckout() ? "Sim" : "Não");
+
+        ((TextView)rowView.findViewById(R.id.vlrTotal)).setText(String.valueOf(reservaAtual.getValor()));
 
         return rowView;
     }
@@ -55,4 +68,5 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
     public int getCount() {
         return ldeReserva.getSize();
     }
+
 }

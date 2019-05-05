@@ -96,16 +96,16 @@ public class Estruturas{
         Date dtEntrada2 = new Date(2017 - 1900, 7, 8);
         Date dtSaida = new Date(2019 - 1900, 5, 4);
 
-        Reserva r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
+        Reserva r1 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
 
         //LDE_Reserva lde_reserva_hash = new LDE_Reserva();
         hash_reservas.insere(r1);
 
-        Reserva r2 = new Reserva(dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
+        Reserva r2 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
         hash_reservas.insere(r2);
-        Reserva r3 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
+        Reserva r3 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
         hash_reservas.insere(r3);
-        Reserva r4 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
+        Reserva r4 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
         hash_reservas.insere(r4);
 
 
@@ -136,21 +136,21 @@ public class Estruturas{
 
         Date dtEntrada = new Date(2019 - 1900, 5, 1);
         Date dtSaida = new Date(2019 - 1900, 5, 4);
-        Reserva r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
+        Reserva r1 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
         ((Usuario)(logado.user)).setMinhasReservas(r1);
-        hash_reservas.insere(r1); // Insere dentro da hash
+        //hash_reservas.insere(r1); // Insere dentro da hash
 
         dtEntrada = new Date(2019 - 1900, 7, 5);
         dtSaida = new Date(2019 - 1900, 7, 3);
-        r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(2), 400);
+        r1 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(2), 400);
         ((Usuario)(logado.user)).setMinhasReservas(r1);
-        hash_reservas.insere(r1); // Insere dentro da hash
+        //hash_reservas.insere(r1); // Insere dentro da hash
 
         dtEntrada = new Date(2019 - 1900, 8, 2);
         dtSaida = new Date(2019 - 1900, 8, 4);
-        r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(3), 180);
+        r1 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(3), 180);
         ((Usuario)(logado.user)).setMinhasReservas(r1);
-        hash_reservas.insere(r1); // Insere dentro da hash
+        //hash_reservas.insere(r1); // Insere dentro da hash
     }
 
     public static void destroiEstrutura(){
@@ -169,6 +169,15 @@ public class Estruturas{
 
         Usuario userTres = new Usuario("filipi","Filipi Guimares Silva","123456789",
                 "01/01/2019","user@user.com.br","11954546565","filipi");
+        Date dtEntrada = new Date(2019 - 1900, 5, 1);
+        Date dtSaida = new Date(2019 - 1900, 5, 4);
+        Reserva r1 = new Reserva( logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
+        userTres.setMinhasReservas(r1);
+
+        dtEntrada = new Date(2019 - 1900, 5, 8);
+        dtSaida = new Date(2019 - 1900, 5, 12);
+        r1 = new Reserva( logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(3), 450);
+        userTres.setMinhasReservas(r1);
         usuariosCadastrados.insere(userTres);
 
         Usuario userQuatro = new Usuario("serain","Lucas Machado Serain","123456789",
