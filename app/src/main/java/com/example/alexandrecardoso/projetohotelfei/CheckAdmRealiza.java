@@ -56,9 +56,5 @@ public class CheckAdmRealiza extends AppCompatActivity {
             // Nesse caso já foi feito checkOut, fechando o pedido
             Estruturas.tela.exibir(getApplicationContext(),"Esta reserva já foi finalizada!");
         }
-        // Volta para a tela de busca
-        Intent intent = new Intent(CheckAdmRealiza.this, CheckInAdm_BuscarUser.class);
-        startActivity(intent);
-
     }
 }

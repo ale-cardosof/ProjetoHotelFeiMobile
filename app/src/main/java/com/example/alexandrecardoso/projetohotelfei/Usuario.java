@@ -22,7 +22,6 @@ public class Usuario extends Pessoa {
         return (this.ldeMinhasReservas.getSize());
     }
 
-
     public LDE<Reserva> getMinhasReservas() {
         return ldeMinhasReservas;
     }
@@ -45,7 +44,7 @@ public class Usuario extends Pessoa {
 
     public void setMinhasReservas(Reserva novaReserva) {
         this.ldeMinhasReservas.insere(novaReserva);
-        //Estruturas.hash_reservas.insere(novaReserva);
+        Estruturas.hash_reservas.insereHash(novaReserva);
     }
 
     public Usuario getEsquerda() {

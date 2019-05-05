@@ -30,7 +30,7 @@
         <activity android:name=".loginUser" />
         <activity android:name=".menuCadastroNovoFuncionario" />
         <activity android:name=".menuVisualizarHotel" />
-        <activity android:name=".menuAdministrador" /> <!-- <activity android:name=".teste"></activity>! -->
+        <activity android:name=".menuAdministrador" />
         <activity android:name=".loginAdm" />
         <activity android:name=".UsuarioNovaReserva" />
         <activity android:name=".UsuarioReservas" />

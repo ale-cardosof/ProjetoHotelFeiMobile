@@ -99,60 +99,6 @@ public class Estruturas{
         Date dtEntrada2 = new Date(2017 - 1900, 7, 8);
         Date dtEntrada3 = new Date(2017 - 1900, 7, 9);
         Date dtSaida = new Date(2019 - 1900, 5, 4);
-
-        Reserva r1 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
-
-        //LDE_Reserva lde_reserva_hash = new LDE_Reserva();
-        hash_reservas.insereHash(r1);
-        Reserva r2 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
-        hash_reservas.insereHash(r2);
-        Reserva r3 = new Reserva(logado.username, dtEntrada3,dtSaida, ldeQuartos.getByIndex(1), 150);
-        hash_reservas.insereHash(r3);
-        Reserva r4 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
-        hash_reservas.insereHash(r4);
-        r4 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
-        hash_reservas.insereHash(r4);
-        r4 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
-        hash_reservas.insereHash(r4);
-        r4 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
-        hash_reservas.insereHash(r4);
-        r4 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
-        hash_reservas.insereHash(r4);
-
-        Log.d("HASHESTRUTURAS", " 4 "+ hash_reservas.getTodasReservas().getSize());
-
-        Log.d("HASHESTRUTURAS", " -              ==");
-
-        /*
-        if(hash_reservas.buscaById(0) != null)
-            Log.d("HASHESTRUTURAS", ""+ hash_reservas.buscaById(0).getIdReserva());
-        if(hash_reservas.buscaById(1) != null)
-            Log.d("HASHESTRUTURAS", ""+ hash_reservas.buscaById(1).getIdReserva());
-        if(hash_reservas.buscaById(2) != null)
-            Log.d("HASHESTRUTURAS", ""+ hash_reservas.buscaById(2).getIdReserva());
-        if(hash_reservas.buscaById(3) != null)
-            Log.d("HASHESTRUTURAS", ""+ hash_reservas.buscaById(3).getIdReserva());
-        Log.d("HASHESTRUTURAS", " -              =="+ hash_reservas.buscaById(3).getIdReserva());
-        /*
-        Log.d("HASH", "---------------------------------- MAIN");
-        if (hash_reservas.busca(r1) != null)
-            Log.d("HASH", ""+hash_reservas.busca(r3).getValor().getIdReserva());
-        if (hash_reservas.busca(r4) != null)
-            Log.d("HASH", ""+hash_reservas.busca(r4).getValor().getIdReserva());
-        if (hash_reservas.busca(r1) != null)
-            Log.d("HASH", ""+hash_reservas.busca(r1).getValor().getIdReserva());
-        if (hash_reservas.busca(r2) != null)
-            Log.d("HASH", ""+hash_reservas.busca(r2).getValor().getIdReserva());
-        Log.d("HASH", "---------------------------------- MAIN");
-
-        Reserva r10 = hash_reservas.buscaById(2);
-
-        if (r10 != null)
-            Log.d("HASH", ""+r10.getIdReserva() + " va" + r10.getDtEntrada());
-
-        NoLDE_Reserva lista =  hash_reservas.imprimeTodasReservas();
-
-        Log.d("HASH", " lista " + lista.getSize());*/
     }
 
     public static void destroiEstrutura(){
