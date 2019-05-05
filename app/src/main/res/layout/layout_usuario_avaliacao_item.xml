@@ -5,10 +5,18 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="398dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/borda_linear_layout"
         android:orientation="vertical">
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="2.4"
+            android:stepSize="1.0" />
 
         <TextView
             android:id="@+id/lblTituloAvaliacao"
@@ -32,17 +40,18 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/lblMensagemAvaliacao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:text="lblMensagemAvaliacao"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#000000" />
+            android:layout_marginLeft="10dp"
+            android:ems="10"
+            android:enabled="false"
+            android:gravity="start|top"
+            android:hint="Mensagem"
+            android:inputType="textMultiLine"
+            android:textColor="#000C0B0B" />
 
     </LinearLayout>
 

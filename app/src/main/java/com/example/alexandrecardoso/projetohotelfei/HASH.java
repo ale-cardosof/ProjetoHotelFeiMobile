@@ -1,7 +1,6 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
 import android.text.format.DateFormat;
-import android.util.Log;
 
 public class HASH{
     // Vetor em que cada posição é uma LDE diferente
@@ -11,16 +10,13 @@ public class HASH{
 
     // Construtor
     public HASH(){
-        vetorHash[1] = new NoLDE_Reserva();
     }
 
     // Função Insere
     boolean insereHash(Reserva x){
         // Função Hash
-        Log.d("HASHESTRUTURAS", " ------------------------COMEÇO-----------------------");
         int posicao = this.hash(x);
         // Inserção
-        Log.d("HASHESTRUTURAS", " -------"+vetorHash[posicao]+"------ Inseriuy n ["+posicao+"] o " + x.getIdReserva());
         if (vetorHash[posicao] == null)
             vetorHash[posicao] = new NoLDE_Reserva();
 
@@ -42,9 +38,11 @@ public class HASH{
 
     Reserva buscaById(int id){
         for(int i = 0; i < MAX; i++){
-            Reserva reserAux = vetorHash[i].buscaById(id);
-            if (reserAux != null)
-                return reserAux;
+            if ( vetorHash[i] != null) {
+                Reserva reserAux = vetorHash[i].buscaById(id);
+                if (reserAux != null)
+                    return reserAux;
+            }
         }
         return null; // Busca pelo valor e traz No
     }
@@ -55,14 +53,14 @@ public class HASH{
         return (vetorHash[posicaoHash].removeByNo(x)); // Remove pelo valor e retorna int
     }
 
-    NoLDE_Reserva getTodasReservas(){
-        NoLDE_Reserva listaReserva = new NoLDE_Reserva();
+    LDE<Reserva> getTodasReservas(){
+        LDE<Reserva> listaReserva = new LDE<>();
         for(int i = 0; i < MAX; i++){
             if(vetorHash[i] != null) {
                 No<Reserva> reserAux = vetorHash[i].getByIndex(0);
                 while (reserAux != null) {
                     if (reserAux.getValor() != null)
-                        listaReserva.insereNo(reserAux.getValor());
+                        listaReserva.insere(reserAux.getValor());
                     reserAux = reserAux.getProximo();
                 }
             }
