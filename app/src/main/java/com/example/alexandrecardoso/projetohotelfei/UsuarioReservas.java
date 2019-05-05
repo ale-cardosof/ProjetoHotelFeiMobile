@@ -22,7 +22,6 @@ public class UsuarioReservas extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(UsuarioReservas.this, UsuarioAvaliacao.class);
-
                 int i = 0;
                 Quarto ptrQuarto = Estruturas.ldeQuartos.getByIndex(i);
                 int quartoNum = ((Usuario)(Estruturas.logado.user)).getMinhasReservas(position).getQuartoReserva().getNumPorta();

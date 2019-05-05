@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
 
 public class UsuarioMenu extends AppCompatActivity {
 

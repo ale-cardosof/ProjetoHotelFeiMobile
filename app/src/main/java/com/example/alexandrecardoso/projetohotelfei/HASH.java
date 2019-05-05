@@ -17,9 +17,13 @@ public class HASH{
         this.numInseridos = 0;
     }
 
+    public int getNumInseridos(){
+        return numInseridos;
+    }
+
     // Função Insere
     boolean insere(Reserva x){
-        if (numInseridos < MAX){
+        if (numInseridos < MAX){ // Verificar se deve existir
             // Função Hash
             int posicao = this.hash(x);
             // Inserção

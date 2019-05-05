@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.admsCadastrados;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
 
 public class menuCadastroNovoFuncionario extends AppCompatActivity {
     private EditText edUsuario, edNome, edCPF,edData, edEmail, edCelular, edSenha, edSenhaConf;
@@ -52,7 +53,7 @@ public class menuCadastroNovoFuncionario extends AppCompatActivity {
         // Se tudo estiver ok, cria o usuário
         if(preenchimento && senhas && caracterEspecial && tamanhoUserName && existencia){
             Administrador novoUser = new Administrador(edUsuario.getText().toString(),edNome.getText().toString(),edCPF.getText().toString(),edData.getText().toString(),edEmail.getText().toString(),edCelular.getText().toString(),edSenha.getText().toString());
-            Estruturas.admsCadastrados.insere(novoUser);
+            admsCadastrados.insere(novoUser);
             tela.exibir(getApplicationContext(),"Novo Administrador Cadastrado com sucesso.");
             Intent intent = new Intent(this, menuAdministrador.class);
             startActivity(intent);

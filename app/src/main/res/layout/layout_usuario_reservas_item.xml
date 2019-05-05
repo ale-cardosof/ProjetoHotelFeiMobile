@@ -23,7 +23,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/lblNumeroQuarto"
+                android:id="@+id/nomeDoUsuario"
                 android:layout_width="177dp"
                 android:layout_height="38dp"
                 android:text="Seu Quarto"
@@ -37,7 +37,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/QUARTO_TEXT"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:text="Data Entrada"
@@ -45,7 +45,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/lblDataEntrada"
+                android:id="@+id/idQuarto"
                 android:layout_width="61dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -67,7 +67,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/lblDataSaida"
+                android:id="@+id/dtEntrada"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -89,7 +89,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/lblValTotal"
+                android:id="@+id/boolCheckIN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

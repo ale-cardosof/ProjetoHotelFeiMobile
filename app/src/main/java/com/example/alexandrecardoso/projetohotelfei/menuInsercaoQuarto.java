@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
 
 public class menuInsercaoQuarto extends AppCompatActivity {
     private String[] permissoesNecessarias = new String[]{

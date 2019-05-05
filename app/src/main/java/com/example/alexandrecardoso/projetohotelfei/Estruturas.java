@@ -11,7 +11,6 @@ public class Estruturas{
     public static Arvore_user usuariosCadastrados = new Arvore_user();
     public static Arvore_adm admsCadastrados = new Arvore_adm();
     public static infoLogado logado = new infoLogado("",0);
-    //public static LDE<Reserva> ldeReservas = new LDE<>();
     public static MensagemToast tela = new MensagemToast();
     public static HASH hash_reservas = new HASH();
 
@@ -139,16 +138,19 @@ public class Estruturas{
         Date dtSaida = new Date(2019 - 1900, 5, 4);
         Reserva r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
         ((Usuario)(logado.user)).setMinhasReservas(r1);
+        hash_reservas.insere(r1); // Insere dentro da hash
 
         dtEntrada = new Date(2019 - 1900, 7, 5);
         dtSaida = new Date(2019 - 1900, 7, 3);
         r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(2), 400);
         ((Usuario)(logado.user)).setMinhasReservas(r1);
+        hash_reservas.insere(r1); // Insere dentro da hash
 
         dtEntrada = new Date(2019 - 1900, 8, 2);
         dtSaida = new Date(2019 - 1900, 8, 4);
         r1 = new Reserva(dtEntrada,dtSaida, ldeQuartos.getByIndex(3), 180);
         ((Usuario)(logado.user)).setMinhasReservas(r1);
+        hash_reservas.insere(r1); // Insere dentro da hash
     }
 
     public static void destroiEstrutura(){

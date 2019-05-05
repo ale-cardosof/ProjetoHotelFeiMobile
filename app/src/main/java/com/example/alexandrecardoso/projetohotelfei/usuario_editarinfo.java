@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.logado;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
 
 public class usuario_editarinfo extends AppCompatActivity {
     private EditText edNome, edCPF,edData, edEmail, edCelular;

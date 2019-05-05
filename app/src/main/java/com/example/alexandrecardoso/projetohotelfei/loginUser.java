@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
 
 public class loginUser extends AppCompatActivity {
     TextInputEditText input_username, input_password;

@@ -9,7 +9,6 @@ import static com.example.alexandrecardoso.projetohotelfei.Estruturas.logado;
 
 public class menuVisualizarHotel extends AppCompatActivity {
     TextView quartosDisponiveis,quantosPreReservados,quartosReservados,quartosTotal;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +29,10 @@ public class menuVisualizarHotel extends AppCompatActivity {
             int total = 0;
 
             // Calcula valores
-            disp = ((Administrador)(Estruturas.logado.user)).getMeuHotel().getNumQuartosDisponiveis();
-            pre = ((Administrador)(Estruturas.logado.user)).getMeuHotel().getNumQuartosPreReservados();
-            reserv = ((Administrador)(Estruturas.logado.user)).getMeuHotel().getNumQuartosReservados();
-            total = ((Administrador)(Estruturas.logado.user)).getMeuHotel().getNumQuartosExistentes();
+            disp = ((Administrador)(logado.user)).getMeuHotel().getNumQuartosDisponiveis();
+            pre = ((Administrador)(logado.user)).getMeuHotel().getNumQuartosPreReservados();
+            reserv = ((Administrador)(logado.user)).getMeuHotel().getNumQuartosReservados();
+            total = ((Administrador)(logado.user)).getMeuHotel().getNumQuartosExistentes();
 
             // Altera valor da tela
             quartosDisponiveis.setText(Integer.toString(disp));

@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.usuariosCadastrados;
 
 public class cadastroUser extends AppCompatActivity {
     private EditText edUsuario, edNome, edCPF,edData, edEmail, edCelular, edSenha, edSenhaConf;
@@ -49,7 +50,7 @@ public class cadastroUser extends AppCompatActivity {
         // Se tudo estiver ok, cria o usuário
         if(preenchimento && senhas && caracterEspecial && tamanhoUserName && existencia){
             Usuario novoUser = new Usuario(edUsuario.getText().toString(),edNome.getText().toString(),edCPF.getText().toString(),edData.getText().toString(),edEmail.getText().toString(),edCelular.getText().toString(),edSenha.getText().toString());
-            Estruturas.usuariosCadastrados.insere(novoUser);
+            usuariosCadastrados.insere(novoUser);
             tela.exibir(getApplicationContext(),"Usuário cadastrado com sucesso!");
             // Volta para tela de Login
             Intent intent = new Intent(this, loginUser.class);

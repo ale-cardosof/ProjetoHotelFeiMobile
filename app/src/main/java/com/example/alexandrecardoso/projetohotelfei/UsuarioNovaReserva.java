@@ -11,7 +11,8 @@ import android.widget.TextView;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.example.alexandrecardoso.projetohotelfei.Estruturas.*;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.logado;
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
 
 public class UsuarioNovaReserva extends AppCompatActivity {
 
@@ -138,7 +139,7 @@ public class UsuarioNovaReserva extends AppCompatActivity {
                     diasHosp = diffData(dataEntradaReserva, dataSaidaReserva);
                     valTotal = diasHosp * valDiaria; // Calcula o valor total
                     ((TextView)findViewById(R.id.lblDiasTotal)).setText(String.valueOf(diasHosp));
-                    ((TextView)findViewById(R.id.lblValTotal)).setText(String.valueOf(valTotal));
+                    ((TextView)findViewById(R.id.boolCheckIN)).setText(String.valueOf(valTotal));
                     btnReservar.setEnabled(true); // Habilita o botão de reservar
 
                 } catch (Exception e) {
@@ -150,7 +151,7 @@ public class UsuarioNovaReserva extends AppCompatActivity {
         btnReservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((Usuario)logado.user).setMinhasReservas(new Reserva(dataEntradaReserva, dataSaidaReserva,quartoReserva, valTotal ));
+                ((Usuario)(logado.user)).setMinhasReservas(new Reserva(dataEntradaReserva, dataSaidaReserva,quartoReserva, valTotal ));
                 tela.exibir(UsuarioNovaReserva.this, "Reserva realizada com sucesso!!");
             }
         });
@@ -190,7 +191,7 @@ public class UsuarioNovaReserva extends AppCompatActivity {
     private void limpa(){
         btnDataSaida.setText("Data de Saida");
         btnDataEntrada.setText("Data de entrada");
-        ((TextView)findViewById(R.id.lblValTotal)).setText("");
+        ((TextView)findViewById(R.id.boolCheckIN)).setText("");
         ((TextView)findViewById(R.id.lblDiasTotal)).setText("");
         valTotal = 0;
         btnReservar.setEnabled(false);

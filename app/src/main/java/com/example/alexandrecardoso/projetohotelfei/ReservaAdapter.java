@@ -2,12 +2,10 @@ package com.example.alexandrecardoso.projetohotelfei;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,13 +39,13 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
 
         ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageResource(
                 reservaAtual.getQuartoReserva().getImagemQuarto());
-        ((TextView)rowView.findViewById(R.id.lblNumeroQuarto)).setText(String.valueOf(
+        ((TextView)rowView.findViewById(R.id.nomeDoUsuario)).setText(String.valueOf(
                 reservaAtual.getQuartoReserva().getNumPorta()));
-        ((TextView)rowView.findViewById(R.id.lblValTotal)).setText(String.valueOf(
+        ((TextView)rowView.findViewById(R.id.boolCheckIN)).setText(String.valueOf(
                 reservaAtual.getValor()));
-        ((TextView)rowView.findViewById(R.id.lblDataEntrada)).setText(dateFormat.format(
+        ((TextView)rowView.findViewById(R.id.idQuarto)).setText(dateFormat.format(
                 reservaAtual.getDtEntrada()));
-        ((TextView)rowView.findViewById(R.id.lblDataSaida)).setText(dateFormat.format(
+        ((TextView)rowView.findViewById(R.id.dtEntrada)).setText(dateFormat.format(
                 reservaAtual.getDtSaida()));
 
         return rowView;

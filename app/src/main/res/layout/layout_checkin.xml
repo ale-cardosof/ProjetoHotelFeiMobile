@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imvQuarto"
+        android:layout_width="104dp"
+        android:layout_height="122dp"
+        android:layout_margin="5dp"
+        android:src="@color/cardview_dark_background" />
+
+    <LinearLayout
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/nomeDoUsuario3"
+                android:layout_width="176dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Nome do Usuário"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/username3"
+                android:layout_width="177dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|left|center_vertical"
+                android:text="(username)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/IDRESERVA_TEXT"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ID de Reserva"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/idReserva"
+                android:layout_width="61dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="idReserva"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/QUARTO_TEXT"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Quarto"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/idQuarto"
+                android:layout_width="61dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="idQuarto"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:text="Data Entrada"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dtEntrada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="dtEntrada"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="59dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Data Saída"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dtSaida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="dtSaida"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="83dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Check-In"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dtCheckIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="dtCheckIn"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Check-Out"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dtCheckout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="dtCheckout"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="63dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Valor Total"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/vlrTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="vlrTotal"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
