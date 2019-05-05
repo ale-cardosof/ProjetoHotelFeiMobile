@@ -2,6 +2,8 @@ package com.example.alexandrecardoso.projetohotelfei.Estruturas_;
 
 import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
 
+// Classe Árvore, criada para armazenar os usuários cadastrados.
+// Ela é ordenada a partir do username do usuário (que é transformado em ASC)
 public class Arvore_adm{
     // Atributos
     private Administrador raiz; // Primeiro Usuario

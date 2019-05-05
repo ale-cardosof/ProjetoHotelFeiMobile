@@ -1,10 +1,12 @@
 package com.example.alexandrecardoso.projetohotelfei.Classes;
 
+import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
+
 import java.util.ArrayList;
 
 public class Hotel {
     private String nome;
-    private ArrayList<Quarto> quartos = new ArrayList();
+    public  LDE<Quarto> quartos = new LDE<>();
     private int capacidade;
     private int numQuartosExistentes;
     private int numQuartosDisponiveis;
@@ -19,22 +21,8 @@ public class Hotel {
         numQuartosDisponiveis = 0;
     }
 
-    // Adiciona um Quarto
-    boolean insereQuarto(Quarto newQuarto){
-        if(numQuartosExistentes < capacidade){
-            quartos.add(newQuarto);
-            numQuartosExistentes++;
-            return true;
-        }return false;
-    }
-
-    // Verifica se um número de porta já existe
-    public boolean verificaExistenciaPorta(int numPorta){
-        for(int i=0; i < numQuartosExistentes; i++){
-            if(quartos.get(i).getNumPorta() == numPorta){
-                return true; // Retorna true, sinalizando que existe aquele número.
-            }
-        }return false; // Retorna false, sinalizando que existe aquele número.
+    public LDE<Quarto> getQuartos(){
+        return quartos;
     }
 
     public int getNumQuartosExistentes() {

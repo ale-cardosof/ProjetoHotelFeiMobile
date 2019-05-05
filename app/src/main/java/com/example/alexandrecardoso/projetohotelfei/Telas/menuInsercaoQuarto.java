@@ -15,11 +15,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Permissao;
 import com.example.alexandrecardoso.projetohotelfei.R;
 
+import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.logado;
 import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.tela;
 
 public class menuInsercaoQuarto extends AppCompatActivity {
@@ -278,15 +280,18 @@ public class menuInsercaoQuarto extends AppCompatActivity {
 
     public void cadastraQuarto(View view){
         if(verificaPreenchimento()){
-
-        novoQuarto.setNumPorta(Integer.parseInt(edNumPorta.getText().toString()));
-        novoQuarto.setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
-        novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
-        novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
-        novoQuarto.setPossuiTv(true);
-        tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
-        Estruturas.ldeQuartos.insere(novoQuarto);
-        limparCampos();
+            novoQuarto.setNumPorta(Integer.parseInt(edNumPorta.getText().toString()));
+            novoQuarto.setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
+            novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
+            novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
+            novoQuarto.setPossuiTv(true);
+            tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
+            Estruturas.ldeQuartos.insere(novoQuarto);
+            // Essa linha acessa a LDE de quartos do usuario logado, ai vc faz o que quiser..
+            ((Administrador)(logado.user)).getMeuHotel().getQuartos();
+            // inserindo por exemplo
+            ((Administrador)(logado.user)).getMeuHotel().getQuartos().insere(novoQuarto);
+            limparCampos();
         }
         else{
             tela.exibir(getApplicationContext(),"Todos os campos precisam estar preenchidos!");
