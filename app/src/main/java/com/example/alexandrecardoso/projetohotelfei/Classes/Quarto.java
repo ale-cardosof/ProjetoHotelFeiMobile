@@ -5,8 +5,6 @@ import android.graphics.Bitmap;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Avaliacao;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
 
-import java.util.ArrayList;
-
 public class Quarto {
     private int numPorta; // Chave
     private double valorDiaria;
@@ -17,7 +15,6 @@ public class Quarto {
     private int status; // 0 - Desocupado, 1 - Pré-Reservado, 2 - Reservado
     private int diasReservado; // Dias de reserva
     private int imagemQuarto; // Estudar maneira de armazenar a imagem do quarto
-    private ArrayList<Bitmap> imagensQuarto = new ArrayList<Bitmap>();
     private LDE<Avaliacao> ldeAvaliacoes = new LDE<>();
     private Bitmap teste[] = new Bitmap[5];
 

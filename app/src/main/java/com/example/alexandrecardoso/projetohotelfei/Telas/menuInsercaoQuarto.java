@@ -14,11 +14,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
+import com.example.alexandrecardoso.projetohotelfei.Classes.Hotel;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Permissao;
+import com.example.alexandrecardoso.projetohotelfei.Classes.Reserva;
+import com.example.alexandrecardoso.projetohotelfei.Classes.Usuario;
 import com.example.alexandrecardoso.projetohotelfei.R;
 
 import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.logado;
@@ -38,6 +42,8 @@ public class menuInsercaoQuarto extends AppCompatActivity {
     private static int posImg;
     private static boolean inserirPressionado = false;
     private static Bitmap imagem = null;
+    private  RadioGroup rgTv;
+    private  boolean possuiTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         edValorDiaria = findViewById(R.id.edValorDiaria);
         edqdtCama = findViewById(R.id.edQtdCama);
         edqtdChuveiro = findViewById(R.id.edqtdChuveiro);
+        rgTv = findViewById(R.id.radioGroup);
 
         imgCamera = findViewById(R.id.imgCamera);
         imgCamera2 = findViewById(R.id.imgCamera2);
@@ -275,7 +282,21 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         || edqdtCama.getText().toString().equals("") || edqtdChuveiro.getText().toString().equals("")){
             return  false;
         }
+        else if(imgQuarto1.getDrawable()==null)
+            return  false;
         return  true;
+    }
+
+    public void verificaRadioButton(){
+        rgTv.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.radioButton){
+                    possuiTv = true;
+                }else
+                    possuiTv = false;
+            }
+        });
     }
 
     public void cadastraQuarto(View view){
@@ -284,12 +305,13 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             novoQuarto.setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
             novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
             novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
-            novoQuarto.setPossuiTv(true);
+            novoQuarto.setPossuiTv(possuiTv);
             tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
-            Estruturas.ldeQuartos.insere(novoQuarto);
+            //Estruturas.ldeQuartos.insere(novoQuarto);
             // Essa linha acessa a LDE de quartos do usuario logado, ai vc faz o que quiser..
-            ((Administrador)(logado.user)).getMeuHotel().getQuartos();
+            //((Administrador)(logado.user)).getMeuHotel().getQuartos();
             // inserindo por exemplo
+            //((Administrador)(logado.user)).getMeuHotel().setQuartos(novoQuarto);
             ((Administrador)(logado.user)).getMeuHotel().getQuartos().insere(novoQuarto);
             limparCampos();
         }

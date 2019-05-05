@@ -25,6 +25,12 @@ public class Hotel {
         return quartos;
     }
 
+    public void setQuartos (Quarto novoQuarto){
+        this.quartos.insere(novoQuarto);
+        Estruturas.ldeQuartos.insere(novoQuarto);
+    }
+
+
     public int getNumQuartosExistentes() {
         return numQuartosExistentes;
     }
