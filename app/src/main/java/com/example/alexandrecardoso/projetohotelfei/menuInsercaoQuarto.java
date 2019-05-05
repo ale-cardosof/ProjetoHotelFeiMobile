@@ -27,6 +27,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
     private ImageView imgQuarto1;
     private  static  final int SELECAO_CAMERA = 100;
     private  static  final int SELECAO_GALERIA = 200;
+    private static Quarto novoQuarto = new Quarto();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,20 +82,28 @@ public class menuInsercaoQuarto extends AppCompatActivity {
 
     }
 
+    public void guardaImg(Bitmap imagem){
+
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(resultCode == RESULT_OK){
             Bitmap imagem = null;
+            novoQuarto.adicionaImagem(imagem);
             try{
                 switch (requestCode){
                     case SELECAO_CAMERA:
                         imagem = (Bitmap) data.getExtras().get("data");
+                        novoQuarto.adicionaImagem(imagem);
+
                         break;
                     case SELECAO_GALERIA:
                         Uri localImagemSelecionada = data.getData();
                         imagem = MediaStore.Images.Media.getBitmap(getContentResolver(), localImagemSelecionada);
+                        novoQuarto.adicionaImagem(imagem);
                         break;
                 }
 
@@ -141,7 +150,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
 
     public void cadastraQuarto(View view){
         if(verificaPreenchimento()){
-            Quarto novoQuarto = new Quarto();
+
         novoQuarto.setNumPorta(Integer.parseInt(edNumPorta.getText().toString()));
         novoQuarto.setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
         novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));

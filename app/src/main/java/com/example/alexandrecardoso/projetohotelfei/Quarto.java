@@ -3,6 +3,10 @@ package com.example.alexandrecardoso.projetohotelfei;
 import android.graphics.Bitmap;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class Quarto {
     private int numPorta; // Chave
@@ -13,7 +17,7 @@ public class Quarto {
     private int status; // 0 - Desocupado, 1 - Pré-Reservado, 2 - Reservado
     private int diasReservado; // Dias de reserva
     private int imagemQuarto; // Estudar maneira de armazenar a imagem do quarto
-    private ArrayList<Bitmap> imagensQuarto = new ArrayList();
+    private ArrayList<Bitmap> imagensQuarto = new ArrayList<Bitmap>();
     private LDE<Avaliacao> ldeAvaliacoes = new LDE<>();
 
 
@@ -114,5 +118,16 @@ public class Quarto {
     public void setPossuiTv(boolean possuiTv) {
         this.possuiTv = possuiTv;
     }
+
+
+
+    public void adicionaImagem(Bitmap foto) {
+        this.imagensQuarto.add(foto);
+    }
+
+    public Bitmap retornaImagem(int position){
+        return this.imagensQuarto.get(position);
+    }
+
 
 }

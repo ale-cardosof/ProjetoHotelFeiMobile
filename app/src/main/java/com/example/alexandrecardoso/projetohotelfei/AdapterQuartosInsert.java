@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosInsert.MyViewHolder> {
@@ -30,6 +31,7 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
         myViewHolder.valorDiaria.setText("Valor da diária: R$"+quarto.getValorDiaria());
         myViewHolder.quantidadeCama.setText("Quantidade de cama:" + quarto.getQntdCamas());
         myViewHolder.quantidadeChuveiro.setText("Numero de chuveiro:" + quarto.getQntdChuveiros());
+        myViewHolder.imgQuartos1.setImageBitmap(quarto.retornaImagem(0));
 
     }
 
@@ -46,7 +48,7 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
         TextView quantidadeCama;
         TextView quantidadeChuveiro;
         TextView possuiTV;
-        //ImageView imgQuarto1,imgQuarto2,imgQuarto3,imgQuarto4,imgQuarto5;
+        ImageView imgQuartos1,imgQuartos2,imgQuartos3,imgQuartos4,imgQuartos5;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -56,6 +58,11 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
             quantidadeCama = itemView.findViewById(R.id.txtCama);
             quantidadeChuveiro = itemView.findViewById(R.id.txtChuveiro);
             possuiTV = itemView.findViewById(R.id.txtTV);
+            imgQuartos1 = itemView.findViewById(R.id.imgQuartos1);
+            imgQuartos2 = itemView.findViewById(R.id.imgQuartos2);
+            imgQuartos3 = itemView.findViewById(R.id.imgQuartos3);
+            imgQuartos4 = itemView.findViewById(R.id.imgQuartos4);
+            imgQuartos5 = itemView.findViewById(R.id.imgQuartos5);
         }
     }
 }
