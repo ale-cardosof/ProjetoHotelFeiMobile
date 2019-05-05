@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/laranja"
-    tools:context=".menuInsercaoQuarto">
+    tools:context=".Telas.menuInsercaoQuarto">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/back"
-        tools:context=".menuInsercaoQuarto"
+        tools:context=".Telas.menuInsercaoQuarto"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="16dp">
 

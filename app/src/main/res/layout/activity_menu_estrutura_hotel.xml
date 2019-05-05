@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back"
     android:onClick="atualizaAc"
-    tools:context=".menuEstruturaHotel">
+    tools:context=".Telas.menuEstruturaHotel">
 
     <Button
         android:id="@+id/button12"
