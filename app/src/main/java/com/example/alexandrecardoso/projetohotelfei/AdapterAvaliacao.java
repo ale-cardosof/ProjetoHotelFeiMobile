@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 // Classe que ira gerar itens da list View de Avaliação a partir da LDE
@@ -33,9 +34,12 @@ public class AdapterAvaliacao extends ArrayAdapter<Avaliacao> {
         else
             rowView.setBackgroundColor(Color.parseColor("#BFF0E68C"));
 
-        ((TextView)rowView.findViewById(R.id.lblTituloAvaliacao)).setText(alAvaliacoes.getByIndex(position).getTitulo());
-        ((TextView)rowView.findViewById(R.id.lblNotaAvaliacao)).setText(String.valueOf(alAvaliacoes.getByIndex(position).getNota()));
-        ((TextView)rowView.findViewById(R.id.lblMensagemAvaliacao)).setText(alAvaliacoes.getByIndex(position).getMensagem());
+        Avaliacao avalAtual = alAvaliacoes.getByIndex(position);
+
+        ((RatingBar)rowView.findViewById(R.id.ratingBar)).setRating(avalAtual.getNota());
+        ((TextView)rowView.findViewById(R.id.lblNotaAvaliacao)).setText(String.valueOf(avalAtual.getNota()));
+        ((TextView)rowView.findViewById(R.id.lblTituloAvaliacao)).setText(avalAtual.getTitulo());
+        ((TextView)rowView.findViewById(R.id.lblMensagemAvaliacao)).setText(avalAtual.getMensagem());
 
         return rowView;
     }

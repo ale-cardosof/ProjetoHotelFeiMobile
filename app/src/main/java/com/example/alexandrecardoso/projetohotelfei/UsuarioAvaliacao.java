@@ -1,6 +1,5 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -41,8 +40,9 @@ public class UsuarioAvaliacao extends AppCompatActivity {
                     tela.exibir(UsuarioAvaliacao.this, "A nota deve ser de 0 a 5.");
                 }
                 else{
-                    Avaliacao avUsuario = new Avaliacao(txtTitulo.getText().toString(), Double.parseDouble(txtNota.getText().toString()), String.valueOf(txtMensagem.getText()));
+                    Avaliacao avUsuario = new Avaliacao(txtTitulo.getText().toString(), Float.parseFloat(txtNota.getText().toString()), String.valueOf(txtMensagem.getText()));
                     quartoAtual.setAvaliacoes(avUsuario);
+                    tela.exibir(UsuarioAvaliacao.this, "Avaliação publicada com sucesso! \n Obrigado pela sua colaboração!");
                 }
             }
         });

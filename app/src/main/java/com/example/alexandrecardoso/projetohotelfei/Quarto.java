@@ -11,6 +11,7 @@ import java.util.ListIterator;
 public class Quarto {
     private int numPorta; // Chave
     private double valorDiaria;
+    private float mediaAvaliacao = -1;
     private int qntdCamas;
     private int qntdChuveiros;
     private boolean possuiTv;
@@ -21,12 +22,10 @@ public class Quarto {
     private LDE<Avaliacao> ldeAvaliacoes = new LDE<>();
     private Bitmap teste[] = new Bitmap[5];
 
-
     //private Imagens fotos;
 
     public Quarto(){
         // SÓ PARA TESTES
-        addAvaliacoes();
     }
     public Quarto(int numeroPorta, double valorDiaria, int qntdCamas, int qntdChuveiro, boolean possuiTv) {
         this.numPorta = numeroPorta;
@@ -36,21 +35,6 @@ public class Quarto {
         this.possuiTv = possuiTv;
         this.status = 0;
         this.diasReservado = 0;
-
-        // SÓ PARA TESTES
-        addAvaliacoes();
-    }
-
-    // SÓ PARA TESTES - REMOVERRR
-    private void addAvaliacoes() {
-
-        Avaliacao av = new Avaliacao("Otimo Quarto!", 5.0, "Otimo Quarto! Cabe toda a Familia, só os buscapés, nordestino sem dente.");
-        ldeAvaliacoes.insere(av);
-        av = new Avaliacao("Bom pra suruba!", 5.0, "Por que tudo depende do quanto voce quer comer alguém.");
-        ldeAvaliacoes.insere(av);
-        av = new Avaliacao("Sem spoiler", 1.0, "Thanos morre no final.");
-        ldeAvaliacoes.insere(av);
-
     }
 
 
@@ -72,12 +56,26 @@ public class Quarto {
         return true;
     }*/
 
+    private float calculaMedia(){
+        float media = 0;
+        int nAval = ldeAvaliacoes.getSize();
+        for(int i = 0; i < nAval; i++ ){
+            media += ldeAvaliacoes.getByIndex(i).getNota();
+        }
+        return media/nAval;
+    }
+
+    public double getMediaAvaliacao() {
+        return mediaAvaliacao;
+    }
+
     public LDE<Avaliacao> getAvaliacoes() {
         return ldeAvaliacoes;
     }
 
     public void setAvaliacoes(Avaliacao avaliacao) {
         this.ldeAvaliacoes.insere(avaliacao);
+        mediaAvaliacao = calculaMedia();
     }
 
     public int getNumPorta() {

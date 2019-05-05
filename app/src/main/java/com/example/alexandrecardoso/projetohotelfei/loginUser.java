@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
@@ -55,7 +54,6 @@ public class loginUser extends AppCompatActivity {
                 Estruturas.logado.usernameASC = userProcuradoAsc;
                 Estruturas.logado.tipoUser = 2;
                 aux = 0;
-                Log.d("UsuarioLogado", "Antes de criar user");
             }else{// Senha incorreta
                 // Aviso sobre senha incorreta
                 aux = 1;

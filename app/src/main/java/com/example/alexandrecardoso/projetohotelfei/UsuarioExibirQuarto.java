@@ -42,10 +42,11 @@ public class UsuarioExibirQuarto extends AppCompatActivity {
         lvAvaliacoes.setAdapter(adapter);
 
         // Seta o tamanho da ListView de acordo com o tamanho da lista
+        /*
         ViewGroup.LayoutParams params = lvAvaliacoes.getLayoutParams();
         params.height = 450 * lvAvaliacoes.getCount();
         lvAvaliacoes.setLayoutParams(params);
-        lvAvaliacoes.requestLayout();
+        lvAvaliacoes.requestLayout();*/
 
         btnReservar.setOnClickListener(new View.OnClickListener() {
             @Override
