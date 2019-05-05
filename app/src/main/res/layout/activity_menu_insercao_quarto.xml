@@ -10,7 +10,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/laranja"
+        android:background="@drawable/back"
         tools:context=".menuInsercaoQuarto"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="16dp">
@@ -21,13 +21,13 @@
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@color/aasdasd"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toStartOf="@+id/imgQuarto2"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
-            app:srcCompat="@drawable/hotelfund" />
+            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro" />
 
         <ImageView
             android:id="@+id/imgQuarto2"
@@ -35,25 +35,25 @@
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@color/aasdasd"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toStartOf="@+id/imgQuarto3"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imgQuarto1"
-            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
-            app:srcCompat="@drawable/hotelfund" />
+            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro" />
 
         <ImageView
             android:id="@+id/imgQuarto3"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="28dp"
+            android:background="@color/aasdasd"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toStartOf="@+id/imgQuarto4"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imgQuarto2"
-            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
-            app:srcCompat="@drawable/hotelfund" />
+            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro" />
 
         <ImageView
             android:id="@+id/imgQuarto4"
@@ -61,14 +61,14 @@
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@color/aasdasd"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toStartOf="@+id/imgQuarto5"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imgQuarto3"
             app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
-            app:layout_constraintVertical_bias="0.6"
-            app:srcCompat="@drawable/hotelfund" />
+            app:layout_constraintVertical_bias="0.6" />
 
         <ImageButton
             android:id="@+id/imgGaleria4"
@@ -90,14 +90,14 @@
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@color/aasdasd"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imgQuarto4"
             app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
-            app:layout_constraintVertical_bias="0.583"
-            app:srcCompat="@drawable/hotelfund" />
+            app:layout_constraintVertical_bias="0.583" />
 
         <ImageButton
             android:id="@+id/imgGaleria5"
@@ -232,7 +232,7 @@
             android:layout_height="39dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="36dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:ems="10"

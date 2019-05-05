@@ -23,12 +23,14 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             Manifest.permission.CAMERA
     };
     private EditText edNumPorta, edValorDiaria, edAvaliacao, edqdtCama, edqtdChuveiro;
-    private ImageButton imgCamera,imgCamera2,imgCamera3,imgCamera4,imgCamera5, imgGaleria, imgGaleria2, imgGaleria3, imgGaleria4,imgGaleria5;
+    ImageButton imgCamera,imgCamera2,imgCamera3,imgCamera4,imgCamera5, imgGaleria, imgGaleria2, imgGaleria3, imgGaleria4,imgGaleria5;
     private ImageView imgQuarto1,imgQuarto2,imgQuarto3,imgQuarto4,imgQuarto5;
     private  static  final int SELECAO_CAMERA = 100;
     private  static  final int SELECAO_GALERIA = 200;
     private static Quarto novoQuarto = new Quarto();
     private static int posImg;
+    private static boolean inserirPressionado = false;
+    private static Bitmap imagem = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,16 +189,12 @@ public class menuInsercaoQuarto extends AppCompatActivity {
 
     }
 
-    public void guardaImg(Bitmap imagem){
-
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(resultCode == RESULT_OK){
-            Bitmap imagem = null;
+            imagem = null;
             novoQuarto.adicionaImagem(imagem,posImg);
 
             try{
@@ -262,6 +260,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         imgQuarto3.setImageBitmap(null);
         imgQuarto4.setImageBitmap(null);
         imgQuarto5.setImageBitmap(null);
+        imagem  = null;
     }
 
     public boolean verificaPreenchimento(){
