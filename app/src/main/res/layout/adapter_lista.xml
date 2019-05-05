@@ -56,29 +56,35 @@
             android:id="@+id/imgQuartos1"
             android:layout_width="75dp"
             android:layout_height="75dp"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/border_laranja" />
 
         <ImageView
             android:id="@+id/imgQuartos2"
             android:layout_width="75dp"
             android:layout_height="75dp"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/border_laranja" />
 
         <ImageView
             android:id="@+id/imgQuartos3"
             android:layout_width="75dp"
             android:layout_height="75dp"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/border_laranja" />
 
         <ImageView
             android:id="@+id/imgQuartos4"
             android:layout_width="75dp"
             android:layout_height="75dp"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/border_laranja" />
+
         <ImageView
             android:id="@+id/imgQuartos5"
             android:layout_width="75dp"
             android:layout_height="75dp"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/border_laranja" />
 
 
