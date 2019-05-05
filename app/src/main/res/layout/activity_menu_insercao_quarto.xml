@@ -70,6 +70,20 @@
             app:layout_constraintVertical_bias="0.6"
             app:srcCompat="@drawable/hotelfund" />
 
+        <ImageButton
+            android:id="@+id/imgGaleria4"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgQuarto4"
+            app:layout_constraintEnd_toEndOf="@+id/imgQuarto4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgCamera4"
+            app:layout_constraintTop_toTopOf="@+id/imgQuarto4"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
         <ImageView
             android:id="@+id/imgQuarto5"
             android:layout_width="60dp"
@@ -82,7 +96,90 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imgQuarto4"
             app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro"
+            app:layout_constraintVertical_bias="0.583"
             app:srcCompat="@drawable/hotelfund" />
+
+        <ImageButton
+            android:id="@+id/imgGaleria5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgQuarto5"
+            app:layout_constraintEnd_toEndOf="@+id/imgQuarto5"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgCamera5"
+            app:layout_constraintTop_toTopOf="@+id/imgQuarto5"
+            app:layout_constraintVertical_bias="0.971"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <ImageButton
+            android:id="@+id/imgCamera5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgQuarto5"
+            app:layout_constraintStart_toStartOf="@+id/imgQuarto5"
+            app:layout_constraintTop_toTopOf="@+id/imgQuarto5"
+            app:layout_constraintVertical_bias="0.971"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <ImageButton
+            android:id="@+id/imgCamera4"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgQuarto4"
+            app:layout_constraintStart_toStartOf="@+id/imgQuarto4"
+            app:layout_constraintTop_toTopOf="@+id/imgQuarto4"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <ImageButton
+            android:id="@+id/imgCamera3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgQuarto3"
+            app:layout_constraintStart_toStartOf="@+id/imgQuarto3"
+            app:layout_constraintTop_toTopOf="@+id/imgQuarto3"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <ImageButton
+            android:id="@+id/imgCamera2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgQuarto2"
+            app:layout_constraintStart_toStartOf="@+id/imgQuarto2"
+            app:layout_constraintTop_toTopOf="@+id/imgQuarto2"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <ImageButton
+            android:id="@+id/imgGaleria3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgQuarto3"
+            app:layout_constraintEnd_toEndOf="@+id/imgQuarto3"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toEndOf="@+id/imgCamera3"
+            app:layout_constraintTop_toTopOf="@+id/imgQuarto3"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <ImageButton
+            android:id="@+id/imgGaleria2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgQuarto2"
+            app:layout_constraintEnd_toEndOf="@+id/imgQuarto2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgCamera2"
+            app:layout_constraintTop_toTopOf="@+id/imgQuarto2"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
 
         <EditText
             android:id="@+id/edValorDiaria"
@@ -187,14 +284,15 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
             android:background="@drawable/btnno"
             android:onClick="cadastraQuarto"
             android:text="CADASTRAR"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView2"
@@ -216,7 +314,7 @@
             android:layout_height="61dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:checkedButton="@id/radioButton2"

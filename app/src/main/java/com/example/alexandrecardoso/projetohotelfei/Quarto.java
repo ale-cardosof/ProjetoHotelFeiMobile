@@ -19,6 +19,7 @@ public class Quarto {
     private int imagemQuarto; // Estudar maneira de armazenar a imagem do quarto
     private ArrayList<Bitmap> imagensQuarto = new ArrayList<Bitmap>();
     private LDE<Avaliacao> ldeAvaliacoes = new LDE<>();
+    private Bitmap teste[] = new Bitmap[5];
 
 
     //private Imagens fotos;
@@ -121,12 +122,15 @@ public class Quarto {
 
 
 
-    public void adicionaImagem(Bitmap foto) {
-        this.imagensQuarto.add(foto);
+    public void adicionaImagem(Bitmap foto, int position) {
+        //imagensQuarto.get(position);
+        this.teste[position] = foto;
     }
 
     public Bitmap retornaImagem(int position){
-        return this.imagensQuarto.get(position);
+
+        //return this.imagensQuarto.get(position);
+        return  this.teste[position];
     }
 
 
