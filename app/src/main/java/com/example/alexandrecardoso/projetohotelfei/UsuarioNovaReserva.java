@@ -151,7 +151,7 @@ public class UsuarioNovaReserva extends AppCompatActivity {
         btnReservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((Usuario)(logado.user)).setMinhasReservas(new Reserva((logado.user).getUsername(), dataEntradaReserva, dataSaidaReserva,quartoReserva, valTotal ));
+                ((Usuario)(logado.user)).setMinhasReservas(new Reserva((logado.user).getNome(), dataEntradaReserva, dataSaidaReserva,quartoReserva, valTotal ));
                 tela.exibir(UsuarioNovaReserva.this, "Reserva realizada com sucesso!!");
             }
         });

@@ -252,7 +252,6 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         //informar que precisa aceitar permissao
     }
 
-
     public void limparCampos(){
         edNumPorta.setText("");
         edValorDiaria.setText("");

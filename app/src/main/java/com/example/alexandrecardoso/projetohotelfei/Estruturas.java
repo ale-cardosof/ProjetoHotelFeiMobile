@@ -14,6 +14,7 @@ public class Estruturas{
     public static Arvore_adm admsCadastrados = new Arvore_adm();
     public static infoLogado logado = new infoLogado("",0);
     public static MensagemToast tela = new MensagemToast();
+    public static Reserva reserva_clicada = new Reserva();
     public static HASH hash_reservas = new HASH();
 
     public static void criaEstru (){
@@ -172,12 +173,12 @@ public class Estruturas{
                 "01/01/2019","user@user.com.br","11954546565","filipi");
         Date dtEntrada = new Date(2019 - 1900, 5, 1);
         Date dtSaida = new Date(2019 - 1900, 5, 4);
-        Reserva r1 = new Reserva( logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
+        Reserva r1 = new Reserva( userTres.getNome(), dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
         userTres.setMinhasReservas(r1);
 
         dtEntrada = new Date(2019 - 1900, 5, 8);
         dtSaida = new Date(2019 - 1900, 5, 12);
-        r1 = new Reserva( logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(3), 450);
+        r1 = new Reserva( userTres.getNome(), dtEntrada,dtSaida, ldeQuartos.getByIndex(3), 450);
         userTres.setMinhasReservas(r1);
         usuariosCadastrados.insere(userTres);
 

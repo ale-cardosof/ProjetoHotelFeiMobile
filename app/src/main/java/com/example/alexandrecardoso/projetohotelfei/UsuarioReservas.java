@@ -15,6 +15,7 @@ public class UsuarioReservas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_reservas);
         ListView listView = findViewById(R.id.lvUsuarioReserva);
+        getSupportActionBar().hide();
         ArrayAdapter adapter = new ReservaAdapter(this, ((Usuario)Estruturas.logado.user).getMinhasReservas());
         listView.setAdapter(adapter);
 
