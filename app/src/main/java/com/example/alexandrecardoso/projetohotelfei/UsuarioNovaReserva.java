@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.Calendar;
 import java.util.Date;
 
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.hash_reservas;
 import static com.example.alexandrecardoso.projetohotelfei.Estruturas.logado;
 import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
 
@@ -106,9 +107,9 @@ public class UsuarioNovaReserva extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-
                     int diasHosp;
-
+                    if(!hash_reservas.verificaDisponibilidade(dataEntradaReserva,dataSaidaReserva, quartoReserva.getNumPorta()))
+                        throw new Exception("Esse quarto já está reservado para essa data.");
 //                    String dataEntrada = btnDataEntrada.getText().toString();
 //                    String dataSaida = btnDataSaida.getText().toString();
 //

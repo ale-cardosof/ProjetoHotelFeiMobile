@@ -1,7 +1,5 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
-import android.util.Log;
-
 import java.util.Date;
 
 // Classe que guardará todas as estruturas do aplicativo
@@ -77,7 +75,7 @@ public class Estruturas{
         q.setQntdChuveiros(2);
         q.setValorDiaria(400);
         q.setPossuiTv(true);
-        q.setAvaliacoes(new Avaliacao("Ótima localização",4.5,
+        q.setAvaliacoes(new Avaliacao("Ótima localização",4,
                 "Ótima localização e café da manhã," +
                         "mas especialmente funcionários muito atenciosos!!"));
         q.setImagemQuarto(R.drawable.quarto_6);
@@ -89,7 +87,7 @@ public class Estruturas{
         q.setQntdChuveiros(1);
         q.setValorDiaria(300);
         q.setPossuiTv(true);
-        q.setAvaliacoes(new Avaliacao("O quarto DECA!!!",4.5,
+        q.setAvaliacoes(new Avaliacao("O quarto DECA!!!",4,
                 "Lugar confortavel, serviço de quarto excelente (Especialidade; Galinha assada)." +
                         "Quem tem mais tem 10!"));
         q.setImagemQuarto(R.drawable.quarto_10);

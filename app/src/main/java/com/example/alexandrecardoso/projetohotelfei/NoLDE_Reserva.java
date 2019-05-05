@@ -3,15 +3,12 @@ package com.example.alexandrecardoso.projetohotelfei;
 public class NoLDE_Reserva {
 
     private Reserva valor;
-    private No<Reserva> prox;
     private No<Reserva>  noPrim;
     private int tam;
 
     public NoLDE_Reserva() {
         this.valor = null;
-        this.prox = null;
         this.noPrim = null;
-        valor = null;
     }
 
     public Reserva getValor() {
@@ -21,15 +18,6 @@ public class NoLDE_Reserva {
     public void setValor(Reserva valor) {
         this.valor = valor;
     }
-
-    public No<Reserva>  getProx() {
-        return prox;
-    }
-
-    public void setProx(No<Reserva>  prox) {
-        this.prox = prox;
-    }
-
 
     //Insere um No à LDE a partir do Objeto recebido
     void insereNo(Reserva valor) {
@@ -77,6 +65,7 @@ public class NoLDE_Reserva {
             }
         return null; // Busca pelo valor e traz No
     }
+
 
     Reserva getByValor(Reserva noBusca) {
         No<Reserva> noAtual = noPrim;
