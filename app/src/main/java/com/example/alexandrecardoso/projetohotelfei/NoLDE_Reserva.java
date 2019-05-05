@@ -1,9 +1,5 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
-import android.util.Log;
-
-
-
 public class NoLDE_Reserva {
 
     private Reserva valor;

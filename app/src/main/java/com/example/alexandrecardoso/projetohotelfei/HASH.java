@@ -4,7 +4,6 @@ import android.text.format.DateFormat;
 
 public class HASH{
     // Vetor em que cada posição é uma LDE diferente
-    //public LDE_Reserva[] vetorHash = new LDE_Reserva[31];
     private int MAX = 31;
     public NoLDE_Reserva vetorHash[] = new NoLDE_Reserva[MAX];
 
@@ -66,5 +65,9 @@ public class HASH{
             }
         }
         return listaReserva; // Busca pelo valor e traz No
+    }
+
+    Reserva getReservaAtual(int posicao){
+        return getTodasReservas().getByIndex(posicao); // Busca pelo valor e traz No
     }
 }
