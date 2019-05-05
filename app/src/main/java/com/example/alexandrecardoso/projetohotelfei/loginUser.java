@@ -55,7 +55,6 @@ public class loginUser extends AppCompatActivity {
                 Estruturas.logado.usernameASC = userProcuradoAsc;
                 Estruturas.logado.tipoUser = 2;
                 aux = 0;
-                Estruturas.montarReservasUsuario();
                 Log.d("UsuarioLogado", "Antes de criar user");
             }else{// Senha incorreta
                 // Aviso sobre senha incorreta

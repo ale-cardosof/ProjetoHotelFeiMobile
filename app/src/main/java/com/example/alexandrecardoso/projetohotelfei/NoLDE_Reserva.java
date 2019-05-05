@@ -1,15 +1,21 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import android.util.Log;
+
+
+
 public class NoLDE_Reserva {
 
     private Reserva valor;
-    private NoLDE_Reserva prox;
-    private NoLDE_Reserva noPrim;
+    private No<Reserva> prox;
+    private No<Reserva>  noPrim;
     private int tam;
+
     public NoLDE_Reserva() {
         this.valor = null;
         this.prox = null;
         this.noPrim = null;
+        valor = null;
     }
 
     public Reserva getValor() {
@@ -20,69 +26,68 @@ public class NoLDE_Reserva {
         this.valor = valor;
     }
 
-    public NoLDE_Reserva getProx() {
+    public No<Reserva>  getProx() {
         return prox;
     }
 
-    public void setProx(NoLDE_Reserva prox) {
+    public void setProx(No<Reserva>  prox) {
         this.prox = prox;
     }
 
 
     //Insere um No à LDE a partir do Objeto recebido
-    void insere(Reserva valor) {
-        NoLDE_Reserva noAtual = new NoLDE_Reserva();
+    void insereNo(Reserva valor) {
+        No<Reserva>  noAtual = new No<>(valor);
         noAtual.setValor(valor);
 
-        NoLDE_Reserva noProx = noPrim;
-        NoLDE_Reserva noAnt = null;
+        No<Reserva>  noProx = noPrim;
+        No<Reserva>  noAnt = null;
+
         while (noProx != null) {
             noAnt = noProx;
-            noProx = noProx.getProx();
+            noProx = noProx.getProximo();
         }
         if (noAnt != null) {
-            noAnt.setProx(noAtual);
+            noAnt.setProximo(noAtual);
         } else {
             noPrim = noAtual;
         }
         tam++;
     }
 
-
-
     // Retorna um objeto pelo indice
-    Reserva getByIndex(int i) { ;
-        NoLDE_Reserva noAtual = noPrim;
+    No<Reserva> getByIndex(int i) { ;
+        No<Reserva> noAtual = noPrim;
         int iAtual = 0;
         while (noAtual != null) {
             if (i == iAtual) {
-                return noAtual.getValor();
+                return noAtual;
             }
             else if (iAtual > i) {
                 return null;
             }
-            noAtual = noAtual.getProx();
+            noAtual = noAtual.getProximo();
             iAtual++;
         }
         return null;
     }
 
     Reserva buscaById(int id){
-            NoLDE_Reserva noAux = noPrim;
+        No<Reserva> noAux = noPrim;
             while(noAux != null){
                 if(noAux.getValor().getIdReserva() == id)
                     return noAux.getValor();
-                noAux = noAux.getProx();
+                noAux = noAux.getProximo();
             }
         return null; // Busca pelo valor e traz No
     }
 
-    NoLDE_Reserva getByValor(Reserva noBusca) {
-        NoLDE_Reserva noAtual = noPrim;
+    Reserva getByValor(Reserva noBusca) {
+        No<Reserva> noAtual = noPrim;
         while (noAtual != null) {
             if (noBusca == noAtual.getValor())
-                return noAtual;
-            noAtual = noAtual.getProx();
+                return noAtual.getValor();
+            noAtual = noAtual.getProximo();
         }
         return null;
     }
@@ -93,21 +98,21 @@ public class NoLDE_Reserva {
         if (i >= tam || i < 0)
             return false;
 
-        NoLDE_Reserva noAtual = noPrim;
-        NoLDE_Reserva noAnt = null;
+        No<Reserva> noAtual = noPrim;
+        No<Reserva> noAnt = null;
         int iAtual = 0;
         while (noAtual != null) {
             if (i == iAtual) {
                 if (noAnt != null)
-                    noAnt.setProx(noAtual.getProx());
+                    noAnt.setProximo(noAtual.getProximo());
                 else
-                    noPrim = noAtual.getProx();
+                    noPrim = noAtual.getProximo();
                 noAtual = null;
                 tam--;
                 return true;
             }
             noAnt = noAtual;
-            noAtual = noAtual.getProx();
+            noAtual = noAtual.getProximo();
             iAtual++;
         }
         return false;
@@ -115,21 +120,21 @@ public class NoLDE_Reserva {
 
     boolean removeByNo(Reserva noRemove) {
 
-        NoLDE_Reserva noAtual = noPrim;
-        NoLDE_Reserva noAnt = null;
+        No<Reserva> noAtual = noPrim;
+        No<Reserva> noAnt = null;
 
         while (noAtual != null) {
             if (noRemove == noAtual.getValor()) {
                 if (noAnt != null)
-                    noAnt.setProx(noAtual.getProx());
+                    noAnt.setProximo(noAtual.getProximo());
                 else
-                    noPrim = noAtual.getProx();
+                    noPrim = noAtual.getProximo();
                 noAtual = null;
                 tam--;
                 return true;
             }
             noAnt = noAtual;
-            noAtual = noAtual.getProx();
+            noAtual = noAtual.getProximo();
         }
         return false;
     }

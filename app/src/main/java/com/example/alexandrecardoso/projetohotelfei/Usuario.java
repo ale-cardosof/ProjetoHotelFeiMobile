@@ -40,7 +40,7 @@ public class Usuario extends Pessoa {
 
     public void setMinhasReservas(Reserva novaReserva) {
         this.ldeMinhasReservas.insere(novaReserva);
-        Estruturas.hash_reservas.insere(novaReserva);
+        //Estruturas.hash_reservas.insere(novaReserva);
     }
 
     public Usuario getEsquerda() {

@@ -1,5 +1,7 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import android.util.Log;
+
 import java.util.Date;
 
 // Classe que guardará todas as estruturas do aplicativo
@@ -94,21 +96,42 @@ public class Estruturas{
 
         Date dtEntrada = new Date(2019 - 1900, 5, 1);
         Date dtEntrada2 = new Date(2017 - 1900, 7, 8);
+        Date dtEntrada3 = new Date(2017 - 1900, 7, 9);
         Date dtSaida = new Date(2019 - 1900, 5, 4);
 
         Reserva r1 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
 
         //LDE_Reserva lde_reserva_hash = new LDE_Reserva();
-        hash_reservas.insere(r1);
-
+        hash_reservas.insereHash(r1);
         Reserva r2 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
-        hash_reservas.insere(r2);
-        Reserva r3 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
-        hash_reservas.insere(r3);
+        hash_reservas.insereHash(r2);
+        Reserva r3 = new Reserva(logado.username, dtEntrada3,dtSaida, ldeQuartos.getByIndex(1), 150);
+        hash_reservas.insereHash(r3);
         Reserva r4 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
-        hash_reservas.insere(r4);
+        hash_reservas.insereHash(r4);
+        r4 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
+        hash_reservas.insereHash(r4);
+        r4 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
+        hash_reservas.insereHash(r4);
+        r4 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
+        hash_reservas.insereHash(r4);
+        r4 = new Reserva(logado.username, dtEntrada2,dtSaida, ldeQuartos.getByIndex(1), 150);
+        hash_reservas.insereHash(r4);
 
+        Log.d("HASHESTRUTURAS", " 4 "+ hash_reservas.getTodasReservas().getSize());
 
+        Log.d("HASHESTRUTURAS", " -              ==");
+
+        /*
+        if(hash_reservas.buscaById(0) != null)
+            Log.d("HASHESTRUTURAS", ""+ hash_reservas.buscaById(0).getIdReserva());
+        if(hash_reservas.buscaById(1) != null)
+            Log.d("HASHESTRUTURAS", ""+ hash_reservas.buscaById(1).getIdReserva());
+        if(hash_reservas.buscaById(2) != null)
+            Log.d("HASHESTRUTURAS", ""+ hash_reservas.buscaById(2).getIdReserva());
+        if(hash_reservas.buscaById(3) != null)
+            Log.d("HASHESTRUTURAS", ""+ hash_reservas.buscaById(3).getIdReserva());
+        Log.d("HASHESTRUTURAS", " -              =="+ hash_reservas.buscaById(3).getIdReserva());
         /*
         Log.d("HASH", "---------------------------------- MAIN");
         if (hash_reservas.busca(r1) != null)
@@ -129,28 +152,6 @@ public class Estruturas{
         NoLDE_Reserva lista =  hash_reservas.imprimeTodasReservas();
 
         Log.d("HASH", " lista " + lista.getSize());*/
-    }
-
-
-    public static void montarReservasUsuario(){
-
-        Date dtEntrada = new Date(2019 - 1900, 5, 1);
-        Date dtSaida = new Date(2019 - 1900, 5, 4);
-        Reserva r1 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(1), 150);
-        ((Usuario)(logado.user)).setMinhasReservas(r1);
-        //hash_reservas.insere(r1); // Insere dentro da hash
-
-        dtEntrada = new Date(2019 - 1900, 7, 5);
-        dtSaida = new Date(2019 - 1900, 7, 3);
-        r1 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(2), 400);
-        ((Usuario)(logado.user)).setMinhasReservas(r1);
-        //hash_reservas.insere(r1); // Insere dentro da hash
-
-        dtEntrada = new Date(2019 - 1900, 8, 2);
-        dtSaida = new Date(2019 - 1900, 8, 4);
-        r1 = new Reserva(logado.username, dtEntrada,dtSaida, ldeQuartos.getByIndex(3), 180);
-        ((Usuario)(logado.user)).setMinhasReservas(r1);
-        //hash_reservas.insere(r1); // Insere dentro da hash
     }
 
     public static void destroiEstrutura(){
