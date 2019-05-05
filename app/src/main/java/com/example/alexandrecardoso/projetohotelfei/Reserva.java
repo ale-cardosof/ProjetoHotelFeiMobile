@@ -14,6 +14,10 @@ public class Reserva {
     private boolean checkin = false;
     private boolean checkout = false;
 
+    public Reserva(){
+
+    }
+
     public Reserva(String usuario, Date dtEntrada,Date dtSaida, Quarto quartoReserva, double valor){
         this.dtEntrada = dtEntrada;
         this.dtSaida = dtSaida;

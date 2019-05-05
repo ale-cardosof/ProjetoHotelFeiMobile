@@ -103,8 +103,8 @@ public class cadastroUser extends AppCompatActivity {
     }
 
     public boolean verificaTamanhoUserName(){
-        // Verifica se o campo username tem 8 ou menos caracteres
-        if(edUsuario.getText().toString().length() > 8){
+        // Verifica se o campo username tem mais de 8 caracteres ou menos de 2
+        if(edUsuario.getText().toString().length() > 8 || edUsuario.getText().toString().length() < 2){
             tela.exibir(getApplicationContext(),"Username inválido (mais de 8 caracteres)");
             return false;
         }

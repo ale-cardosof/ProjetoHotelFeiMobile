@@ -25,43 +25,47 @@ public class AdapterReservaAdm extends ArrayAdapter<Reserva> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.layout_checkin, parent, false);
+        if(ldeReserva.getSize() == 0){
+            return null;
+        }else{
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View rowView = inflater.inflate(R.layout.layout_checkin, parent, false);
 
-        if (position % 2 == 0) {
-            rowView.setBackgroundColor(Color.parseColor("#4D808080"));
+            if (position % 2 == 0) {
+                rowView.setBackgroundColor(Color.parseColor("#4D808080"));
+            }
+            else
+                rowView.setBackgroundColor(Color.parseColor("#BFF0E68C"));
+
+            DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(context.getApplicationContext());
+            reservaAtual = ldeReserva.getByIndex(position);
+
+            ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageResource(
+                    reservaAtual.getQuartoReserva().getImagemQuarto());
+
+            ((TextView)rowView.findViewById(R.id.username3)).setText(String.valueOf(
+                    reservaAtual.getUsuario()));
+
+            ((TextView)rowView.findViewById(R.id.alteracao)).setText(String.valueOf(
+                    reservaAtual.getIdReserva()));
+
+            ((TextView)rowView.findViewById(R.id.idQuarto)).setText(String.valueOf(
+                    reservaAtual.getQuartoReserva().getNumPorta()));
+
+            ((TextView)rowView.findViewById(R.id.dtEntrada)).setText(dateFormat.format(
+                    reservaAtual.getDtEntrada()));
+
+            ((TextView)rowView.findViewById(R.id.dtSaida)).setText(dateFormat.format(
+                    reservaAtual.getDtSaida()));
+
+            ((TextView)rowView.findViewById(R.id.dtCheckIn)).setText(reservaAtual.isCheckin() ? "Sim" : "Não");
+
+            ((TextView)rowView.findViewById(R.id.dtCheckout)).setText(reservaAtual.isCheckout() ? "Sim" : "Não");
+
+            ((TextView)rowView.findViewById(R.id.vlrTotal)).setText(String.valueOf(reservaAtual.getValor()));
+
+            return rowView;
         }
-        else
-            rowView.setBackgroundColor(Color.parseColor("#BFF0E68C"));
-
-        DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(context.getApplicationContext());
-        reservaAtual = ldeReserva.getByIndex(position);
-
-        ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageResource(
-                reservaAtual.getQuartoReserva().getImagemQuarto());
-
-        ((TextView)rowView.findViewById(R.id.username3)).setText(String.valueOf(
-                reservaAtual.getUsuario()));
-
-        ((TextView)rowView.findViewById(R.id.idReserva)).setText(String.valueOf(
-                reservaAtual.getIdReserva()));
-
-        ((TextView)rowView.findViewById(R.id.idQuarto)).setText(String.valueOf(
-                reservaAtual.getQuartoReserva().getNumPorta()));
-
-        ((TextView)rowView.findViewById(R.id.dtEntrada)).setText(dateFormat.format(
-                reservaAtual.getDtEntrada()));
-
-        ((TextView)rowView.findViewById(R.id.dtSaida)).setText(dateFormat.format(
-                reservaAtual.getDtSaida()));
-
-        ((TextView)rowView.findViewById(R.id.dtCheckIn)).setText(reservaAtual.isCheckin() ? "Sim" : "Não");
-
-        ((TextView)rowView.findViewById(R.id.dtCheckout)).setText(reservaAtual.isCheckout() ? "Sim" : "Não");
-
-        ((TextView)rowView.findViewById(R.id.vlrTotal)).setText(String.valueOf(reservaAtual.getValor()));
-
-        return rowView;
     }
 
     @Override

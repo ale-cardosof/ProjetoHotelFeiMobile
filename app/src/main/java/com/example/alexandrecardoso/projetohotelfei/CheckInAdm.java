@@ -22,4 +22,9 @@ public class CheckInAdm extends AppCompatActivity {
         Intent intent = new Intent(this, CheckInAdm_listar.class);
         startActivity(intent);
     }
+
+    public void onBackPressed(){
+        Intent intent = new Intent(CheckInAdm.this, menuAdministrador.class);
+        startActivity(intent);
+    }
 }

@@ -1,21 +1,67 @@
 package com.example.alexandrecardoso.projetohotelfei;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
 
 public class CheckInAdm_BuscarUser extends AppCompatActivity {
-
+    TextView userCliente;
+    ListView listView;
+    ArrayAdapter adapter;
+    Usuario userBuscado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_in_adm__buscar_user);
         getSupportActionBar().hide();
+        userCliente = findViewById(R.id.userCliente);
+        listView = findViewById(R.id.lvReservaUsuario);
 
-        ListView listView = findViewById(R.id.lvReservaUsuario);
-        ArrayAdapter adapter = new AdapterReservaAdm(this, Estruturas.usuariosCadastrados.busca("filipi").getMinhasReservas());
-        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(CheckInAdm_BuscarUser.this, CheckAdmRealiza.class);
+                Estruturas.reserva_clicada = userBuscado.getMinhasReservas(position);
+                startActivity(intent);
+            }
+        });
     }
+
+    public void buscarCliente(View view){
+        String usernameBuscado = userCliente.getText().toString();
+        userBuscado = Estruturas.usuariosCadastrados.busca(usernameBuscado);
+        if (userBuscado == null){
+            // Usuário não existe
+            Estruturas.tela.exibir(getApplicationContext(),"Usuário não existe.");
+        }else{
+            if(userBuscado.getQntReservas() == 0){
+                // Usuário existe, porém não tem nenhuma reserva
+                adapter = new AdapterReservaAdm(this, userBuscado.getMinhasReservas());
+                listView.setAdapter(adapter);
+                Estruturas.tela.exibir(getApplicationContext(),"O usuário " + userBuscado.getNome() + " não possui nenhuma reserva pendente.");
+            }else{
+                // Usuário existe e possui alguma reserva
+                adapter = new AdapterReservaAdm(this, userBuscado.getMinhasReservas());
+                listView.setAdapter(adapter);
+                Estruturas.tela.exibir(getApplicationContext(),"Estas são as reservas de " + userBuscado.getNome() + ".");
+            }
+        }
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(CheckInAdm_BuscarUser.this, CheckInAdm.class);
+        startActivity(intent);
+    }
+
 }

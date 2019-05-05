@@ -18,6 +18,11 @@ public class Usuario extends Pessoa {
         direita = null;
     }
 
+    public int getQntReservas(){
+        return (this.ldeMinhasReservas.getSize());
+    }
+
+
     public LDE<Reserva> getMinhasReservas() {
         return ldeMinhasReservas;
     }

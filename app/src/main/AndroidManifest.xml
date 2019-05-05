@@ -5,10 +5,10 @@
 
     <uses-feature
         android:name="android.hardware.camera2"
-        android:required = "true"
-        />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".CheckAdmRealiza"></activity>
+        <activity android:name=".CheckAdmRealiza" />
         <activity android:name=".CheckInAdm_listar" />
         <activity android:name=".CheckInAdm_BuscarUser" />
         <activity android:name=".CheckInAdm" />

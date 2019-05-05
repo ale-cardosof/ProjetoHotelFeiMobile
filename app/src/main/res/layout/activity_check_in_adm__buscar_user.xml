@@ -36,30 +36,39 @@
         app:srcCompat="@drawable/wowtellog" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buscaCl"
         android:layout_width="115dp"
         android:layout_height="56dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:background="@drawable/btnno"
+        android:onClick="buscarCliente"
         android:text="BUSCAR USUÁRIO"
         android:textColor="@android:color/background_light"
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userCliente"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="Reservas"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        tools:layout_editor_absoluteX="156dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userCliente"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -74,15 +83,17 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/userCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="Username do Cliente"
         android:inputType="textPersonName"
-        android:text="Username do Cliente"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22"
-        tools:layout_editor_absoluteX="40dp"
         tools:ignore="MissingConstraints" />
 
     <ListView
@@ -91,7 +102,7 @@
         android:layout_height="344dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
