@@ -219,6 +219,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
                         break;
                     case SELECAO_GALERIA:
                         Uri localImagemSelecionada = data.getData();
+                        // Verificar espaço
                         imagem = MediaStore.Images.Media.getBitmap(getContentResolver(), localImagemSelecionada);
                         novoQuarto.adicionaImagem(imagem,posImg);
                         break;

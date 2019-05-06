@@ -11,6 +11,7 @@ import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Reserva;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Usuario;
@@ -27,10 +28,10 @@ public class UsuarioNovaReserva extends AppCompatActivity {
 
     private Button btnDataEntrada, btnDataSaida, btnDataReserva, btnVerificarDisp, btnReservar;
     private CalendarView cvDataReserva;
-    private Quarto quartoReserva;
+    Quarto quartoReserva;
     private Date dataEntradaReserva, dataSaidaReserva;
     private double valDiaria = 0,valTotal;
-    public static Quarto quarto;
+    static Quarto quarto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,6 @@ public class UsuarioNovaReserva extends AppCompatActivity {
 
         // Captura o quarto recebido, passa para uma variavel privada e destroi a publica estatica
         quartoReserva = quarto;
-        quarto = null;
 
         // Atribui os botoes à suas respectivas views
         btnDataEntrada = findViewById(R.id.btnDataEntrada);
@@ -110,6 +110,13 @@ public class UsuarioNovaReserva extends AppCompatActivity {
                 // Seta o texto do botão Auxiliar de acordo com a data selecionada
                 btnDataReserva.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
                 cvDataReserva.setVisibility(CalendarView.GONE); // Torna o calendario invisivel
+
+                if(dataSaidaReserva == null){
+                    Estruturas.tela.exibir(getApplicationContext(),"NULO");
+                }
+                quarto = null;
+
+
             }
         });
 

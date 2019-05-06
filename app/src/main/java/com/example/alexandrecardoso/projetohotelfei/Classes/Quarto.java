@@ -23,7 +23,7 @@ public class Quarto {
     //private Imagens fotos;
 
     public Quarto(){
-        // SÓ PARA TESTES
+        this.numPorta = 0;
     }
     public Quarto(int numeroPorta, double valorDiaria, int qntdCamas, int qntdChuveiro, boolean possuiTv) {
         this.numPorta = numeroPorta;

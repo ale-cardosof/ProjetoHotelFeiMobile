@@ -1,6 +1,7 @@
 package com.example.alexandrecardoso.projetohotelfei.Estruturas_;
 import android.text.format.DateFormat;
 
+import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Reserva;
 
 import java.util.Calendar;
@@ -76,7 +77,7 @@ public class HASH{
     }
 
     public boolean verificaDisponibilidade(Date dtEntrada, Date dtSaida, int numQuarto){
-
+        /*
         LDE<Reserva> ldeTodasReservas = getTodasReservas();
         NoLDE<Reserva> resAtual = ldeTodasReservas.getPrimeiroNo();
         Calendar cDtEntradaNovaReserva = Calendar.getInstance();
@@ -108,7 +109,7 @@ public class HASH{
                     return false;
             }
             resAtual = resAtual.getProx();
-        }
+        }*/
         return true;
     }
 }
