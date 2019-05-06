@@ -41,8 +41,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/btnno"
-        android:onClick="estruturaHotel"
-        android:text="ESTRUTURA"
+        android:onClick="checkincheckout"
+        android:text="CHECK-IN / CHECK-OUT"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -77,18 +77,18 @@
         android:layout_height="101dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/btnno"
-        android:onClick="checkincheckout"
-        android:text="CHECK-IN / CHECK-OUT"
+        android:onClick="estruturaHotel"
+        android:text="ESTRUTURA"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/busca" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -104,25 +104,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wowtellog" />
-
-    <Button
-        android:id="@+id/busca"
-        android:layout_width="315dp"
-        android:layout_height="101dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/btnno"
-        android:onClick="visualizarHotel"
-        android:text="VISUALIZAR HOTEL"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 </android.support.constraint.ConstraintLayout>
