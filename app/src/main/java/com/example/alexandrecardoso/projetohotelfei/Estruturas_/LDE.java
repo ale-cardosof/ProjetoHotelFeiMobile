@@ -22,7 +22,7 @@ public class LDE<T> {
         NoLDE<T> noProx = noPrim;
         NoLDE<T> noAnt = null;
 
-        while (noProx != null) {
+        while (noPrim != null && noProx != null) {
             noAnt = noProx;
             noProx = noProx.getProx();
         }
@@ -32,6 +32,7 @@ public class LDE<T> {
         } else {
             noPrim = noAtual;
         }
+        noAtual.setProx(noProx); // Inseri
 
         tam++;
     }
@@ -60,7 +61,6 @@ public class LDE<T> {
         }
         return null;
     }
-
 
     // Imprime no LogCat (Para testes)
     public void imprime() {

@@ -37,7 +37,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
     private ImageView imgQuarto1,imgQuarto2,imgQuarto3,imgQuarto4,imgQuarto5;
     private  static  final int SELECAO_CAMERA = 100;
     private  static  final int SELECAO_GALERIA = 200;
-    private static Quarto novoQuarto = new Quarto();
+    Quarto novoQuarto = new Quarto();
     private static int posImg;
     private static boolean inserirPressionado = false;
     private static Bitmap imagem = null;
@@ -301,19 +301,6 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         return true;
     }
 
-
-    public void verificaRadioButton(){
-        rgTv.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.radioButton){
-                    possuiTv = true;
-                }else
-                    possuiTv = false;
-            }
-        });
-    }
-
     public void cadastraQuarto(View view){
         if(verificaPreenchimento() && verificaPorta()){
             novoQuarto.setNumPorta(Integer.parseInt(edNumPorta.getText().toString()));
@@ -326,7 +313,6 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             limparCampos();
             Intent intent = new Intent(menuInsercaoQuarto.this, menuEstruturaHotel.class);
             startActivity(intent);
-
         }
     }
 }
