@@ -324,6 +324,9 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             Estruturas.ldeQuartos.insere(novoQuarto);
             tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
             limparCampos();
+            Intent intent = new Intent(menuInsercaoQuarto.this, menuEstruturaHotel.class);
+            startActivity(intent);
+
         }
     }
 }
