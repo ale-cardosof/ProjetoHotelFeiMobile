@@ -311,7 +311,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
     }
 
     public void cadastraQuarto(View view){
-        if(verificaPreenchimento()){
+        if(verificaPreenchimento() && verificaPorta()){
             novoQuarto.setNumPorta(Integer.parseInt(edNumPorta.getText().toString()));
             novoQuarto.setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
             novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
