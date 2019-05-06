@@ -3,6 +3,8 @@ Projeto dos alunos Alexandre Cardoso Feitosa, Filipi Guimarães Silva e Lucas Ma
 
 -- Tutorial de Uso Correto do Nosso Aplicativo
 
+O apk se encontra em APP > release > apk_ProjetoHotelFEI.apk
+
 ----> Usuários Iniciais
 Visando a facilidade ao testar o aplicativo, criamos alguns usuários padrões para que você logue
 pela primeira vez, são eles:
