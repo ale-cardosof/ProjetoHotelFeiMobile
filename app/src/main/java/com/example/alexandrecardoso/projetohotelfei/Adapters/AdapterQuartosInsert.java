@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
@@ -35,8 +36,8 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        //Quarto quarto = Estruturas.ldeQuartos.getByIndex(i);
-        Quarto quarto = ((Administrador)(logado.user)).getMeuHotel().getQuartos().getByIndex(0);
+        Quarto quarto = Estruturas.ldeQuartos.getByIndex(i);
+        //Quarto quarto = ((Administrador)(logado.user)).getMeuHotel().getQuartos().getByIndex(i);
         myViewHolder.numeroPorta.setText("Numero da porta: " +quarto.getNumPorta());
         myViewHolder.valorDiaria.setText("Valor da diária: R$"+quarto.getValorDiaria());
         myViewHolder.quantidadeCama.setText("Quantidade de cama:" + quarto.getQntdCamas());
@@ -50,6 +51,7 @@ public class AdapterQuartosInsert extends RecyclerView.Adapter<AdapterQuartosIns
         myViewHolder.imgQuartos3.setImageBitmap(quarto.retornaImagem(2));
         myViewHolder.imgQuartos4.setImageBitmap(quarto.retornaImagem(3));
         myViewHolder.imgQuartos5.setImageBitmap(quarto.retornaImagem(4));
+        //notifyDataSetChanged();
 
     }
 

@@ -287,6 +287,17 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         return  true;
     }
 
+  /*  public boolean verificaPorta(){
+
+        for(int i=0;i<=Estruturas.ldeQuartos.getSize();i++){
+            Quarto quarto = Estruturas.ldeQuartos.getByIndex(i);
+            if(quarto.getNumPorta()==Integer.parseInt(edNumPorta.getText().toString()));
+                return false;
+        }
+        return true;
+    }
+    */
+
     public void verificaRadioButton(){
         rgTv.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -307,7 +318,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
             novoQuarto.setPossuiTv(possuiTv);
             tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
-            //Estruturas.ldeQuartos.insere(novoQuarto);
+            Estruturas.ldeQuartos.insere(novoQuarto);
             // Essa linha acessa a LDE de quartos do usuario logado, ai vc faz o que quiser..
             //((Administrador)(logado.user)).getMeuHotel().getQuartos();
             // inserindo por exemplo
