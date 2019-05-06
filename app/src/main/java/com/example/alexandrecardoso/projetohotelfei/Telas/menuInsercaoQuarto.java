@@ -287,7 +287,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         return  true;
     }
 
-  /*  public boolean verificaPorta(){
+    public boolean verificaPorta(){
 
         for(int i=0;i<=Estruturas.ldeQuartos.getSize();i++){
             Quarto quarto = Estruturas.ldeQuartos.getByIndex(i);
@@ -296,7 +296,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         }
         return true;
     }
-    */
+
 
     public void verificaRadioButton(){
         rgTv.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
