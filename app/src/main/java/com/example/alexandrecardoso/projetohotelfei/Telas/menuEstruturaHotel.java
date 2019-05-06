@@ -19,6 +19,8 @@ import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
 import com.example.alexandrecardoso.projetohotelfei.R;
 import com.example.alexandrecardoso.projetohotelfei.Adapters.RecyclerItemClickListener;
 
+import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.tela;
+
 public class menuEstruturaHotel extends AppCompatActivity {
 
     public static int numeroQuarto;
@@ -84,8 +86,6 @@ public class menuEstruturaHotel extends AppCompatActivity {
         dialog.setPositiveButton("Alterar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(),":",
-                        Toast.LENGTH_SHORT).show();
                 numeroQuarto = Estruturas.ldeQuartos.getByIndex(position).getNumPorta();
                 Log.d("Valor", ""+numeroQuarto);
                 Intent intent = new Intent(menuEstruturaHotel.this, menuAlterarQuarto.class);
@@ -99,6 +99,8 @@ public class menuEstruturaHotel extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"O quarto foi excluido.",
                         Toast.LENGTH_SHORT).show();
                 Estruturas.ldeQuartos.removeByIndex(position);
+                Intent intent = new Intent(menuEstruturaHotel.this, menuEstruturaHotel.class);
+                startActivity(intent);
             }
         });
 
@@ -116,5 +118,10 @@ public class menuEstruturaHotel extends AppCompatActivity {
         finish();
 
         startActivity(getIntent());
+    }
+
+    public void onBackPressed(){
+        Intent intent = new Intent(menuEstruturaHotel.this, menuAdministrador.class);
+        startActivity(intent);
     }
 }

@@ -21,12 +21,6 @@ public class menuAdministrador extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
-
-    public  void visualizarHotel(View view){
-        Intent intent = new Intent(menuAdministrador.this, menuVisualizarHotel.class);
-        startActivity(intent);
-    }
-
     public void checkincheckout(View view){
         Intent intent = new Intent(menuAdministrador.this, CheckInAdm.class);
         startActivity(intent);
