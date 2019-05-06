@@ -12,16 +12,18 @@ public class LES<Bitmap>{
         if (n == 5 || posicao > 4){
             return false; // Não admite mais que 5 imagens
         }
+
+        /*
         if(this.busca(x) != -1){
             return false; // Não admite duas imagens iguais no vetor
-        }
+        }*/
 
         /* Joga o valor inserido na posição de inserção e aumenta o total de números inseridos */
         v[posicao] = x;
         n++;
         return true;
     }
-    /* 2 - Função de busca */
+    /* 2 - Função de busca
     public int busca(Bitmap x){
         //	Por ser uma Les, o vetor já está ordenado. Portanto, iteramos i:
         // a - Enquanto ele for menor que o total de números inseridos;
@@ -33,7 +35,7 @@ public class LES<Bitmap>{
         }
         // Retorna -1 para verificação de erros
         return -1;
-    }
+    }*/
     // Busca pelo indice
     public Bitmap busca(int x){
         return v[x];
