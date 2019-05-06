@@ -4,6 +4,7 @@ import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
 
 // Função LES adptada para funcionamento junta a Classe Adm, inserindo ordenamente pelo código ASC do username
 public class LES_adm extends LES {
+
     public Administrador v[] = new Administrador[10]; // Vetor de Usuários
     /* 0 - Construtor */
     public LES_adm(){
@@ -67,5 +68,4 @@ public class LES_adm extends LES {
         // Retorna -1, indicando que não achou
         return -1;
     }
-
 }

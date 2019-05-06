@@ -11,11 +11,12 @@ import android.widget.LinearLayout;
 
 import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
+import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LES;
 
 
 public class AdapterQuartos extends PagerAdapter {
     private Context context;
-    private Bitmap[] imgsQuartos = new Bitmap[5];
+    private LES<Bitmap> imgsQuartos = new LES<>();
     private LDE<Quarto> ldeQuartos;
     private int qtdQuartos;
 
@@ -28,7 +29,7 @@ public class AdapterQuartos extends PagerAdapter {
     public AdapterQuartos(Context context, Quarto quarto) {
         this.context = context;
         this.qtdQuartos =  1;
-        this.imgsQuartos[0] = quarto.getImagemQuarto();
+        this.imgsQuartos = quarto.getLesImagens();
     }
 
     @Override
@@ -60,9 +61,9 @@ public class AdapterQuartos extends PagerAdapter {
 
         ImageView imvQuartos = new ImageView(context);
         if(ldeQuartos != null)
-            imvQuartos.setImageBitmap(ldeQuartos.getByIndex(position).getImagemQuarto());
+            imvQuartos.setImageBitmap(ldeQuartos.getByIndex(position).retornaImagem(0));
         else
-            imvQuartos.setImageBitmap(imgsQuartos[position]);
+            imvQuartos.setImageBitmap(imgsQuartos.busca(position));
         liImgs.addView(imvQuartos);
 
         return liImgs;

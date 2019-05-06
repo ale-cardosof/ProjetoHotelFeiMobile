@@ -42,7 +42,7 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
         reservaAtual = ldeReserva.getByIndex(position);
 
         ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageBitmap(
-                reservaAtual.getQuartoReserva().getImagemQuarto());
+                reservaAtual.getQuartoReserva().retornaImagem(0));
         ((TextView)rowView.findViewById(R.id.nomeDoUsuario)).setText(String.valueOf(
                 reservaAtual.getQuartoReserva().getNumPorta()));
         ((TextView)rowView.findViewById(R.id.boolCheckIN)).setText(String.valueOf(

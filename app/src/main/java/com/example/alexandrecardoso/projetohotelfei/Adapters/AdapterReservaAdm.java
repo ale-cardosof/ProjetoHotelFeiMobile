@@ -45,7 +45,7 @@ public class AdapterReservaAdm extends ArrayAdapter<Reserva> {
             reservaAtual = ldeReserva.getByIndex(position);
 
             ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageBitmap(
-                    reservaAtual.getQuartoReserva().getImagemQuarto());
+                    reservaAtual.getQuartoReserva().retornaImagem(0));
 
             ((TextView)rowView.findViewById(R.id.username3)).setText(String.valueOf(
                     reservaAtual.getUsuario()));

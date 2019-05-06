@@ -7,6 +7,7 @@ import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
 
 import java.util.Date;
 
+
 // Classe que guardará todas as estruturas do aplicativo
 public class Estruturas{
 

@@ -2,8 +2,10 @@ package com.example.alexandrecardoso.projetohotelfei.Classes;
 
 import android.graphics.Bitmap;
 
-import com.example.alexandrecardoso.projetohotelfei.Classes.Avaliacao;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
+import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LES;
+
+import java.util.function.BiPredicate;
 
 public class Quarto {
     private int numPorta; // Chave
@@ -15,7 +17,8 @@ public class Quarto {
     private int status; // 0 - Desocupado, 1 - Pré-Reservado, 2 - Reservado
     private int diasReservado; // Dias de reserva
     private LDE<Avaliacao> ldeAvaliacoes = new LDE<>();
-    private Bitmap teste[] = new Bitmap[5];
+//    private Bitmap teste[] = new Bitmap[5];
+    private LES<Bitmap> lesImagens = new LES<>();
 
     //private Imagens fotos;
 
@@ -30,10 +33,6 @@ public class Quarto {
         this.possuiTv = possuiTv;
         this.status = 0;
         this.diasReservado = 0;
-    }
-
-    public Bitmap getImagemQuarto() {
-        return teste[0];
     }
 
     /*
@@ -113,14 +112,14 @@ public class Quarto {
 
     public void adicionaImagem(Bitmap foto, int position) {
         //imagensQuarto.get(position);
-        this.teste[position] = foto;
+        this.lesImagens.insere(foto,position);
     }
 
     public Bitmap retornaImagem(int position){
-
-        //return this.imagensQuarto.get(position);
-        return  this.teste[position];
+        return lesImagens.busca(position);
     }
 
-
+    public LES<Bitmap> getLesImagens() {
+        return lesImagens;
+    }
 }
