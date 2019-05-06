@@ -42,7 +42,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
     private static boolean inserirPressionado = false;
     private static Bitmap imagem = null;
     private  RadioGroup rgTv;
-    private  boolean possuiTv;
+    private  boolean possuiTv=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -263,6 +263,19 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         //informar que precisa aceitar permissao
     }
 
+    public void verificaRadioButton(){
+        rgTv.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.radioButton){
+                    possuiTv = true;
+                }else
+                    possuiTv = false;
+            }
+        });
+    }
+
+
     public void limparCampos(){
         edNumPorta.setText("");
         edValorDiaria.setText("");
@@ -307,6 +320,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             novoQuarto.setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
             novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
             novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
+            verificaRadioButton();
             novoQuarto.setPossuiTv(possuiTv);
             Estruturas.ldeQuartos.insere(novoQuarto);
             tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");

@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Permissao;
@@ -31,6 +32,9 @@ public class menuAlterarQuarto extends AppCompatActivity {
     EditText edNumPorta, edValorDiaria, edqdtCama, edqtdChuveiro;
     ImageButton imgCamera,imgCamera2,imgCamera3,imgCamera4,imgCamera5, imgGaleria, imgGaleria2, imgGaleria3, imgGaleria4,imgGaleria5;
     ImageView imgQuarto1,imgQuarto2,imgQuarto3,imgQuarto4,imgQuarto5;
+    private  RadioGroup rgTv;
+
+    private  boolean possuiTv=true;
     private  static  final int SELECAO_CAMERA = 100;
     private  static  final int SELECAO_GALERIA = 200;
     private static int posImg;
@@ -59,6 +63,7 @@ public class menuAlterarQuarto extends AppCompatActivity {
         imgQuarto3 = findViewById(R.id.imgQuarto3);
         imgQuarto4 = findViewById(R.id.imgQuarto4);
         imgQuarto5 = findViewById(R.id.imgQuarto5);
+        rgTv = findViewById(R.id.radioGroup);
 
         //setDadosQuarto();
 
@@ -202,6 +207,17 @@ public class menuAlterarQuarto extends AppCompatActivity {
     }
         }
     }
+    public void verificaRadioButton(){
+        rgTv.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.radioButton){
+                    possuiTv = true;
+                }else
+                    possuiTv = false;
+            }
+        });
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -305,6 +321,7 @@ public class menuAlterarQuarto extends AppCompatActivity {
                 Estruturas.ldeQuartos.getByIndex(i).setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
                 Estruturas.ldeQuartos.getByIndex(i).setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
                 Estruturas.ldeQuartos.getByIndex(i).setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
+                Estruturas.ldeQuartos.getByIndex(i).setPossuiTv(possuiTv);
                 break;
             }
             else{
