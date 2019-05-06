@@ -280,19 +280,24 @@ public class menuInsercaoQuarto extends AppCompatActivity {
     public boolean verificaPreenchimento(){
         if(edNumPorta.getText().toString().equals("") ||edValorDiaria.getText().toString().equals("")
         || edqdtCama.getText().toString().equals("") || edqtdChuveiro.getText().toString().equals("")){
+            tela.exibir(getApplicationContext(),"Todos os campos precisam ser preenchidos!");
             return  false;
         }
-        else if(imgQuarto1.getDrawable()==null)
+        else if(imgQuarto1.getDrawable()==null){
+            tela.exibir(getApplicationContext(),"Erro na inserção da imagem 1.");
             return  false;
+        }
         return  true;
     }
 
     public boolean verificaPorta(){
 
-        for(int i=0;i<=Estruturas.ldeQuartos.getSize();i++){
+        for(int i=0;i<Estruturas.ldeQuartos.getSize();i++){
             Quarto quarto = Estruturas.ldeQuartos.getByIndex(i);
-            if(quarto.getNumPorta()==Integer.parseInt(edNumPorta.getText().toString()));
+            if(quarto.getNumPorta()== (Integer.parseInt(edNumPorta.getText().toString()))){
+                tela.exibir(getApplicationContext(),"Número de porta já existente.");
                 return false;
+            }
         }
         return true;
     }
@@ -317,17 +322,9 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
             novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
             novoQuarto.setPossuiTv(possuiTv);
+            ((Administrador)(logado.user)).getMeuHotel().setQuartos(novoQuarto);
             tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
-            Estruturas.ldeQuartos.insere(novoQuarto);
-            // Essa linha acessa a LDE de quartos do usuario logado, ai vc faz o que quiser..
-            //((Administrador)(logado.user)).getMeuHotel().getQuartos();
-            // inserindo por exemplo
-            //((Administrador)(logado.user)).getMeuHotel().setQuartos(novoQuarto);
-            ((Administrador)(logado.user)).getMeuHotel().getQuartos().insere(novoQuarto);
             limparCampos();
-        }
-        else{
-            tela.exibir(getApplicationContext(),"Todos os campos precisam estar preenchidos!");
         }
     }
 }

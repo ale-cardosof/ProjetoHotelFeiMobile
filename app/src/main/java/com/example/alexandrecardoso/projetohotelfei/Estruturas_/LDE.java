@@ -117,10 +117,13 @@ public class LDE<T> {
         }
         return false;
     }
+
+
     // retorna o primeiro no No da LDE
     NoLDE<T> getPrimeiroNo(){
         return noPrim;
     }
+
     // retorna o tamanho da funcao
     public int getSize(){
         return tam;
