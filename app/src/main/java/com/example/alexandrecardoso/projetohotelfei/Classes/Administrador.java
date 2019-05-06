@@ -7,18 +7,13 @@ import java.util.ArrayList;
 public class Administrador extends Pessoa {
     /* Atributos */
     private Administrador pai;
-    private Administrador esquerda; // Usados na árvore
+    private Administrador esquerda;
     private Administrador direita;
-    private Hotel meuHotel = new Hotel(20);
 
     /* Métodos */
     // 0. Construtor
     public Administrador(String username, String nome, String cpf, String dataNascimento, String email, String celular, String senha) {
         super( username, nome, cpf, dataNascimento, email, celular, senha);
-    }
-    // 3. Retorna Hotel
-    public Hotel getMeuHotel() {
-        return meuHotel;
     }
 
     public Administrador getEsquerda() {

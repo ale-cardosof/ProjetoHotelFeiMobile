@@ -24,7 +24,6 @@ public class Estruturas{
         criarAdm();
         insereUsuarios();
         criaQuartos();
-        //criaHotel();
         criado = true;
     }
 
@@ -38,7 +37,7 @@ public class Estruturas{
         q.setPossuiTv(true);
         q.setAvaliacoes(new Avaliacao("Otimo Quarto!!!",5,"Recepção excelente," +
                 " serviço de quarto bem atenciosos e instalações de acordo com minhas expectativas."));
-        admsCadastrados.busca("admin").getMeuHotel().setQuartos(q);
+        ldeQuartos.insere(q);
 
         q = new Quarto();
         q.setNumPorta(2);
@@ -48,7 +47,7 @@ public class Estruturas{
         q.setPossuiTv(true);
         q.setAvaliacoes(new Avaliacao("Hotel simples.",5,"Hotel simples, " +
                 "porém confortável! Café da manhã honesto! Estacionamento pago."));
-        admsCadastrados.busca("admin").getMeuHotel().setQuartos(q);
+        ldeQuartos.insere(q);
 
         q = new Quarto();
         q.setNumPorta(3);
@@ -58,7 +57,7 @@ public class Estruturas{
         q.setPossuiTv(true);
         q.setAvaliacoes(new Avaliacao("Vista incrível",5,"Os hóspedes são " +
                 "bastante efusivos ao falar da vista deste hotel. Para os visitantes, um dos grandes destaques do estabelecimento é a cobertura."));
-        admsCadastrados.busca("admin").getMeuHotel().setQuartos(q);
+        ldeQuartos.insere(q);
 
         q = new Quarto();
         q.setNumPorta(4);
@@ -69,7 +68,7 @@ public class Estruturas{
         q.setAvaliacoes(new Avaliacao("Fachada 5 estrelas...cuidado!",3,
                 "Ótima localização e café da manhã, " +
                         "mas especialmente funcionários muito atenciosos!!"));
-        admsCadastrados.busca("admin").getMeuHotel().setQuartos(q);
+        ldeQuartos.insere(q);
 
         q = new Quarto();
         q.setNumPorta(5);
@@ -80,7 +79,7 @@ public class Estruturas{
         q.setAvaliacoes(new Avaliacao("Ótima localização",4,
                 "Ótima localização e café da manhã," +
                         "mas especialmente funcionários muito atenciosos!!"));
-        admsCadastrados.busca("admin").getMeuHotel().setQuartos(q);
+        ldeQuartos.insere(q);
 
         q = new Quarto();
         q.setNumPorta(10);
@@ -91,7 +90,7 @@ public class Estruturas{
         q.setAvaliacoes(new Avaliacao("O quarto DECA!!!",4,
                 "Lugar confortavel, serviço de quarto excelente (Especialidade; Galinha assada)." +
                         "Quem tem mais tem 10!"));
-        admsCadastrados.busca("admin").getMeuHotel().setQuartos(q);
+        ldeQuartos.insere(q);
 
         Date dtEntrada = new Date(2019 - 1900, 5, 1);
         Date dtEntrada2 = new Date(2017 - 1900, 7, 8);
@@ -137,8 +136,4 @@ public class Estruturas{
         admsCadastrados.insere(admInicial);
     }
 
-    public  static  void criaHotel(){
-
-        Hotel nossoHotel = new Hotel(30);
-    }
 }

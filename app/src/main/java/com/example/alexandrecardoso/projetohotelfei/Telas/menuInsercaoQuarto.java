@@ -18,7 +18,6 @@ import android.widget.RadioGroup;
 
 import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
-import com.example.alexandrecardoso.projetohotelfei.Classes.Hotel;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Permissao;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Reserva;
@@ -322,7 +321,7 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             novoQuarto.setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
             novoQuarto.setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));
             novoQuarto.setPossuiTv(possuiTv);
-            ((Administrador)(logado.user)).getMeuHotel().setQuartos(novoQuarto);
+            Estruturas.ldeQuartos.insere(novoQuarto);
             tela.exibir(getApplicationContext(),"Quarto cadastrado com sucesso!");
             limparCampos();
         }
