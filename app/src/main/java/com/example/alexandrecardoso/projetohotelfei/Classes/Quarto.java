@@ -5,8 +5,6 @@ import android.graphics.Bitmap;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LES;
 
-import java.util.function.BiPredicate;
-
 public class Quarto {
     private int numPorta; // Chave
     private double valorDiaria;
@@ -14,37 +12,20 @@ public class Quarto {
     private int qntdCamas;
     private int qntdChuveiros;
     private boolean possuiTv;
-    private int status; // 0 - Desocupado, 1 - Pré-Reservado, 2 - Reservado
-    private int diasReservado; // Dias de reserva
     private LDE<Avaliacao> ldeAvaliacoes = new LDE<>();
-//    private Bitmap teste[] = new Bitmap[5];
     private LES<Bitmap> lesImagens = new LES<>();
-
-    //private Imagens fotos;
 
     public Quarto(){
         this.numPorta = 0;
     }
+
     public Quarto(int numeroPorta, double valorDiaria, int qntdCamas, int qntdChuveiro, boolean possuiTv) {
         this.numPorta = numeroPorta;
         this.valorDiaria = valorDiaria;
         this.qntdCamas = qntdCamas;
         this.qntdChuveiros = qntdChuveiro;
         this.possuiTv = possuiTv;
-        this.status = 0;
-        this.diasReservado = 0;
     }
-
-    /*
-    public boolean adicionarImagem(int referencia){
-        fotos.getReferencias().insere(referencia);
-        return true;
-    }
-
-    public boolean removerImagem(int referencia){
-        fotos.getReferencias().removeN(referencia);
-        return true;
-    }*/
 
     private float calculaMedia(){
         float media = 0;
@@ -53,10 +34,6 @@ public class Quarto {
             media += ldeAvaliacoes.getByIndex(i).getNota();
         }
         return media/nAval;
-    }
-
-    public double getMediaAvaliacao() {
-        return mediaAvaliacao;
     }
 
     public LDE<Avaliacao> getAvaliacoes() {
@@ -108,10 +85,7 @@ public class Quarto {
         this.possuiTv = possuiTv;
     }
 
-
-
     public void adicionaImagem(Bitmap foto, int position) {
-        //imagensQuarto.get(position);
         this.lesImagens.insere(foto,position);
     }
 

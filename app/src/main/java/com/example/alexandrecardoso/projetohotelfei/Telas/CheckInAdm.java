@@ -20,6 +20,7 @@ public class CheckInAdm extends AppCompatActivity {
         Intent intent = new Intent(this, CheckInAdm_BuscarUser.class);
         startActivity(intent);
     }
+
     public void listarReservas(View view){
         Intent intent = new Intent(this, CheckInAdm_listar.class);
         startActivity(intent);

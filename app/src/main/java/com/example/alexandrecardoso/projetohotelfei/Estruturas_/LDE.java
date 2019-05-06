@@ -2,19 +2,19 @@ package com.example.alexandrecardoso.projetohotelfei.Estruturas_;
 
 import android.util.Log;
 
-//Estrutura de dado LDE
+// Estrutura de dados LDE
 public class LDE<T> {
 
     private NoLDE<T> noPrim; // Primeiro No da LDE
-    private int tam; // tamanho da LDE
+    private int tam; // Tamanho da LDE
 
-    //Construtor que define as inicia as variaveis da LDE
+    /* 1 - Construtor que define e inicia as variaveis da LDE */
     public LDE() {
         noPrim = null;
         tam = 0;
     }
 
-    //Insere um No à LDE a partir do Objeto recebido
+    /* 2 - Insere um No à LDE a partir do Objeto recebido */
     public void insere(T valor) {
         NoLDE<T> noAtual = new NoLDE<>();
         noAtual.setValor(valor);
@@ -32,12 +32,12 @@ public class LDE<T> {
         } else {
             noPrim = noAtual;
         }
-        noAtual.setProx(noProx); // Inseri
+        noAtual.setProx(noProx);
 
         tam++;
     }
 
-    // Retorna um objeto pelo indice
+    /* 3 - Retorna um objeto pelo indice */
     public T getByIndex(int i) {
         NoLDE<T> noAtual = noPrim;
         int iAtual = 0;
@@ -52,17 +52,7 @@ public class LDE<T> {
         return null;
     }
 
-    public NoLDE<T> getByValor(T noBusca) {
-        NoLDE<T> noAtual = noPrim;
-        while (noAtual != null) {
-            if (noBusca == noAtual.getValor())
-                return noAtual;
-            noAtual = noAtual.getProx();
-        }
-        return null;
-    }
-
-    // Imprime no LogCat (Para testes)
+    /* 4 - Imprime no LogCat (Para testes) */
     public void imprime() {
         NoLDE<T> noAtual = noPrim;
 
@@ -72,7 +62,7 @@ public class LDE<T> {
         }
     }
 
-    // Remove um No pelo indice
+    /* 5 - Remove um No pelo indice */
     public boolean removeByIndex(int i) {
         if (i >= tam || i < 0)
             return false;
@@ -97,35 +87,45 @@ public class LDE<T> {
         return false;
     }
 
-    public boolean removeByNo(T noRemove) {
-
-        NoLDE<T> noAtual = noPrim;
-        NoLDE<T> noAnt = null;
-
-        while (noAtual != null) {
-            if (noRemove == noAtual.getValor()) {
-                if (noAnt != null)
-                    noAnt.setProx(noAtual.getProx());
-                else
-                    noPrim = noAtual.getProx();
-                noAtual = null;
-                tam--;
-                return true;
-            }
-            noAnt = noAtual;
-            noAtual = noAtual.getProx();
-        }
-        return false;
-    }
-
-
-    // retorna o primeiro no No da LDE
+    /* 6 - Retorna o primeiro no No da LDE */
     NoLDE<T> getPrimeiroNo(){
         return noPrim;
     }
 
-    // retorna o tamanho da funcao
+    /* 7 - Retorna o tamanho da funcao */
     public int getSize(){
         return tam;
     }
+}
+
+// No auxiliar usado na LDE
+class No<T>{
+    T valor;
+    No<T> proximo;
+    No<T> anterior;
+
+    /* 1 - Construtor */
+    No(T valorNo){
+        valor = valorNo;
+        proximo = anterior = null;
+    }
+
+    /* 2 - Getter's e Setter's */
+    public T getValor() {
+        return valor;
+    }
+
+    public void setValor(T valor) {
+        this.valor = valor;
+    }
+
+    public No<T> getProximo() {
+        return proximo;
+    }
+
+    public void setProximo(No<T> proximo) {
+        this.proximo = proximo;
+    }
+
+
 }

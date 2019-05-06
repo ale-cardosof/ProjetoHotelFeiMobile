@@ -11,6 +11,7 @@ public class Arvore_user{
         this.raiz = null;
         this.n = 0;
     }
+
     /* 1 - Insere */
     public void insere(Usuario x){
         System.out.println("Inserindo o user: " + x.getUsername() + "..");
@@ -48,6 +49,7 @@ public class Arvore_user{
             pai = pai.getPai();
         }this.imprimeEDR(); // Testes, retirar na versão final
     }
+
     /* 2 - Busca pelo username (ASC) */
     public Usuario buscaASC(Long x){
         Usuario ptrAnterior;
@@ -64,10 +66,12 @@ public class Arvore_user{
         }
         return null;
     }
+
     /* 3 - Busca pelo username (CHAR) */
     public Usuario busca(String x){
         return buscaASC((this.geraAsc(x)));
     }
+
     /* 4  - Remove pelo username (ASC) */
     public Usuario remove(Long x){
         Usuario ptrRemovido = this.buscaASC(x);
@@ -147,6 +151,7 @@ public class Arvore_user{
         }
         return null; // Nunca cairá aqui.
     }
+
     /* 5 - Conta filhos */
     public int contaFilhos(Usuario ptr){
         if((ptr.getEsquerda() != null) && (ptr.getDireita() != null))
@@ -156,6 +161,7 @@ public class Arvore_user{
         else
             return 0;
     }
+
     /* 6 - Altura */
     int altura(Usuario no){
         if(no == null)
@@ -163,7 +169,8 @@ public class Arvore_user{
         else
             return (this.maior((this.altura(no.getEsquerda())),(this.altura(no.getDireita())))+1);
     }
-    /* 7 - Função Maior */
+
+    /* 7 - Método Maior */
     public int maior(int a, int b){
         if (a == b)
             return a;
@@ -172,11 +179,13 @@ public class Arvore_user{
         else
             return b;
     }
-    /* 8 - Função de Fator de Balanceamento */
+
+    /* 8 - Método de Fator de Balanceamento */
     int FB(Usuario no){
         return ( (this.altura(no.getDireita())) - (this.altura(no.getEsquerda())));
     }
-    /* 9 - Função de Balanceamento */
+
+    /* 9 - Método de Balanceamento */
     void balanceia(Usuario pai){
         int fb = this.FB(pai);
         int fbdireita, fbesquerda;
@@ -204,6 +213,7 @@ public class Arvore_user{
             }
         }
     }
+
     /* 10 - Right Rotate */
     void rightRotate(Usuario x){
         // Cria ponteiros
@@ -234,6 +244,7 @@ public class Arvore_user{
             raiz = y;
         }
     }
+
     /* 11 - Left Rotate */
     void leftRotate(Usuario y){
         // Cria ponteiros
@@ -268,12 +279,14 @@ public class Arvore_user{
             raiz = x;
         }
     }
+
     /* 12 - Imprime EDR (Criada para testes) */
     void imprimeEDR(){
         System.out.println("Ola papai. Esse é o nosso tamanho: " + n + "..");
         this.imprimeEDR(raiz);
         System.out.println("");
     }
+
     /* 13 - Imprime Recursivo EDR (Criada para testes) */
     void imprimeEDR(Usuario n){
         if(n != null){
@@ -282,6 +295,7 @@ public class Arvore_user{
             System.out.println(n.getUsernameASC());
         }
     }
+
     /* 14 - Converte String pra ASC */
     public Long geraAsc(String entrada) {
         if(entrada.length() > 8){

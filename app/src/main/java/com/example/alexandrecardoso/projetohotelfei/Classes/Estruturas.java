@@ -22,8 +22,8 @@ public class Estruturas{
 
     public static void criaEstru (){
         criarAdm();
-        insereUsuarios();
         criaQuartos();
+        insereUsuarios();
         criado = true;
     }
 
@@ -91,16 +91,6 @@ public class Estruturas{
                 "Lugar confortavel, serviço de quarto excelente (Especialidade; Galinha assada)." +
                         "Quem tem mais tem 10!"));
         ldeQuartos.insere(q);
-
-        Date dtEntrada = new Date(2019 - 1900, 5, 1);
-        Date dtEntrada2 = new Date(2017 - 1900, 7, 8);
-        Date dtEntrada3 = new Date(2017 - 1900, 7, 9);
-        Date dtSaida = new Date(2019 - 1900, 5, 4);
-    }
-
-    public static void destroiEstrutura(){
-        criado = false;
-        ldeQuartos = null;
     }
 
     public static void insereUsuarios(){

@@ -1,62 +1,49 @@
 package com.example.alexandrecardoso.projetohotelfei.Estruturas_;
 import android.text.format.DateFormat;
-
-import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Reserva;
 
 import java.util.Calendar;
 import java.util.Date;
 
 public class HASH{
-    // Vetor em que cada posição é uma LDE diferente
+    // Vetor em que cada posição é uma LDE diferente e referencia um dia no mês
     private int MAX = 31;
     public NoLDE_Reserva vetorHash[] = new NoLDE_Reserva[MAX];
 
-    // Construtor
+    /* 0 - Construtor */
     public HASH(){
     }
 
-    // Função Insere
+    /* 1 - Insere */
     public boolean insereHash(Reserva x){
         // Função Hash
         int posicao = this.hash(x);
         // Inserção
         if (vetorHash[posicao] == null)
             vetorHash[posicao] = new NoLDE_Reserva();
-
         vetorHash[posicao].insereNo(x);
         return true;
     }
 
-    // Função Hash
+    /* 2 - Método Hash */
     public int hash(Reserva x){
         int dia  = Integer.parseInt((String)DateFormat.format("dd", x.getDtEntrada()));
         return ( dia % MAX);
     }
 
-    // Função Busca
+    /* 3 - Método Busca (por Reserva) */
     public Reserva busca(Reserva x){
         int posicaoHash = this.hash(x);
         return (vetorHash[posicaoHash].getByValor(x)); // Busca pelo valor e traz No
     }
 
-    public Reserva buscaById(int id){
-        for(int i = 0; i < MAX; i++){
-            if ( vetorHash[i] != null) {
-                Reserva reserAux = vetorHash[i].buscaById(id);
-                if (reserAux != null)
-                    return reserAux;
-            }
-        }
-        return null; // Busca pelo valor e traz No
-    }
-
-    // Função Remove
+    /* 4 - Método Remove (por reserva) */
     public boolean remove(Reserva x){
         int posicaoHash = this.hash(x);
         return (vetorHash[posicaoHash].removeByNo(x)); // Remove pelo valor e retorna int
     }
 
+    /* 5 - Método que retorna as reservas do ano inteiro */
     public LDE<Reserva> getTodasReservas(){
         LDE<Reserva> listaReserva = new LDE<>();
         for(int i = 0; i < MAX; i++){
@@ -72,12 +59,13 @@ public class HASH{
         return listaReserva; // Busca pelo valor e traz No
     }
 
+    /* 6 - Método que captura a reserva "clicada" na tela de check-in */
     public Reserva getReservaAtual(int posicao){
         return getTodasReservas().getByIndex(posicao); // Busca pelo valor e traz No
     }
 
+    /* 7 - Método que verifica a disponibilidade de um quarto especifico em um intervalo de datas */
     public boolean verificaDisponibilidade(Date dtEntrada, Date dtSaida, int numQuarto){
-        /*
         LDE<Reserva> ldeTodasReservas = getTodasReservas();
         NoLDE<Reserva> resAtual = ldeTodasReservas.getPrimeiroNo();
         Calendar cDtEntradaNovaReserva = Calendar.getInstance();
@@ -86,7 +74,6 @@ public class HASH{
         Calendar cDtSaidaReservaAtual = Calendar.getInstance();
         while (resAtual != null){
             if (resAtual.getValor().getQuartoReserva().getNumPorta() == numQuarto) {
-
                 cDtEntradaNovaReserva.setTime(dtEntrada);
                 cDtSaidaNovaReserva.setTime(dtSaida);
                 cDtEntradaReservaAtual.setTime(resAtual.getValor().getDtEntrada());
@@ -109,7 +96,7 @@ public class HASH{
                     return false;
             }
             resAtual = resAtual.getProx();
-        }*/
+        }
         return true;
     }
 }

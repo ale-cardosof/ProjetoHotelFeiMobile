@@ -2,6 +2,7 @@ package com.example.alexandrecardoso.projetohotelfei.Adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.LinearLayout;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LES;
+import com.example.alexandrecardoso.projetohotelfei.R;
 
 
 public class AdapterQuartos extends PagerAdapter {
@@ -19,17 +21,20 @@ public class AdapterQuartos extends PagerAdapter {
     private LES<Bitmap> imgsQuartos = new LES<>();
     private LDE<Quarto> ldeQuartos;
     private int qtdQuartos;
+    private boolean meuBool;
 
     public AdapterQuartos(Context context, LDE<Quarto> ldeQuartos) {
         this.context = context;
         this.qtdQuartos =  ldeQuartos.getSize();
         this.ldeQuartos = ldeQuartos;
+        this.meuBool = true;
     }
 
     public AdapterQuartos(Context context, Quarto quarto) {
         this.context = context;
         this.qtdQuartos =  1;
         this.imgsQuartos = quarto.getLesImagens();
+        this.meuBool = false;
     }
 
     @Override
@@ -51,8 +56,6 @@ public class AdapterQuartos extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
 
-        //LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
         LinearLayout liImgs = new LinearLayout(context);
         liImgs.setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams liParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
@@ -60,10 +63,23 @@ public class AdapterQuartos extends PagerAdapter {
         container.addView(liImgs);
 
         ImageView imvQuartos = new ImageView(context);
-        if(ldeQuartos != null)
-            imvQuartos.setImageBitmap(ldeQuartos.getByIndex(position).retornaImagem(0));
-        else
-            imvQuartos.setImageBitmap(imgsQuartos.busca(position));
+
+        if(meuBool){
+            if(ldeQuartos.getByIndex(position).retornaImagem(0) != null)
+                imvQuartos.setImageBitmap(ldeQuartos.getByIndex(position).retornaImagem(0));
+            else{
+                Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.quarto_1);
+                imvQuartos.setImageBitmap(icon);
+            }
+        }else{
+            if(imgsQuartos.busca(position) != null)
+                imvQuartos.setImageBitmap(imgsQuartos.busca(position));
+            else{
+                Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.quarto_1);
+                imvQuartos.setImageBitmap(icon);
+            }
+        }
+
         liImgs.addView(imvQuartos);
 
         return liImgs;

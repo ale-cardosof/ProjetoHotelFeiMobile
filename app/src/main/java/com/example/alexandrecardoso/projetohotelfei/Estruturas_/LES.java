@@ -7,7 +7,8 @@ public class LES<Bitmap>{
     public LES(){
         this.n = 0;
     }
-    /* 1 - Função de inserção */
+
+    /* 1 - Método de inserção */
     public boolean insere(Bitmap x, int posicao){
         if (n == 5 || posicao > 4){
             return false; // Não admite mais que 5 imagens
@@ -23,25 +24,13 @@ public class LES<Bitmap>{
         n++;
         return true;
     }
-    /* 2 - Função de busca
-    public int busca(Bitmap x){
-        //	Por ser uma Les, o vetor já está ordenado. Portanto, iteramos i:
-        // a - Enquanto ele for menor que o total de números inseridos;
-        // b - Enquanto o número naquela posição for menor que o número buscado.
-        for(int i=0;i<n && !v[i].equals(x);i++){
-            if(v[i] == x)
-                // Retorna a posição do número procurado
-                return i;
-        }
-        // Retorna -1 para verificação de erros
-        return -1;
-    }*/
-    // Busca pelo indice
+
+    /* 2 - Método de busca */
     public Bitmap busca(int x){
         return v[x];
     }
 
-    /* 3 - Função de impressão */
+    /* 3 - Método de impressão */
     public void imprime(){
         if (n == 0){
             System.out.println("LES vazia! Insira novos numeros.\n");
@@ -60,6 +49,8 @@ public class LES<Bitmap>{
             System.out.println("Numeros inseridos: " + n);
         }
     }
+
+    /* 4 - Método Remove */
     boolean removeI(int idx){
         if(idx > n || idx < 0){
             // Indice Inválido
@@ -76,13 +67,4 @@ public class LES<Bitmap>{
         }
     }
 
-    /* 3 - Função que converte String pra ASC*/
-    public Long geraAsc(String entrada) {
-        String provisorio = "";
-        char[] ascii2 = entrada.toCharArray();
-        for(char ch:ascii2){
-            provisorio = provisorio + ((int)ch - 48);
-        }
-        return Long.parseLong(provisorio);
-    }
 }

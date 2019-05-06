@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -46,11 +47,11 @@ public class UsuarioExibirQuarto extends AppCompatActivity {
         lvAvaliacoes.setAdapter(adapter);
 
         // Seta o tamanho da ListView de acordo com o tamanho da lista
-        /*
+
         ViewGroup.LayoutParams params = lvAvaliacoes.getLayoutParams();
-        params.height = 450 * lvAvaliacoes.getCount();
+        ((ViewGroup.LayoutParams) params).height = 750 * lvAvaliacoes.getCount();
         lvAvaliacoes.setLayoutParams(params);
-        lvAvaliacoes.requestLayout();*/
+        lvAvaliacoes.requestLayout();
 
         btnReservar.setOnClickListener(new View.OnClickListener() {
             @Override

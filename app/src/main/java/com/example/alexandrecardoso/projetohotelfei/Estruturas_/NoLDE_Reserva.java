@@ -8,11 +8,13 @@ public class NoLDE_Reserva {
     private No<Reserva>  noPrim;
     private int tam;
 
+    /* 0 - Construtor */
     public NoLDE_Reserva() {
         this.valor = null;
         this.noPrim = null;
     }
 
+    /* 1 - Getter's e Setter's */
     public Reserva getValor() {
         return valor;
     }
@@ -21,7 +23,7 @@ public class NoLDE_Reserva {
         this.valor = valor;
     }
 
-    //Insere um No à LDE a partir do Objeto recebido
+    /* 2 - Insere um No à LDE a partir do Objeto recebido */
     void insereNo(Reserva valor) {
         No<Reserva>  noAtual = new No<>(valor);
         noAtual.setValor(valor);
@@ -41,7 +43,7 @@ public class NoLDE_Reserva {
         tam++;
     }
 
-    // Retorna um objeto pelo indice
+    /* 3 - Retorna um objeto pelo indice */
     No<Reserva> getByIndex(int i) { ;
         No<Reserva> noAtual = noPrim;
         int iAtual = 0;
@@ -58,17 +60,7 @@ public class NoLDE_Reserva {
         return null;
     }
 
-    Reserva buscaById(int id){
-        No<Reserva> noAux = noPrim;
-            while(noAux != null){
-                if(noAux.getValor().getIdReserva() == id)
-                    return noAux.getValor();
-                noAux = noAux.getProximo();
-            }
-        return null; // Busca pelo valor e traz No
-    }
-
-
+    /* 4 - Retorna uma Reserva */
     Reserva getByValor(Reserva noBusca) {
         No<Reserva> noAtual = noPrim;
         while (noAtual != null) {
@@ -79,32 +71,7 @@ public class NoLDE_Reserva {
         return null;
     }
 
-
-    // Remove um No pelo indice
-    boolean removeByIndex(int i) {
-        if (i >= tam || i < 0)
-            return false;
-
-        No<Reserva> noAtual = noPrim;
-        No<Reserva> noAnt = null;
-        int iAtual = 0;
-        while (noAtual != null) {
-            if (i == iAtual) {
-                if (noAnt != null)
-                    noAnt.setProximo(noAtual.getProximo());
-                else
-                    noPrim = noAtual.getProximo();
-                noAtual = null;
-                tam--;
-                return true;
-            }
-            noAnt = noAtual;
-            noAtual = noAtual.getProximo();
-            iAtual++;
-        }
-        return false;
-    }
-
+    /* 5 - Remove uma Reserva */
     boolean removeByNo(Reserva noRemove) {
 
         No<Reserva> noAtual = noPrim;
@@ -126,8 +93,4 @@ public class NoLDE_Reserva {
         return false;
     }
 
-    // retorna o tamanho da funcao
-    int getSize(){
-        return tam;
-    }
 }

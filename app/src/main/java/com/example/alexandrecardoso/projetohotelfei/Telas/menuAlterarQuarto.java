@@ -207,6 +207,7 @@ public class menuAlterarQuarto extends AppCompatActivity {
     }
         }
     }
+
     public void verificaRadioButton(){
         rgTv.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -222,8 +223,6 @@ public class menuAlterarQuarto extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-
 
         if(resultCode == RESULT_OK){
             imagem = null;
@@ -287,7 +286,6 @@ public class menuAlterarQuarto extends AppCompatActivity {
         edValorDiaria.setText("");
         edqdtCama.setText("");
         edqtdChuveiro.setText("");
-
     }
 
     public void setDadosQuarto(){
@@ -318,6 +316,7 @@ public class menuAlterarQuarto extends AppCompatActivity {
         int i;
         for(i=0; i <= Estruturas.ldeQuartos.getSize();i++){
             if(numeroQuarto == Estruturas.ldeQuartos.getByIndex(i).getNumPorta()){
+                this.verificaRadioButton();
                 Estruturas.ldeQuartos.getByIndex(i).setValorDiaria(Double.parseDouble(edValorDiaria.getText().toString()));
                 Estruturas.ldeQuartos.getByIndex(i).setQntdCamas(Integer.parseInt(edqdtCama.getText().toString()));
                 Estruturas.ldeQuartos.getByIndex(i).setQntdChuveiros(Integer.parseInt(edqtdChuveiro.getText().toString()));

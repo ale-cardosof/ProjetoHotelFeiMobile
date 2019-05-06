@@ -362,6 +362,23 @@
             app:layout_constraintTop_toTopOf="@+id/imgQuarto1"
             app:srcCompat="@android:drawable/ic_menu_gallery" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginRight="88dp"
+            android:layout_marginBottom="4dp"
+            android:text="Tamanho máximo das imagens: 2mb"
+            app:layout_constraintBottom_toTopOf="@+id/imgQuarto3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edqtdChuveiro" />
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

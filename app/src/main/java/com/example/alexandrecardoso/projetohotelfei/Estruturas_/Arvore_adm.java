@@ -5,14 +5,17 @@ import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
 // Classe Árvore, criada para armazenar os usuários cadastrados.
 // Ela é ordenada a partir do username do usuário (que é transformado em ASC)
 public class Arvore_adm{
+
     // Atributos
     private Administrador raiz; // Primeiro Usuario
     public int n;
+
     /* 0 - Construtor */
     public Arvore_adm() {
         this.raiz = null;
         this.n = 0;
     }
+
     /* 1 - Insere */
     public void insere(Administrador x){
         // Anterior irá guardar o possível pai
@@ -50,6 +53,7 @@ public class Arvore_adm{
         }
         this.imprimeEDR(); // Testes, retirar na versão final
     }
+
     /* 2 - Busca pelo username (ASC) */
     public Administrador buscaASC(Long x){
         Administrador ptrAnterior;
@@ -66,10 +70,12 @@ public class Arvore_adm{
         }
         return null;
     }
+
     /* 3 - Busca pelo username (CHAR) */
     public Administrador busca(String x){
         return buscaASC((this.geraAsc(x)));
     }
+
     /* 4  - Remove pelo username (ASC) */
     public Administrador remove(Long x){
         Administrador ptrRemovido = this.buscaASC(x);
@@ -91,8 +97,6 @@ public class Arvore_adm{
                 // Reposiciona filhos do que irá substituir o removido
                 this.remove(anterior.getUsernameASC());
                 // Substiui o removido pelo antecessor
-                // ptrRemovido.setValor(anterior->getValor());
-                // -- Aqui ao invés de fazer a linha acima, eu copiei o Usuário
                 ptrRemovido.copiaUser(anterior);
             }else if(qntdFilhos == 1){
                 // Nesse Caso, tem apenas 1 filho
@@ -148,6 +152,7 @@ public class Arvore_adm{
         }
         return null; // Nunca cairá aqui.
     }
+
     /* 5 - Conta filhos */
     public int contaFilhos(Administrador ptr){
         if((ptr.getEsquerda() != null) && (ptr.getDireita() != null))
@@ -157,6 +162,7 @@ public class Arvore_adm{
         else
             return 0;
     }
+
     /* 6 - Altura */
     int altura(Administrador no){
         if(no == null)
@@ -164,7 +170,8 @@ public class Arvore_adm{
         else
             return (this.maior((this.altura(no.getEsquerda())),(this.altura(no.getDireita())))+1);
     }
-    /* 7 - Função Maior */
+
+    /* 7 - Método Maior */
     public int maior(int a, int b){
         if (a == b)
             return a;
@@ -173,11 +180,13 @@ public class Arvore_adm{
         else
             return b;
     }
-    /* 8 - Função de Fator de Balanceamento */
+
+    /* 8 - Método de Fator de Balanceamento */
     int FB(Administrador no){
         return ( (this.altura(no.getDireita())) - (this.altura(no.getEsquerda())));
     }
-    /* 9 - Função de Balanceamento */
+
+    /* 9 - Método de Balanceamento */
     void balanceia(Administrador pai){
         int fb = this.FB(pai);
         int fbdireita, fbesquerda;
@@ -205,6 +214,7 @@ public class Arvore_adm{
             }
         }
     }
+
     /* 10 - Right Rotate */
     void rightRotate(Administrador x){
         // Cria ponteiros
@@ -236,6 +246,7 @@ public class Arvore_adm{
             raiz = y;
         }
     }
+
     /* 11 - Left Rotate */
     void leftRotate(Administrador y){
         // Cria ponteiros
@@ -270,12 +281,14 @@ public class Arvore_adm{
             raiz = x;
         }
     }
+
     // 12 - Imprime EDR (Criada para testes)
     void imprimeEDR(){
         System.out.println("Ola papai. Esse é o nosso tamanho: " + n + "..");
         this.imprimeEDR(raiz);
         System.out.println("");
     }
+
     // 13 - Imprime Recursivo EDR (Criada para testes)
     void imprimeEDR(Administrador n){
         if(n != null){
@@ -284,6 +297,7 @@ public class Arvore_adm{
             System.out.println(n.getUsernameASC());
         }
     }
+
     /* 14 - Converte String pra ASC */
     public Long geraAsc(String entrada) {
         if(entrada.length() > 8){

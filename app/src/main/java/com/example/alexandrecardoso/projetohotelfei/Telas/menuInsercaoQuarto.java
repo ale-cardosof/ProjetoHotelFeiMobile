@@ -15,16 +15,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
-
-import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Permissao;
-import com.example.alexandrecardoso.projetohotelfei.Classes.Reserva;
-import com.example.alexandrecardoso.projetohotelfei.Classes.Usuario;
 import com.example.alexandrecardoso.projetohotelfei.R;
-
-import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.logado;
 import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.tela;
 
 public class menuInsercaoQuarto extends AppCompatActivity {
@@ -32,14 +26,13 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.CAMERA
     };
-    private EditText edNumPorta, edValorDiaria, edAvaliacao, edqdtCama, edqtdChuveiro;
+    private EditText edNumPorta, edValorDiaria, edqdtCama, edqtdChuveiro;
     ImageButton imgCamera,imgCamera2,imgCamera3,imgCamera4,imgCamera5, imgGaleria, imgGaleria2, imgGaleria3, imgGaleria4,imgGaleria5;
     private ImageView imgQuarto1,imgQuarto2,imgQuarto3,imgQuarto4,imgQuarto5;
     private  static  final int SELECAO_CAMERA = 100;
     private  static  final int SELECAO_GALERIA = 200;
     Quarto novoQuarto = new Quarto();
     private static int posImg;
-    private static boolean inserirPressionado = false;
     private static Bitmap imagem = null;
     private  RadioGroup rgTv;
     private  boolean possuiTv=true;

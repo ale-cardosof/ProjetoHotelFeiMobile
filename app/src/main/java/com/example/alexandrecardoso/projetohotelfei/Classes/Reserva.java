@@ -1,7 +1,5 @@
 package com.example.alexandrecardoso.projetohotelfei.Classes;
 
-import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
-
 import java.util.Date;
 
 public class Reserva {
@@ -45,16 +43,8 @@ public class Reserva {
         return idReserva;
     }
 
-    public void setDtEntrada(Date dtEntrada) {
-        this.dtEntrada = dtEntrada;
-    }
-
     public Date getDtSaida() {
         return dtSaida;
-    }
-
-    public void setDtSaida(Date dtSaida) {
-        this.dtSaida = dtSaida;
     }
 
     public double getValor() {
@@ -67,18 +57,6 @@ public class Reserva {
 
     public Quarto getQuartoReserva() {
         return quartoReserva;
-    }
-
-    public boolean isAvaliada() {
-        return avaliada;
-    }
-
-    public void setAvaliada(boolean avaliada) {
-        this.avaliada = avaliada;
-    }
-
-    public void setQuartoReserva(Quarto quartoReserva) {
-        this.quartoReserva = quartoReserva;
     }
 
     public boolean isCheckin() {

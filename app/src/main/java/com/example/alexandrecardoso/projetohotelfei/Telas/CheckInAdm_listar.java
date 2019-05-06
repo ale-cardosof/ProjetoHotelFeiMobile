@@ -10,12 +10,10 @@ import android.widget.ListView;
 
 import com.example.alexandrecardoso.projetohotelfei.Adapters.AdapterReservaAdm;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
-import com.example.alexandrecardoso.projetohotelfei.Classes.Usuario;
 import com.example.alexandrecardoso.projetohotelfei.R;
 
 public class CheckInAdm_listar extends AppCompatActivity {
     ListView listView;
-    Usuario userBuscado;
     ArrayAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

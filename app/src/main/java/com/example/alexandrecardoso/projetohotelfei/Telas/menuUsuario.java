@@ -29,6 +29,7 @@ public class menuUsuario extends AppCompatActivity {
         startActivity(intent);
 
     }
+
     public void abrirTelaCliente(View view){
         Intent intent = new Intent(menuUsuario.this, loginUser.class);
         startActivity(intent);

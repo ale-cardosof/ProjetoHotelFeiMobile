@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Reserva;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Usuario;
@@ -111,9 +109,6 @@ public class UsuarioNovaReserva extends AppCompatActivity {
                 btnDataReserva.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
                 cvDataReserva.setVisibility(CalendarView.GONE); // Torna o calendario invisivel
 
-                if(dataSaidaReserva == null){
-                    Estruturas.tela.exibir(getApplicationContext(),"NULO");
-                }
                 quarto = null;
 
 
@@ -128,28 +123,6 @@ public class UsuarioNovaReserva extends AppCompatActivity {
                     int diasHosp;
                     if(!hash_reservas.verificaDisponibilidade(dataEntradaReserva,dataSaidaReserva, quartoReserva.getNumPorta()))
                         throw new Exception("Esse quarto já está reservado para essa data.");
-//                    String dataEntrada = btnDataEntrada.getText().toString();
-//                    String dataSaida = btnDataSaida.getText().toString();
-//
-//                    String dataEntradaSplit[], dataSaidaSplit[];
-//                    dataEntradaSplit = dataEntrada.split("/"); // retorna um vetor com o dia, mes e ano
-//                    dataSaidaSplit = dataSaida.split("/");
-//
-//                    // Data de entrada
-//                    int diaEntrada = Integer.parseInt(dataEntradaSplit[0]);
-//                    int mesEntrada = Integer.parseInt(dataEntradaSplit[1]) - 1;
-//                    int anoEntrada = Integer.parseInt(dataEntradaSplit[2]);
-//
-//                    // Data de saida
-//                    int diaSaida = Integer.parseInt(dataSaidaSplit[0]);
-//                    int mesSaida = Integer.parseInt(dataSaidaSplit[1]) - 1;
-//                    int anoSaida = Integer.parseInt(dataSaidaSplit[2]);
-//
-//                    SimpleDateFormat df = new SimpleDateFormat("dd-MM-YYYY");
-//
-//                    Date dtEntrada = new Date(anoEntrada - 1900, mesEntrada, diaEntrada);
-//                    Date dtSaida = new Date(anoSaida - 1900, mesSaida, diaSaida);
-
                     // Caso a data de Saida seja menor que a de entrada retorna o erro
                     if(dataEntradaReserva.compareTo(dataSaidaReserva) == 1) {
                         throw new Exception("A data de entrada não pode ser maior que a data de saida!");
