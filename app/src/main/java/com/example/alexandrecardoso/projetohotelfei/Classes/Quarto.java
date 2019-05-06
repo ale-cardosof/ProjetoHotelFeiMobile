@@ -14,7 +14,6 @@ public class Quarto {
     private boolean possuiTv;
     private int status; // 0 - Desocupado, 1 - Pré-Reservado, 2 - Reservado
     private int diasReservado; // Dias de reserva
-    private int imagemQuarto; // Estudar maneira de armazenar a imagem do quarto
     private LDE<Avaliacao> ldeAvaliacoes = new LDE<>();
     private Bitmap teste[] = new Bitmap[5];
 
@@ -33,14 +32,10 @@ public class Quarto {
         this.diasReservado = 0;
     }
 
-
-    public int getImagemQuarto() {
-        return imagemQuarto;
+    public Bitmap getImagemQuarto() {
+        return teste[0];
     }
 
-    public void setImagemQuarto(int imagemQuarto) {
-        this.imagemQuarto = imagemQuarto;
-    }
     /*
     public boolean adicionarImagem(int referencia){
         fotos.getReferencias().insere(referencia);

@@ -1,17 +1,9 @@
 package com.example.alexandrecardoso.projetohotelfei.Classes;
 
-import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
-import com.example.alexandrecardoso.projetohotelfei.Classes.Avaliacao;
-import com.example.alexandrecardoso.projetohotelfei.Classes.Quarto;
-import com.example.alexandrecardoso.projetohotelfei.Classes.Reserva;
-import com.example.alexandrecardoso.projetohotelfei.Classes.Usuario;
-import com.example.alexandrecardoso.projetohotelfei.Classes.infoLogado;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.Arvore_adm;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.Arvore_user;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.HASH;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
-import com.example.alexandrecardoso.projetohotelfei.Classes.MensagemToast;
-import com.example.alexandrecardoso.projetohotelfei.R;
 
 import java.util.Date;
 
@@ -29,7 +21,7 @@ public class Estruturas{
     public static HASH hash_reservas = new HASH();
 
     public static void criaEstru (){
-        //criaQuartos();
+        criaQuartos();
         insereUsuarios();
         criarAdm();
         //criaHotel();
@@ -46,7 +38,6 @@ public class Estruturas{
         q.setPossuiTv(true);
         q.setAvaliacoes(new Avaliacao("Otimo Quarto!!!",5,"Recepção excelente," +
                 " serviço de quarto bem atenciosos e instalações de acordo com minhas expectativas."));
-        q.setImagemQuarto(R.drawable.quarto_1);
         ldeQuartos.insere(q);
 
         q = new Quarto();
@@ -57,7 +48,6 @@ public class Estruturas{
         q.setPossuiTv(true);
         q.setAvaliacoes(new Avaliacao("Hotel simples.",5,"Hotel simples, " +
                 "porém confortável! Café da manhã honesto! Estacionamento pago."));
-        q.setImagemQuarto(R.drawable.quarto_2);
         ldeQuartos.insere(q);
 
         q = new Quarto();
@@ -68,7 +58,6 @@ public class Estruturas{
         q.setPossuiTv(true);
         q.setAvaliacoes(new Avaliacao("Vista incrível",5,"Os hóspedes são " +
                 "bastante efusivos ao falar da vista deste hotel. Para os visitantes, um dos grandes destaques do estabelecimento é a cobertura."));
-        q.setImagemQuarto(R.drawable.quarto_3);
         ldeQuartos.insere(q);
 
         q = new Quarto();
@@ -80,7 +69,6 @@ public class Estruturas{
         q.setAvaliacoes(new Avaliacao("Fachada 5 estrelas...cuidado!",3,
                 "Ótima localização e café da manhã, " +
                         "mas especialmente funcionários muito atenciosos!!"));
-        q.setImagemQuarto(R.drawable.quarto_4);
         ldeQuartos.insere(q);
 
         q = new Quarto();
@@ -92,7 +80,6 @@ public class Estruturas{
         q.setAvaliacoes(new Avaliacao("Ótima localização",4,
                 "Ótima localização e café da manhã," +
                         "mas especialmente funcionários muito atenciosos!!"));
-        q.setImagemQuarto(R.drawable.quarto_6);
         ldeQuartos.insere(q);
 
         q = new Quarto();
@@ -104,7 +91,6 @@ public class Estruturas{
         q.setAvaliacoes(new Avaliacao("O quarto DECA!!!",4,
                 "Lugar confortavel, serviço de quarto excelente (Especialidade; Galinha assada)." +
                         "Quem tem mais tem 10!"));
-        q.setImagemQuarto(R.drawable.quarto_10);
         ldeQuartos.insere(q);
 
         Date dtEntrada = new Date(2019 - 1900, 5, 1);

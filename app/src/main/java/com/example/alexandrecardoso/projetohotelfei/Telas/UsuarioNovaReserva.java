@@ -1,8 +1,10 @@
-package com.example.alexandrecardoso.projetohotelfei;
+package com.example.alexandrecardoso.projetohotelfei.Telas;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -17,8 +19,9 @@ import com.example.alexandrecardoso.projetohotelfei.R;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.example.alexandrecardoso.projetohotelfei.Estruturas.logado;
-import static com.example.alexandrecardoso.projetohotelfei.Estruturas.tela;
+import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.hash_reservas;
+import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.logado;
+import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.tela;
 
 public class UsuarioNovaReserva extends AppCompatActivity {
 
@@ -49,7 +52,10 @@ public class UsuarioNovaReserva extends AppCompatActivity {
         valDiaria = quartoReserva.getValorDiaria();
 
         // Atribui imagem do quarto recebido à ImageView
-        ((ImageView)findViewById(R.id.imvQuarto)).setImageResource(quartoReserva.getImagemQuarto());
+        Bitmap icon = BitmapFactory.decodeResource(UsuarioNovaReserva.this.getResources(),
+                R.drawable.quarto_1);
+
+        ((ImageView)findViewById(R.id.imvQuarto)).setImageBitmap(icon);
         // Atribui os textos de informações sobre o quarto
         ((TextView)findViewById(R.id.lblValorDiaria)).setText(String.valueOf(quartoReserva.getValorDiaria()));
         ((TextView)findViewById(R.id.lblValorDia)).setText(String.valueOf(valDiaria));
@@ -112,9 +118,9 @@ public class UsuarioNovaReserva extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-
                     int diasHosp;
-
+                    if(!hash_reservas.verificaDisponibilidade(dataEntradaReserva,dataSaidaReserva, quartoReserva.getNumPorta()))
+                        throw new Exception("Esse quarto já está reservado para essa data.");
 //                    String dataEntrada = btnDataEntrada.getText().toString();
 //                    String dataSaida = btnDataSaida.getText().toString();
 //

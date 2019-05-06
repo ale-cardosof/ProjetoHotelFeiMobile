@@ -2,8 +2,8 @@ package com.example.alexandrecardoso.projetohotelfei.Estruturas_;
 
 class No<T>{
     T valor;
-    No proximo;
-    No anterior;
+    No<T> proximo;
+    No<T> anterior;
 
     public T getValor() {
         return valor;
@@ -13,19 +13,19 @@ class No<T>{
         this.valor = valor;
     }
 
-    public No getProximo() {
+    public No<T> getProximo() {
         return proximo;
     }
 
-    public void setProximo(No proximo) {
+    public void setProximo(No<T> proximo) {
         this.proximo = proximo;
     }
 
-    public No getAnterior() {
+    public No<T> getAnterior() {
         return anterior;
     }
 
-    public void setAnterior(No anterior) {
+    public void setAnterior(No<T> anterior) {
         this.anterior = anterior;
     }
 
@@ -37,22 +37,22 @@ class No<T>{
 
 public class LDDE<T> {
 
-    private No primeiro,ultimo;
+    private No<T> primeiro,ultimo;
     private int numeroNo;
 
-    public No getPrimeiro() {
+    public No<T> getPrimeiro() {
         return primeiro;
     }
 
-    public void setPrimeiro(No primeiro) {
+    public void setPrimeiro(No<T> primeiro) {
         this.primeiro = primeiro;
     }
 
-    public No getUltimo() {
+    public No<T> getUltimo() {
         return ultimo;
     }
 
-    public void setUltimo(No ultimo) {
+    public void setUltimo(No<T> ultimo) {
         this.ultimo = ultimo;
     }
 
@@ -64,12 +64,13 @@ public class LDDE<T> {
         this.numeroNo = numeroNo;
     }
 
-    LDDE(){
+    public LDDE(){
         primeiro = ultimo = null;
         numeroNo =0;
     }
 
-    void insereNo(No novoNo){
+    public void insereNo(T valor){
+        No<T> novoNo = new No(valor);
         novoNo.setProximo(null);
         novoNo.setAnterior(ultimo);
         if(primeiro==null)
@@ -79,20 +80,21 @@ public class LDDE<T> {
         numeroNo++;
     }
 
-    No buscarNoIndice(int indice){
+    public T buscarNoIndice(int indice){
         No tempNo = primeiro;
         for(int i =0; (i<indice) && tempNo !=null; i++)
             tempNo = tempNo.getProximo();
-        return tempNo;
+
+        return (T)tempNo.getValor();
     }
 
-    void excluirNoIndice(int indice){
+    public void excluirNoIndice(int indice){
         if(indice==0){
             primeiro = primeiro.getProximo();
             if(primeiro!= null)
                 primeiro.setAnterior(null);
         }else{
-            No tempNO = buscarNoIndice(indice);
+            No<T> tempNO = new No<T>(buscarNoIndice(indice));
             tempNO.getAnterior().setProximo(tempNO.getProximo());
             if(tempNO!= ultimo)
                 tempNO.getProximo().setAnterior(tempNO.getAnterior());

@@ -2,6 +2,7 @@ package com.example.alexandrecardoso.projetohotelfei.Adapters;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,11 +33,12 @@ public class AdapterAvaliacao extends ArrayAdapter<Avaliacao> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.layout_usuario_avaliacao_item, parent, false);
 
+        /*
         if (position % 2 == 0) {
             rowView.setBackgroundColor(Color.parseColor("#4D808080"));
         }
         else
-            rowView.setBackgroundColor(Color.parseColor("#BFF0E68C"));
+            rowView.setBackgroundColor(Color.parseColor("#BFF0E68C"));*/
 
         Avaliacao avalAtual = alAvaliacoes.getByIndex(position);
 

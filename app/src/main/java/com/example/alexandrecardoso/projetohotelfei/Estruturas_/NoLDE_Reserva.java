@@ -1,7 +1,6 @@
 package com.example.alexandrecardoso.projetohotelfei.Estruturas_;
 
 import com.example.alexandrecardoso.projetohotelfei.Classes.Reserva;
-import com.example.alexandrecardoso.projetohotelfei.Estruturas_.No;
 
 public class NoLDE_Reserva {
 

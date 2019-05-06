@@ -41,7 +41,7 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
         DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(context.getApplicationContext());
         reservaAtual = ldeReserva.getByIndex(position);
 
-        ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageResource(
+        ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageBitmap(
                 reservaAtual.getQuartoReserva().getImagemQuarto());
         ((TextView)rowView.findViewById(R.id.nomeDoUsuario)).setText(String.valueOf(
                 reservaAtual.getQuartoReserva().getNumPorta()));

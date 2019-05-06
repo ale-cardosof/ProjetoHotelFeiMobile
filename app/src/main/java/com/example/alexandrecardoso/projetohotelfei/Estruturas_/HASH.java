@@ -1,9 +1,10 @@
-package com.example.alexandrecardoso.projetohotelfei;
+package com.example.alexandrecardoso.projetohotelfei.Estruturas_;
 import android.text.format.DateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 import com.example.alexandrecardoso.projetohotelfei.Classes.Reserva;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class HASH{
     // Vetor em que cada posição é uma LDE diferente
@@ -15,7 +16,7 @@ public class HASH{
     }
 
     // Função Insere
-    boolean insereHash(Reserva x){
+    public boolean insereHash(Reserva x){
         // Função Hash
         int posicao = this.hash(x);
         // Inserção
@@ -27,18 +28,18 @@ public class HASH{
     }
 
     // Função Hash
-    int hash(Reserva x){
+    public int hash(Reserva x){
         int dia  = Integer.parseInt((String)DateFormat.format("dd", x.getDtEntrada()));
         return ( dia % MAX);
     }
 
     // Função Busca
-    Reserva busca(Reserva x){
+    public Reserva busca(Reserva x){
         int posicaoHash = this.hash(x);
         return (vetorHash[posicaoHash].getByValor(x)); // Busca pelo valor e traz No
     }
 
-    Reserva buscaById(int id){
+    public Reserva buscaById(int id){
         for(int i = 0; i < MAX; i++){
             if ( vetorHash[i] != null) {
                 Reserva reserAux = vetorHash[i].buscaById(id);
@@ -50,12 +51,12 @@ public class HASH{
     }
 
     // Função Remove
-    boolean remove(Reserva x){
+    public boolean remove(Reserva x){
         int posicaoHash = this.hash(x);
         return (vetorHash[posicaoHash].removeByNo(x)); // Remove pelo valor e retorna int
     }
 
-    LDE<Reserva> getTodasReservas(){
+    public LDE<Reserva> getTodasReservas(){
         LDE<Reserva> listaReserva = new LDE<>();
         for(int i = 0; i < MAX; i++){
             if(vetorHash[i] != null) {
@@ -70,7 +71,44 @@ public class HASH{
         return listaReserva; // Busca pelo valor e traz No
     }
 
-    Reserva getReservaAtual(int posicao){
+    public Reserva getReservaAtual(int posicao){
         return getTodasReservas().getByIndex(posicao); // Busca pelo valor e traz No
+    }
+
+    public boolean verificaDisponibilidade(Date dtEntrada, Date dtSaida, int numQuarto){
+
+        LDE<Reserva> ldeTodasReservas = getTodasReservas();
+        NoLDE<Reserva> resAtual = ldeTodasReservas.getPrimeiroNo();
+        Calendar cDtEntradaNovaReserva = Calendar.getInstance();
+        Calendar cDtSaidaNovaReserva = Calendar.getInstance();
+        Calendar cDtEntradaReservaAtual = Calendar.getInstance();
+        Calendar cDtSaidaReservaAtual = Calendar.getInstance();
+        while (resAtual != null){
+            if (resAtual.getValor().getQuartoReserva().getNumPorta() == numQuarto) {
+
+                cDtEntradaNovaReserva.setTime(dtEntrada);
+                cDtSaidaNovaReserva.setTime(dtSaida);
+                cDtEntradaReservaAtual.setTime(resAtual.getValor().getDtEntrada());
+                cDtSaidaReservaAtual.setTime(resAtual.getValor().getDtSaida());
+
+                if (cDtEntradaNovaReserva.equals(cDtEntradaReservaAtual)
+                || cDtSaidaNovaReserva.equals(cDtSaidaReservaAtual))
+                    return false;
+
+                else if ((resAtual.getValor().getDtEntrada().before(dtEntrada)
+                && resAtual.getValor().getDtSaida().after(dtEntrada))
+                || (resAtual.getValor().getDtEntrada().before(dtSaida)
+                        && resAtual.getValor().getDtSaida().after(dtSaida)))
+                    return false;
+
+                else if ((dtEntrada.before(resAtual.getValor().getDtEntrada())
+                        && dtSaida.after(resAtual.getValor().getDtEntrada()))
+                        || (dtEntrada.before(resAtual.getValor().getDtSaida())
+                        && dtSaida.after(resAtual.getValor().getDtSaida())))
+                    return false;
+            }
+            resAtual = resAtual.getProx();
+        }
+        return true;
     }
 }

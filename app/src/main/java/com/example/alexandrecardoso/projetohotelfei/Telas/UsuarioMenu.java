@@ -15,7 +15,7 @@ import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.te
 
 public class UsuarioMenu extends AppCompatActivity {
 
-    private Button btnBuscarQuartos, btnReservas, btnInfo, btnFormasPgto, btnDeslogar;
+    private Button btnBuscarQuartos, btnReservas, btnInfo, btnDeslogar;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,6 @@ public class UsuarioMenu extends AppCompatActivity {
         btnBuscarQuartos = findViewById(R.id.btnBuscarQuartos);
         btnReservas = findViewById(R.id.btnReservas);
         btnInfo = findViewById(R.id.btnInfo);
-        btnFormasPgto = findViewById(R.id.btnFormasPgto);
         btnDeslogar = findViewById(R.id.btnDeslogar);
 
         btnBuscarQuartos.setOnClickListener(new View.OnClickListener() {
@@ -43,14 +42,7 @@ public class UsuarioMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        btnFormasPgto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(UsuarioMenu.this, UsuarioReservas.class);
-                startActivity(intent);
-            }
-        });
+        
 
         btnReservas.setOnClickListener(new View.OnClickListener() {
             @Override

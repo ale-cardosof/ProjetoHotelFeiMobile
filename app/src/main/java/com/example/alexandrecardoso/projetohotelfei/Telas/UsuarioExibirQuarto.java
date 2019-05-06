@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -31,26 +33,29 @@ public class UsuarioExibirQuarto extends AppCompatActivity {
 
         quartoExibido = quartoAtual;
         quartoAtual = null;
-
+        Log.d("TESTELOG", "Set test");
+        Log.d("TESTELOG", "Set test" + quartoExibido);
         ((TextView)findViewById(R.id.lblNumCamas)).setText(String.valueOf(quartoExibido.getQntdCamas()));
         ((TextView)findViewById(R.id.lblDetalhes)).setText("Detalhes - Quarto : " +quartoExibido.getNumPorta());
         ((TextView)findViewById(R.id.lblPossuiTV)).setText(quartoExibido.isPossuiTv() ? "Sim" : "Não");
         ((TextView)findViewById(R.id.lblNumChuveiros)).setText(String.valueOf(quartoExibido.getQntdChuveiros()));
         ((TextView)findViewById(R.id.lblValorDiaria)).setText(String.valueOf(quartoExibido.getValorDiaria()));
 
+        Log.d("TESTELOG", "Set test");
         ViewPager vpExibeQuarto = findViewById(R.id.vpExibeQuarto);
         vpExibeQuarto.setAdapter(new AdapterQuartos(UsuarioExibirQuarto.this, quartoExibido));
-
+        Log.d("TESTELOG", "Set vp");
         ListView lvAvaliacoes = findViewById(R.id.lvAvaliacoes);
         ArrayAdapter adapter = new AdapterAvaliacao(this, quartoExibido.getAvaliacoes());
         lvAvaliacoes.setAdapter(adapter);
-
+        Log.d("TESTE", "Set adpter");
         // Seta o tamanho da ListView de acordo com o tamanho da lista
-        /*
+
         ViewGroup.LayoutParams params = lvAvaliacoes.getLayoutParams();
-        params.height = 450 * lvAvaliacoes.getCount();
+        params.height = 750 * lvAvaliacoes.getCount();
         lvAvaliacoes.setLayoutParams(params);
-        lvAvaliacoes.requestLayout();*/
+        lvAvaliacoes.requestLayout();
+        Log.d("TESTE", "Set parametros");
 
         btnReservar.setOnClickListener(new View.OnClickListener() {
             @Override

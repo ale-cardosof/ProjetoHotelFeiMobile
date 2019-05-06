@@ -44,7 +44,7 @@ public class AdapterReservaAdm extends ArrayAdapter<Reserva> {
             DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(context.getApplicationContext());
             reservaAtual = ldeReserva.getByIndex(position);
 
-            ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageResource(
+            ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageBitmap(
                     reservaAtual.getQuartoReserva().getImagemQuarto());
 
             ((TextView)rowView.findViewById(R.id.username3)).setText(String.valueOf(

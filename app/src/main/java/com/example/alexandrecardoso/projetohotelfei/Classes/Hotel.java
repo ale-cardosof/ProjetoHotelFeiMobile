@@ -2,8 +2,6 @@ package com.example.alexandrecardoso.projetohotelfei.Classes;
 
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
 
-import java.util.ArrayList;
-
 public class Hotel {
     private String nome;
     public  LDE<Quarto> quartos = new LDE<>();

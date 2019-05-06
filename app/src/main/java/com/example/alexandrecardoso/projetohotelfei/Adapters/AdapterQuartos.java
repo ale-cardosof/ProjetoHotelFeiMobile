@@ -1,6 +1,7 @@
 package com.example.alexandrecardoso.projetohotelfei.Adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
@@ -14,7 +15,7 @@ import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
 
 public class AdapterQuartos extends PagerAdapter {
     private Context context;
-    private int[] imgsQuartos = new int[5];
+    private Bitmap[] imgsQuartos = new Bitmap[5];
     private LDE<Quarto> ldeQuartos;
     private int qtdQuartos;
 
@@ -59,9 +60,9 @@ public class AdapterQuartos extends PagerAdapter {
 
         ImageView imvQuartos = new ImageView(context);
         if(ldeQuartos != null)
-            imvQuartos.setImageResource(ldeQuartos.getByIndex(position).getImagemQuarto());
+            imvQuartos.setImageBitmap(ldeQuartos.getByIndex(position).getImagemQuarto());
         else
-            imvQuartos.setImageResource(imgsQuartos[position]);
+            imvQuartos.setImageBitmap(imgsQuartos[position]);
         liImgs.addView(imvQuartos);
 
         return liImgs;

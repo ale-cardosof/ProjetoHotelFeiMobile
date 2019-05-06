@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/borda_linear_layout">
 
-    <LinearLayout
-        android:layout_width="398dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/borda_linear_layout"
-        android:orientation="vertical">
 
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:numStars="5"
             android:rating="2.4"
             android:stepSize="1.0" />
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:text="lblTituloAvaliacao"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -31,29 +31,26 @@
 
         <TextView
             android:id="@+id/lblNotaAvaliacao"
-            android:layout_width="wrap_content"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:text="5.0"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:id="@+id/lblMensagemAvaliacao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:ems="10"
-            android:enabled="false"
-            android:gravity="start|top"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:clickable="false"
             android:hint="Mensagem"
-            android:inputType="textMultiLine"
-            android:textColor="#000C0B0B" />
-
-    </LinearLayout>
+            android:lines="@android:integer/config_longAnimTime"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
 
 
 </LinearLayout>
