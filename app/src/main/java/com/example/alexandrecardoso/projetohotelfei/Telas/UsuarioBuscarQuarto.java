@@ -11,6 +11,8 @@ import com.example.alexandrecardoso.projetohotelfei.Adapters.AdapterQuartos;
 import com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas;
 import com.example.alexandrecardoso.projetohotelfei.R;
 
+import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.tela;
+
 public class UsuarioBuscarQuarto extends AppCompatActivity {
     private ViewPager vpBuscaQuarto;
 

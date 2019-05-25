@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.alexandrecardoso.projetohotelfei.Classes.MaskEditUtil;
 import com.example.alexandrecardoso.projetohotelfei.R;
 
 import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.logado;
@@ -22,6 +23,9 @@ public class usuario_editarinfo extends AppCompatActivity {
         setContentView(R.layout.activity_usuario_editarinfo);
         getSupportActionBar().hide();
         this.atualizaInfo();
+        edCPF.addTextChangedListener(MaskEditUtil.mask(edCPF, MaskEditUtil.FORMAT_CPF));
+        edCelular.addTextChangedListener(MaskEditUtil.mask(edCelular, MaskEditUtil.FORMAT_FONE));
+        edData.addTextChangedListener(MaskEditUtil.mask(edData, MaskEditUtil.FORMAT_DATE));
      }
 
      public void atualizaInfo(){

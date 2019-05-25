@@ -63,7 +63,6 @@ public class menuInsercaoQuarto extends AppCompatActivity {
         imgQuarto4 = findViewById(R.id.imgQuarto4);
         imgQuarto5 = findViewById(R.id.imgQuarto5);
 
-
         // Retira barra superior com o nome do app
         getSupportActionBar().hide();
 
@@ -268,7 +267,6 @@ public class menuInsercaoQuarto extends AppCompatActivity {
             }
         });
     }
-
 
     public void limparCampos(){
         edNumPorta.setText("");

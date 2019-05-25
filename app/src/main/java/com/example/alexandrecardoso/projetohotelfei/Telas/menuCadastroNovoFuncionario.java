@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.alexandrecardoso.projetohotelfei.Classes.Administrador;
+import com.example.alexandrecardoso.projetohotelfei.Classes.MaskEditUtil;
 import com.example.alexandrecardoso.projetohotelfei.R;
 
 import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.admsCadastrados;
@@ -29,6 +30,10 @@ public class menuCadastroNovoFuncionario extends AppCompatActivity {
         edCelular = findViewById(R.id.edCelular);
         edSenha = findViewById(R.id.edSenha);
         edSenhaConf = findViewById(R.id.edSenhaConf);
+
+        edCPF.addTextChangedListener(MaskEditUtil.mask(edCPF, MaskEditUtil.FORMAT_CPF));
+        edCelular.addTextChangedListener(MaskEditUtil.mask(edCelular, MaskEditUtil.FORMAT_FONE));
+        edData.addTextChangedListener(MaskEditUtil.mask(edData, MaskEditUtil.FORMAT_DATE));
 
 
     }

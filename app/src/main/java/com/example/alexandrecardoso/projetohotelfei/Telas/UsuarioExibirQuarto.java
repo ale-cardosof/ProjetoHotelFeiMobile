@@ -37,7 +37,7 @@ public class UsuarioExibirQuarto extends AppCompatActivity {
         ((TextView)findViewById(R.id.lblDetalhes)).setText("Detalhes - Quarto : " +quartoExibido.getNumPorta());
         ((TextView)findViewById(R.id.lblPossuiTV)).setText(quartoExibido.isPossuiTv() ? "Sim" : "Não");
         ((TextView)findViewById(R.id.lblNumChuveiros)).setText(String.valueOf(quartoExibido.getQntdChuveiros()));
-        ((TextView)findViewById(R.id.lblValorDiaria)).setText(String.valueOf(quartoExibido.getValorDiaria()));
+        ((TextView)findViewById(R.id.lblValorDiaria)).setText("R$ " +  String.valueOf(quartoExibido.getValorDiaria()));
 
         ViewPager vpExibeQuarto = findViewById(R.id.vpExibeQuarto);
         vpExibeQuarto.setAdapter(new AdapterQuartos(UsuarioExibirQuarto.this, quartoExibido));

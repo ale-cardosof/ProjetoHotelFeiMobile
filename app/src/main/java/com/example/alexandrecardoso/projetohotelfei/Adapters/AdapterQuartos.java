@@ -16,6 +16,8 @@ import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LES;
 import com.example.alexandrecardoso.projetohotelfei.R;
 
+import static com.example.alexandrecardoso.projetohotelfei.Classes.Estruturas.tela;
+
 
 public class AdapterQuartos extends PagerAdapter {
     private Context context;
@@ -58,7 +60,6 @@ public class AdapterQuartos extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
-
         LinearLayout liImgs = new LinearLayout(context);
         liImgs.setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams liParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
