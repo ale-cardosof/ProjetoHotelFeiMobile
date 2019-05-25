@@ -4,6 +4,7 @@ import com.example.alexandrecardoso.projetohotelfei.Estruturas_.Arvore_adm;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.Arvore_user;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.HASH;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
+import com.example.alexandrecardoso.projetohotelfei.R;
 
 import java.util.Date;
 
@@ -35,6 +36,7 @@ public class Estruturas{
         q.setQntdChuveiros(1);
         q.setValorDiaria(120);
         q.setPossuiTv(true);
+        q.setQuartoImg(R.drawable.quarto_1);
         q.setAvaliacoes(new Avaliacao("Otimo Quarto!!!",5,"Recepção excelente," +
                 " serviço de quarto bem atenciosos e instalações de acordo com minhas expectativas."));
         ldeQuartos.insere(q);
@@ -45,6 +47,7 @@ public class Estruturas{
         q.setQntdChuveiros(1);
         q.setValorDiaria(100);
         q.setPossuiTv(true);
+        q.setQuartoImg(R.drawable.quarto_2);
         q.setAvaliacoes(new Avaliacao("Hotel simples.",5,"Hotel simples, " +
                 "porém confortável! Café da manhã honesto! Estacionamento pago."));
         ldeQuartos.insere(q);
@@ -55,6 +58,7 @@ public class Estruturas{
         q.setQntdChuveiros(2);
         q.setValorDiaria(300);
         q.setPossuiTv(true);
+        q.setQuartoImg(R.drawable.quarto_3);
         q.setAvaliacoes(new Avaliacao("Vista incrível",5,"Os hóspedes são " +
                 "bastante efusivos ao falar da vista deste hotel. Para os visitantes, um dos grandes destaques do estabelecimento é a cobertura."));
         ldeQuartos.insere(q);
@@ -65,6 +69,7 @@ public class Estruturas{
         q.setQntdChuveiros(1);
         q.setValorDiaria(350);
         q.setPossuiTv(true);
+        q.setQuartoImg(R.drawable.quarto_4);
         q.setAvaliacoes(new Avaliacao("Fachada 5 estrelas...cuidado!",3,
                 "Ótima localização e café da manhã, " +
                         "mas especialmente funcionários muito atenciosos!!"));
@@ -76,6 +81,7 @@ public class Estruturas{
         q.setQntdChuveiros(2);
         q.setValorDiaria(400);
         q.setPossuiTv(true);
+        q.setQuartoImg(R.drawable.quarto_5);
         q.setAvaliacoes(new Avaliacao("Ótima localização",4,
                 "Ótima localização e café da manhã," +
                         "mas especialmente funcionários muito atenciosos!!"));
@@ -87,6 +93,7 @@ public class Estruturas{
         q.setQntdChuveiros(1);
         q.setValorDiaria(300);
         q.setPossuiTv(true);
+        q.setQuartoImg(R.drawable.quarto_10);
         q.setAvaliacoes(new Avaliacao("O quarto DECA!!!",4,
                 "Lugar confortavel, serviço de quarto excelente (Especialidade; Galinha assada)." +
                         "Quem tem mais tem 10!"));

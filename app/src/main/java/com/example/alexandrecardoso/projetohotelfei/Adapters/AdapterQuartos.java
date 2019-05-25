@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -21,6 +22,7 @@ public class AdapterQuartos extends PagerAdapter {
     private LES<Bitmap> imgsQuartos = new LES<>();
     private LDE<Quarto> ldeQuartos;
     private int qtdQuartos;
+    private Quarto quartoAtual;
     private boolean meuBool;
 
     public AdapterQuartos(Context context, LDE<Quarto> ldeQuartos) {
@@ -35,6 +37,7 @@ public class AdapterQuartos extends PagerAdapter {
         this.qtdQuartos =  1;
         this.imgsQuartos = quarto.getLesImagens();
         this.meuBool = false;
+        this.quartoAtual = quarto;
     }
 
     @Override
@@ -68,15 +71,18 @@ public class AdapterQuartos extends PagerAdapter {
             if(ldeQuartos.getByIndex(position).retornaImagem(0) != null)
                 imvQuartos.setImageBitmap(ldeQuartos.getByIndex(position).retornaImagem(0));
             else{
-                Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.quarto_1);
-                imvQuartos.setImageBitmap(icon);
+                //Bitmap icon = BitmapFactory.decodeResource(context.getResources(), ldeQuartos.getByIndex(position).getq);
+                imvQuartos.setImageResource(ldeQuartos.getByIndex(position).getQuartoImg());
             }
         }else{
             if(imgsQuartos.busca(position) != null)
                 imvQuartos.setImageBitmap(imgsQuartos.busca(position));
             else{
-                Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.quarto_1);
-                imvQuartos.setImageBitmap(icon);
+                //Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.quarto_10);
+                //imvQuartos.setImageBitmap(icon);
+                imvQuartos.setImageResource(quartoAtual.getQuartoImg());
+
+                Log.d("HOTELMOBILE","Quartos : " + quartoAtual.getQuartoImg());
             }
         }
 

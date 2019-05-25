@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LDE;
 import com.example.alexandrecardoso.projetohotelfei.Estruturas_.LES;
+import com.example.alexandrecardoso.projetohotelfei.R;
 
 public class Quarto {
     private int numPorta; // Chave
@@ -12,6 +13,7 @@ public class Quarto {
     private int qntdCamas;
     private int qntdChuveiros;
     private boolean possuiTv;
+    private int quartoImg = R.drawable.quarto_6;
     private LDE<Avaliacao> ldeAvaliacoes = new LDE<>();
     private LES<Bitmap> lesImagens = new LES<>();
 
@@ -25,6 +27,14 @@ public class Quarto {
         this.qntdCamas = qntdCamas;
         this.qntdChuveiros = qntdChuveiro;
         this.possuiTv = possuiTv;
+    }
+
+    public int getQuartoImg() {
+        return quartoImg;
+    }
+
+    public void setQuartoImg(int quartoImg) {
+        this.quartoImg = quartoImg;
     }
 
     private float calculaMedia(){
