@@ -45,6 +45,7 @@ public class ReservaAdapter extends ArrayAdapter<Reserva> {
             ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageBitmap(
                     reservaAtual.getQuartoReserva().retornaImagem(0));
         else{
+
             ((ImageView)rowView.findViewById(R.id.imvQuarto)).setImageResource(
                     reservaAtual.getQuartoReserva().getQuartoImg());
         }
